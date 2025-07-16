@@ -24,3 +24,6 @@ pnpm-debug.log*
 *.sw?
 
 .Rproj.user
+
+# Daymet data
+daymet_data/

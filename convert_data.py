@@ -22,7 +22,7 @@ def load_metadata():
     
     return metadata
 
-def process_csv_file(csv_file, metadata_df):
+def process_csv_file(csv_file, metadata_df, station_code):
     """Process a single CSV file and convert to daily averages"""
     print(f"Processing {csv_file}")
     
@@ -51,8 +51,15 @@ def process_csv_file(csv_file, metadata_df):
     # Convert date to string
     daily_stats['date'] = daily_stats['date'].astype(str)
     
-    # Add placeholder air temperature (would come from Daymet in real pipeline)
-    daily_stats['airtemp_c'] = None
+    # Load air temperature data if available
+    airtemp_file = f"/Users/ahzs645/Github/watertemp/unbcwatertemp-viz/daymet_data/{station_code}_airtemp.json"
+    if os.path.exists(airtemp_file):
+        with open(airtemp_file, 'r') as f:
+            airtemp_data = json.load(f)
+        # Add air temperature to daily stats
+        daily_stats['airtemp_c'] = daily_stats['date'].apply(lambda d: airtemp_data.get(d, None))
+    else:
+        daily_stats['airtemp_c'] = None
     
     # Convert to dict and handle NaN values
     records = daily_stats.to_dict('records')
@@ -70,11 +77,14 @@ def create_stations_json(metadata_df, data_dir):
     """Create the stations.json file"""
     stations = []
     
+    # Look for CSV files in the correct directory
+    csv_dir = "/Users/ahzs645/Github/watertemp/unbcwatertemp/Nechako watershed data/01_Data"
+    
     for _, row in metadata_df.iterrows():
         station_code = row['station_code']
         
         # Find corresponding CSV file
-        csv_files = glob.glob(f"{data_dir}/{station_code}_*.csv")
+        csv_files = glob.glob(f"{csv_dir}/{station_code}_*.csv")
         if not csv_files:
             print(f"No CSV file found for station {station_code}")
             continue
@@ -105,7 +115,7 @@ def create_stations_json(metadata_df, data_dir):
         
         # Process the CSV data
         try:
-            data = process_csv_file(csv_file, metadata_df)
+            data = process_csv_file(csv_file, metadata_df, station_code)
             station['n'] = len(data)
             
             # Save individual station data file
