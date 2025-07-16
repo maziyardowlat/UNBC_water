@@ -11,7 +11,7 @@
       <div class="d-flex align-center">
         <div :class="lgAndUp ? 'mr-4' : 'mr-2'">
           <v-img
-            src="/Users/ahzs645/Github/watertemp/unbcwatertemp-viz/SVG/Asset 1.svg"
+            src="/img/Asset 1.svg"
             alt="Logo"
             contain
             :width="lgAndUp ? 200 : 150"
