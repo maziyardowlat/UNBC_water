@@ -1,14 +1,12 @@
-# AKTEMPVIZ Stream Temperature Data Visualization Tool
+# UNBC Water Temperature Visualization Tool
 
-https://aktemp.uaa.alaska.edu/viz/
+https://watertemp.unbc.ca/viz/
 
 ## About
 
-AKTEMPVIZ is a data visualization tool for exploring spatial and temporal water temperature dynamics in streams and rivers across Alaska. The project combines water temperature data from three data sources:
+UNBC Water Temperature Visualization is a data visualization tool for exploring spatial and temporal water temperature dynamics in streams and rivers across the Nechako watershed in British Columbia. The project uses water temperature data from:
 
-- [AKTEMP Database](https://aktemp.uaa.alaska.edu/) (University of Alaska Anchorage)
-- [USGS National Water Information System (NWIS)](https://waterdata.usgs.gov/nwis)
-- [National Park Service (NPS) Aquarius Web Portal](https://irma.nps.gov/aqwebportal)
+- [UNBC Water Temperature Database](https://watertemp.unbc.ca/) (University of Northern British Columbia)
 
 Air temperature data for each water temperature station is obtained from [Daymet](https://daymet.ornl.gov/).
 
@@ -54,11 +52,11 @@ Before running the pipeline, you need to set up the environment variables. These
 # r/.env.local.sh
 
 # database connection
-export AKTEMP_HOST=<host>
-export AKTEMP_PORT=<port>
-export AKTEMP_DBNAME=<dbname>
-export AKTEMP_USER=<user>
-export AKTEMP_PASSWORD=<password>
+export UNBC_HOST=<host>
+export UNBC_PORT=<port>
+export UNBC_DBNAME=<dbname>
+export UNBC_USER=<user>
+export UNBC_PASSWORD=<password>
 
 # logging
 export LOG_LEVEL=DEBUG
@@ -74,7 +72,7 @@ export AWS_S3_BUCKET=<bucket>
 export AWS_S3_PREFIX=<prefix>
 
 # data directory (e.g. data/)
-export AKTEMPVIZ_DATA_DIR=<path to data directory>
+export UNBCWATERTEMP_DATA_DIR=<path to data directory>
 ```
 
 #### Run Pipeline
@@ -85,7 +83,7 @@ To run the pipeline manually, open the `aktempviz.Rproj` file in RStudio and run
 
 ```r
 # set environment variables
-Sys.setenv(AKTEMP_HOST = "<host>")
+Sys.setenv(UNBC_HOST = "<host>")
 # and so on... see .env.local.sh above
 
 # run the pipeline
@@ -108,7 +106,7 @@ The pipeline can also be run within a Docker container for deployment to the clo
 
 ```bash
 cd r
-docker build -t aktemp/aktempviz-data --platform linux/amd64 .
+docker build -t unbc/watertempviz-data --platform linux/amd64 .
 ```
 
 2. Set up required environment variables in the `.env.docker.local` file:
@@ -116,11 +114,11 @@ docker build -t aktemp/aktempviz-data --platform linux/amd64 .
 ```ini
 # .env.docker.local
 
-AKTEMP_HOST=<host>
-AKTEMP_PORT=<port>
-AKTEMP_DBNAME=<dbname>
-AKTEMP_USER=<user>
-AKTEMP_PASSWORD=<password>
+UNBC_HOST=<host>
+UNBC_PORT=<port>
+UNBC_DBNAME=<dbname>
+UNBC_USER=<user>
+UNBC_PASSWORD=<password>
 
 LOG_LEVEL=DEBUG
 TAR_WARN=FALSE
@@ -132,7 +130,7 @@ AWS_SECRET_ACCESS_KEY=<secret access key>
 AWS_S3_BUCKET=<bucket>
 AWS_S3_PREFIX=<prefix>
 
-AKTEMPVIZ_DATA_DIR=/data # important!
+UNBCWATERTEMP_DATA_DIR=/data # important!
 ```
 
 3. Run the data processing pipeline via docker:
@@ -142,17 +140,17 @@ AKTEMPVIZ_DATA_DIR=/data # important!
 docker run \
   --env-file .env.docker \
   -v $(pwd)/data:/data \
-  aktemp/aktempviz-data
+  unbc/watertempviz-data
 
 # open shell in temporary container
-docker run -it --rm --entrypoint /bin/bash aktemp/aktempviz-data
+docker run -it --rm --entrypoint /bin/bash unbc/watertempviz-data
 ```
 
 The pipeline will:
 
-1. Collect data from AKTEMP, USGS, and NPS sources
-2. Process and combine the datasets
-3. Download daymet tiles
+1. Collect data from UNBC water temperature database
+2. Process the dataset
+3. Download daymet tiles for BC region
 4. Merge water and air temperature data
 5. Generate output files in the data directory
 6. Upload results to S3

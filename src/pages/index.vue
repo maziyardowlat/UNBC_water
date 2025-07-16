@@ -21,7 +21,7 @@
           </a>
         </div>
         <div :class="{'text-h5': lgAndUp, 'text-h6': !lgAndUp, 'd-flex': true}">
-          <div>AKTEMP<span class="text-caption">VIZ</span></div>
+          <div>UNBC WaterTemp<span class="text-caption">VIZ</span></div>
           <div v-if="lgAndUp" class="ml-2">Stream Temperature Data Visualization Tool</div>
         </div>
       </div>
@@ -125,13 +125,13 @@
     <v-dialog v-model="showWelcome" max-width="1000">
       <v-card>
         <v-card-title class="text-h4 font-weight-bold primary--text pa-4 ml-2">
-          Explore the Stream Temperatures of Alaska
+          Explore the Stream Temperatures of the Nechako Watershed
         </v-card-title>
         <v-divider class="mb-4"></v-divider>
         <v-card-text>
           <v-row>
             <v-col cols="12" md="6">
-              <p class="text-h6 font-weight-medium mb-4">Uncover water temperature trends and patterns in Alaska's streams and rivers.</p>
+              <p class="text-h6 font-weight-medium mb-4">Uncover water temperature trends and patterns in the Nechako watershed's streams and rivers.</p>
               <v-list class="mb-4">
                 <v-list-item v-for="(feature, index) in welcomeFeatures" :key="index" :prepend-icon="feature.icon" class="my-2">
                   <v-list-item-title class="font-weight-medium">{{ feature.title }}</v-list-item-title>
@@ -1145,14 +1145,16 @@ async function fetchData(station) {
   try {
     const response = await fetch(`data/data/${station.filename}`)
     if (!response.ok) {
-      alert(`Error loading data for station ${station.provider_station_code}`)
+      console.error(`HTTP Error ${response.status} for station ${station.provider_station_code}: ${response.statusText}`)
+      alert(`Error loading data for station ${station.provider_station_code} - HTTP ${response.status}`)
       return []
     }
     await sleep(100)
-    return await response.json()
+    const jsonData = await response.json()
+    return jsonData
   } catch (error) {
-    console.error(error)
-    alert(`Error loading data for station ${station.provider_station_code}`)
+    console.error(`JSON Parse Error for station ${station.provider_station_code}:`, error)
+    alert(`Error loading data for station ${station.provider_station_code} - Parse error: ${error.message}`)
     return []
   } finally {
     loadingData.value = false

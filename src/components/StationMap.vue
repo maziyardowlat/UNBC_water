@@ -1,5 +1,5 @@
 <template>
-  <LMap ref="map" :zoom="4" :center="[63,-150]">
+  <LMap ref="map" :zoom="6" :center="[54.2,-124.5]">
     <LControlLayers position="topleft"></LControlLayers>
     <LControl position="bottomleft" v-show="props.selected.length === 0">
       <div class="legend">
@@ -8,21 +8,9 @@
         </div>
         <div style="" class="legend-item">
           <svg width="20" height="20">
-            <circle cx="10" cy="10" r="9" :stroke="dataSourceColors['AKTEMP']" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" :fill="dataSourceColors['AKTEMP']" fill-opacity="0.5" ></circle>
+            <circle cx="10" cy="10" r="9" :stroke="dataSourceColors['UNBC']" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" :fill="dataSourceColors['UNBC']" fill-opacity="0.5" ></circle>
           </svg>
-          <span class="pl-2">AKTEMP</span>
-        </div>
-        <div class="legend-item">
-          <svg width="20" height="20">
-            <circle cx="10" cy="10" r="9" :stroke="dataSourceColors['NPS']" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" :fill="dataSourceColors['NPS']" fill-opacity="0.5" ></circle>
-          </svg>
-          <span class="pl-2">NPS</span>
-        </div>
-        <div class="legend-item">
-          <svg width="20" height="20">
-            <circle cx="10" cy="10" r="9" :stroke="dataSourceColors['USGS']" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" :fill="dataSourceColors['USGS']" fill-opacity="0.5" ></circle>
-          </svg>
-          <span class="pl-2">USGS</span>
+          <span class="pl-2">UNBC</span>
         </div>
       </div>
     </LControl>
@@ -170,7 +158,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { LMap, LTileLayer, LCircleMarker, LGeoJson, LControlLayers, LControl, LTooltip } from '@vue-leaflet/vue-leaflet'
 
 import { basemaps } from '@/lib/basemaps'
@@ -194,23 +182,13 @@ const emit = defineEmits(['select', 'select-basin'])
 const selectedBasinLayer = ref(null)
 
 const dataSourceColors = {
-  'AKTEMP': '#1b9e77',
-  'NPS': '#d95f02',
-  'USGS': '#7570b3'
+  'UNBC': '#1b9e77'
 }
 
 const basinLayerOptions = ref([
   {
-    value: 'huc4',
-    label: 'Large Basins (HUC4)'
-  },
-  {
-    value: 'huc6',
-    label: 'Medium Basins (HUC6)'
-  },
-  {
-    value: 'huc8',
-    label: 'Small Basins (HUC8)'
+    value: 'nechako',
+    label: 'Nechako Watershed'
   }
 ])
 
@@ -262,7 +240,7 @@ async function loadBasinLayer (basinLayer) {
   basinGeoJson.value.loading = true
   emit('select-basin', null)
   try {
-    const response = await fetch(`data/gis/wbd_${basinLayer}.geojson`)
+    const response = await fetch(`data/gis/nechako_watershed.geojson`)
     if (!response.ok) throw new Error(`Failed to load basin layer: ${response.statusText}`)
     const data = await response.json()
     basinGeoJson.value.data = data

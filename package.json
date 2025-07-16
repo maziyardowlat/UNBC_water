@@ -1,12 +1,12 @@
 {
-  "name": "aktempviz",
+  "name": "unbcwatertempviz",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --fix --ignore-path .gitignore",
-    "deploy": "aws s3 sync dist/ s3://aktemp.uaa.alaska.edu/viz/ --exclude 'data/*' --delete"
+    "deploy": "aws s3 sync dist/ s3://watertemp.unbc.ca/viz/ --exclude 'data/*' --delete"
   },
   "dependencies": {
     "@mdi/font": "7.4.47",

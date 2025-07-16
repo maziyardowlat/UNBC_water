@@ -13,7 +13,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/viz/' : process.env.NODE_ENV === 'staging' ? '/aktempviz/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/viz/' : process.env.NODE_ENV === 'staging' ? '/unbcwatertempviz/' : '/',
   plugins: [
     VueRouter(),
     Layouts(),

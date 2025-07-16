@@ -1,19 +1,19 @@
 
 db_connect <- function () {
-  if (Sys.getenv("AKTEMP_DBNAME") == "") {
-    stop("Environment variable AKTEMP_DBNAME is not set")
+  if (Sys.getenv("UNBC_DBNAME") == "") {
+    stop("Environment variable UNBC_DBNAME is not set")
   }
   DBI::dbConnect(
     RPostgres::Postgres(),
-    dbname = Sys.getenv("AKTEMP_DBNAME"),
-    host = Sys.getenv("AKTEMP_HOST"),
-    port = Sys.getenv("AKTEMP_PORT"),
-    user = Sys.getenv("AKTEMP_USER"),
-    password = Sys.getenv("AKTEMP_PASSWORD")
+    dbname = Sys.getenv("UNBC_DBNAME"),
+    host = Sys.getenv("UNBC_HOST"),
+    port = Sys.getenv("UNBC_PORT"),
+    user = Sys.getenv("UNBC_USER"),
+    password = Sys.getenv("UNBC_PASSWORD")
   )
 }
 
-collect_aktemp_raw_data <- function () {
+collect_unbc_raw_data <- function () {
   con <- db_connect()
 
   db_providers <- tbl(con, "providers") |> 
@@ -100,7 +100,7 @@ collect_aktemp_raw_data <- function () {
   )
 }
 
-transform_aktemp_data <- function (db_data) {
+transform_unbc_data <- function (db_data) {
   series <- db_data[["series"]] |>
     left_join(
       db_data[["daily"]] |>
@@ -169,7 +169,7 @@ transform_aktemp_data <- function (db_data) {
   
   db_data$stations |> 
     mutate(
-      url = glue("https://aktemp.uaa.alaska.edu/#/explorer/stations/{station_id}"),
+      url = glue("https://watertemp.unbc.ca/#/explorer/stations/{station_id}"),
     ) |> 
     inner_join(
       daily_series,
