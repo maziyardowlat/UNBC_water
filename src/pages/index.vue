@@ -10,18 +10,15 @@
     <v-toolbar-title>
       <div class="d-flex align-center">
         <div :class="lgAndUp ? 'mr-4' : 'mr-2'">
-          <a href="https://accs.uaa.alaska.edu/">
-            <v-img
-              src="/img/accs-logo.png"
-              alt="ACCS logo"
-              contain
-              :width="lgAndUp ? 200 : 150"
-              style="background-color:white"
-            ></v-img>
-          </a>
+          <v-img
+            src="/Users/ahzs645/Github/watertemp/unbcwatertemp-viz/SVG/Asset 1.svg"
+            alt="Logo"
+            contain
+            :width="lgAndUp ? 200 : 150"
+          ></v-img>
         </div>
         <div :class="{'text-h5': lgAndUp, 'text-h6': !lgAndUp, 'd-flex': true}">
-          <div>UNBC WaterTemp<span class="text-caption">VIZ</span></div>
+          <div>WaterTemp<span class="text-caption">VIZ</span></div>
           <div v-if="lgAndUp" class="ml-2">Stream Temperature Data Visualization Tool</div>
         </div>
       </div>

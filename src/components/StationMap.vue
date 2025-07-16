@@ -1,5 +1,5 @@
 <template>
-  <LMap ref="map" :zoom="6" :center="[54.2,-124.5]">
+  <LMap ref="map" :zoom="7" :center="[54.2,-124.5]">
     <LControlLayers position="topleft"></LControlLayers>
     <LControl position="bottomleft" v-show="props.selected.length === 0">
       <div class="legend">
