@@ -443,9 +443,11 @@ target: Batch SubmitJob
 retry: off
 ```
 
-## Frontend Application
+## Frontend Application (CURRENT DEPLOYED ONE)
 
 The frontend application is built with Vue.js 3 and Vuetify and designed to be hosted on AWS S3.
+
+THIS IS NOT ON S3, PURELY LOCAL. You run "conver_data.py" with the dataset you put in the data. You need to ensure that you convert the csv with that, and then you can push to github/deploy it with vercel
 
 1. Install dependencies:
 

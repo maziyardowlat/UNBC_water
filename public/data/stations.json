@@ -13,8 +13,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01NE006",
     "filename": "01NE006_ChedakuzCreekAboveNechakoReservoir.json",
     "start": "2020-08-13",
-    "end": "2023-07-04",
-    "n": 1056
+    "end": "2025-08-11",
+    "n": 1825
   },
   {
     "station_id": "01FW003",
@@ -30,8 +30,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW003",
     "filename": "01FW003_CheslattaLakeAboveSatherCreek.json",
     "start": "2020-07-31",
-    "end": "2024-05-23",
-    "n": 1393
+    "end": "2025-05-21",
+    "n": 1756
   },
   {
     "station_id": "01FW008",
@@ -47,8 +47,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW008",
     "filename": "01FW008_CheslattaRiverBelowMurrayLake.json",
     "start": "2022-06-15",
-    "end": "2024-07-18",
-    "n": 765
+    "end": "2025-05-27",
+    "n": 1078
   },
   {
     "station_id": "01FW022",
@@ -64,8 +64,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW022",
     "filename": "01FW022_ChilakoRiverAboveNechakoRiver.json",
     "start": "2020-07-09",
-    "end": "2024-06-21",
-    "n": 1444
+    "end": "2025-06-26",
+    "n": 1814
   },
   {
     "station_id": "01FW018",
@@ -81,8 +81,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW018",
     "filename": "01FW018_ChilakoRiverBelowTatukLake.json",
     "start": "2020-08-13",
-    "end": "2022-11-08",
-    "n": 818
+    "end": "2025-06-26",
+    "n": 1779
   },
   {
     "station_id": "01FW002",
@@ -98,8 +98,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW002",
     "filename": "01FW002_EndakoRiverAboveStellakoRiver.json",
     "start": "2020-11-12",
-    "end": "2024-07-26",
-    "n": 1353
+    "end": "2025-07-04",
+    "n": 1696
   },
   {
     "station_id": "01FW006",
@@ -115,8 +115,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW006",
     "filename": "01FW006_GlacierCreekAboveNadinaLake.json",
     "start": "2022-07-13",
-    "end": "2024-06-26",
-    "n": 715
+    "end": "2025-07-23",
+    "n": 1107
   },
   {
     "station_id": "01NE001",
@@ -132,8 +132,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01NE001",
     "filename": "01NE001_KasalkaCreekAboveTahtsaLake.json",
     "start": "2021-08-12",
-    "end": "2024-06-26",
-    "n": 1050
+    "end": "2025-07-23",
+    "n": 1442
   },
   {
     "station_id": "01FW023",
@@ -166,8 +166,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW001",
     "filename": "01FW001_KuzkwaRiverBelowTezzeronLake.json",
     "start": "2020-07-16",
-    "end": "2024-08-14",
-    "n": 1491
+    "end": "2025-06-10",
+    "n": 1791
   },
   {
     "station_id": "01NE005",
@@ -183,8 +183,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01NE005",
     "filename": "01NE005_LaventieCreekAboveTahtsaLake.json",
     "start": "2020-07-30",
-    "end": "2024-06-26",
-    "n": 1428
+    "end": "2025-07-23",
+    "n": 1820
   },
   {
     "station_id": "01FW024",
@@ -200,8 +200,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW024",
     "filename": "01FW024_McMillanCreekAboveNechakoRiver.json",
     "start": "2023-05-04",
-    "end": "2024-06-19",
-    "n": 413
+    "end": "2025-06-26",
+    "n": 785
   },
   {
     "station_id": "01FW019",
@@ -217,8 +217,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW019",
     "filename": "01FW019_MiddleRiverAboveTrembleurLake.json",
     "start": "2020-07-17",
-    "end": "2024-07-30",
-    "n": 1475
+    "end": "2025-06-11",
+    "n": 1791
   },
   {
     "station_id": "01FW009",
@@ -234,8 +234,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW009",
     "filename": "01FW009_NadinaLake.json",
     "start": "2022-07-12",
-    "end": "2024-05-11",
-    "n": 670
+    "end": "2025-07-23",
+    "n": 1108
   },
   {
     "station_id": "01FW012",
@@ -251,8 +251,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW012",
     "filename": "01FW012_NadinaRiverAboveFrancoisLake.json",
     "start": "2020-07-30",
-    "end": "2024-06-13",
-    "n": 1415
+    "end": "2025-07-23",
+    "n": 1820
   },
   {
     "station_id": "01FW014",
@@ -268,8 +268,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW014",
     "filename": "01FW014_NadinaRiverAboveNadinaLake.json",
     "start": "2023-08-16",
-    "end": "2024-06-13",
-    "n": 303
+    "end": "2025-08-20",
+    "n": 736
   },
   {
     "station_id": "01FW017",
@@ -302,8 +302,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW005",
     "filename": "01FW005_NechakoAtMiworth.json",
     "start": "2020-07-09",
-    "end": "2024-06-19",
-    "n": 1442
+    "end": "2025-05-07",
+    "n": 1764
   },
   {
     "station_id": "01FW025",
@@ -319,8 +319,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW025",
     "filename": "01FW025_NechakoAtPulpmillRoad.json",
     "start": "2023-05-04",
-    "end": "2024-06-19",
-    "n": 413
+    "end": "2025-05-07",
+    "n": 735
   },
   {
     "station_id": "01FW013",
@@ -336,8 +336,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW013",
     "filename": "01FW013_NechakoRiverOffDellwoodRoad.json",
     "start": "2019-07-13",
-    "end": "2024-01-28",
-    "n": 1661
+    "end": "2025-04-11",
+    "n": 2100
   },
   {
     "station_id": "01FW016",
@@ -353,8 +353,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW016",
     "filename": "01FW016_NecoslieRiverAboveStuartLake.json",
     "start": "2020-07-17",
-    "end": "2024-08-13",
-    "n": 1489
+    "end": "2025-06-10",
+    "n": 1790
   },
   {
     "station_id": "02FW002",
@@ -387,8 +387,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW007",
     "filename": "01FW007_OtterCreekBelowFingerLake.json",
     "start": "2020-06-03",
-    "end": "2024-07-16",
-    "n": 1505
+    "end": "2025-07-11",
+    "n": 1865
   },
   {
     "station_id": "01FW021",
@@ -404,8 +404,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW021",
     "filename": "01FW021_PinchiCreekAboveStuartLake.json",
     "start": "2020-07-16",
-    "end": "2024-08-14",
-    "n": 1491
+    "end": "2025-06-11",
+    "n": 1792
   },
   {
     "station_id": "01NE004",
@@ -421,8 +421,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01NE004",
     "filename": "01NE004_RhineCreekAboveSweeneyCreek.json",
     "start": "2020-08-24",
-    "end": "2024-08-21",
-    "n": 1459
+    "end": "2025-07-23",
+    "n": 1795
   },
   {
     "station_id": "01FW010",
@@ -438,8 +438,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW010",
     "filename": "01FW010_SkinsLakeSpillway.json",
     "start": "2019-08-12",
-    "end": "2024-05-18",
-    "n": 1742
+    "end": "2024-07-17",
+    "n": 1802
   },
   {
     "station_id": "01FW004",
@@ -455,8 +455,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW004",
     "filename": "01FW004_StellakoRiverAboveFraserLake.json",
     "start": "2020-11-12",
-    "end": "2024-03-07",
-    "n": 1212
+    "end": "2025-07-04",
+    "n": 1556
   },
   {
     "station_id": "01FW015",
@@ -472,8 +472,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW015",
     "filename": "01FW015_StuartRiverAboveNechakoRiver.json",
     "start": "2020-07-08",
-    "end": "2024-06-20",
-    "n": 1444
+    "end": "2025-06-11",
+    "n": 1800
   },
   {
     "station_id": "01FW011",
@@ -489,8 +489,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW011",
     "filename": "01FW011_TachieRiverAboveStuartLake.json",
     "start": "2020-07-16",
-    "end": "2024-01-28",
-    "n": 1292
+    "end": "2025-06-10",
+    "n": 1791
   },
   {
     "station_id": "01FW020",
@@ -506,8 +506,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW020",
     "filename": "01FW020_TsilcohRiverAbovePinchiLake.json",
     "start": "2020-07-17",
-    "end": "2024-08-13",
-    "n": 1489
+    "end": "2025-06-10",
+    "n": 1790
   },
   {
     "station_id": "01NE002",
@@ -540,7 +540,7 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01NE003",
     "filename": "01NE003_WhitingCreek.json",
     "start": "2021-09-18",
-    "end": "2024-10-25",
-    "n": 1134
+    "end": "2025-07-23",
+    "n": 1405
   }
 ]

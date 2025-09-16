@@ -9,20 +9,16 @@ import os
 from datetime import datetime
 import glob
 
-def load_metadata():
-    """Load station metadata from the text file"""
-    metadata_file = "/Users/ahzs645/Github/watertemp/unbcwatertemp/Nechako watershed data/02_SupplementaryMaterials/Site_Metadata.txt"
+def load_stations():
+    """Load existing stations.json file"""
+    stations_file = os.path.join(os.path.dirname(__file__), "public", "data", "stations.json")
     
-    # Read the metadata file with proper encoding
-    metadata = pd.read_csv(metadata_file, sep='\t', encoding='latin-1')
+    with open(stations_file, 'r') as f:
+        stations = json.load(f)
     
-    # Clean up column names
-    metadata.columns = ['station_code', 'site_name', 'latitude', 'longitude', 
-                       'elevation_m', 'record_start', 'record_end']
-    
-    return metadata
+    return stations
 
-def process_csv_file(csv_file, metadata_df, station_code):
+def process_csv_file(csv_file, station_code):
     """Process a single CSV file and convert to daily averages"""
     print(f"Processing {csv_file}")
     
@@ -30,14 +26,14 @@ def process_csv_file(csv_file, metadata_df, station_code):
     df = pd.read_csv(csv_file)
     
     # Convert timestamp to datetime
-    df['timestamp (UTC)'] = pd.to_datetime(df['timestamp (UTC)'])
+    df['timestamp'] = pd.to_datetime(df['timestamp'])
     
     # Extract date
-    df['date'] = df['timestamp (UTC)'].dt.date
+    df['date'] = df['timestamp'].dt.date
     
     # Group by date and calculate daily statistics
     daily_stats = df.groupby('date').agg({
-        'wtmp (°C)': ['mean', 'min', 'max', 'count']
+        'wtmp': ['mean', 'min', 'max', 'count']
     }).round(2)
     
     # Handle NaN values by replacing them with None later
@@ -52,7 +48,7 @@ def process_csv_file(csv_file, metadata_df, station_code):
     daily_stats['date'] = daily_stats['date'].astype(str)
     
     # Load air temperature data if available
-    airtemp_file = f"/Users/ahzs645/Github/watertemp/unbcwatertemp-viz/daymet_data/{station_code}_airtemp.json"
+    airtemp_file = os.path.join(os.path.dirname(__file__), "daymet_data", f"{station_code}_airtemp.json")
     if os.path.exists(airtemp_file):
         with open(airtemp_file, 'r') as f:
             airtemp_data = json.load(f)
@@ -73,85 +69,81 @@ def process_csv_file(csv_file, metadata_df, station_code):
     
     return records
 
-def create_stations_json(metadata_df, data_dir):
-    """Create the stations.json file"""
-    stations = []
-    
+def update_stations_data(stations, data_dir):
+    """Update existing stations with new CSV data"""
     # Look for CSV files in the correct directory
-    csv_dir = "/Users/ahzs645/Github/watertemp/unbcwatertemp/Nechako watershed data/01_Data"
+    csv_dir = os.path.join(os.path.dirname(__file__), "data", "01_Data")
     
-    for _, row in metadata_df.iterrows():
-        station_code = row['station_code']
+    # Find all CSV files
+    csv_files = glob.glob(f"{csv_dir}/*.csv")
+    print(f"Found {len(csv_files)} CSV files to process")
+    
+    updated_stations = []
+    
+    for station in stations:
+        station_code = station['station_code']
         
         # Find corresponding CSV file
-        csv_files = glob.glob(f"{csv_dir}/{station_code}_*.csv")
-        if not csv_files:
-            print(f"No CSV file found for station {station_code}")
+        matching_csv = None
+        for csv_file in csv_files:
+            if station_code in os.path.basename(csv_file):
+                matching_csv = csv_file
+                break
+        
+        if not matching_csv:
+            print(f"No CSV file found for station {station_code}, keeping existing data")
+            updated_stations.append(station)
             continue
-            
-        csv_file = csv_files[0]
-        filename = os.path.basename(csv_file).replace('.csv', '.json')
         
-        # Extract waterbody name from site name
-        site_name = row['site_name'].strip('*').strip('�').strip('\u00a0').strip()  # Remove special characters
-        
-        station = {
-            "station_id": station_code,
-            "provider_station_code": f"UNBC:{station_code}",
-            "station_code": station_code,
-            "station_description": site_name,
-            "waterbody_name": site_name.split(' above ')[0].split(' below ')[0].split(' at ')[0],
-            "latitude": float(row['latitude']),
-            "longitude": float(row['longitude']),
-            "provider_code": "UNBC",
-            "provider_name": "University of Northern British Columbia",
-            "dataset": "UNBC",
-            "url": f"https://watertemp.unbc.ca/#/explorer/stations/{station_code}",
-            "filename": filename,
-            "start": str(row['record_start']),
-            "end": str(row['record_end']),
-            "n": 0  # Will be calculated when processing data
-        }
+        print(f"Found CSV file for {station_code}: {os.path.basename(matching_csv)}")
         
         # Process the CSV data
         try:
-            data = process_csv_file(csv_file, metadata_df, station_code)
+            data = process_csv_file(matching_csv, station_code)
             station['n'] = len(data)
             
+            # Update start and end dates based on actual data
+            if data:
+                station['start'] = data[0]['date']
+                station['end'] = data[-1]['date']
+            
             # Save individual station data file
-            data_output_dir = f"{data_dir}/data"
+            data_output_dir = os.path.join(data_dir, "data")
             os.makedirs(data_output_dir, exist_ok=True)
             
-            with open(f"{data_output_dir}/{filename}", 'w') as f:
+            filename = station['filename']
+            with open(os.path.join(data_output_dir, filename), 'w') as f:
                 json.dump(data, f, indent=2)
                 
-            stations.append(station)
-            print(f"Created data file for {station_code}: {len(data)} daily records")
+            updated_stations.append(station)
+            print(f"Updated data file for {station_code}: {len(data)} daily records")
             
         except Exception as e:
             print(f"Error processing {station_code}: {e}")
+            # Keep the original station data if processing fails
+            updated_stations.append(station)
             continue
     
-    return stations
+    return updated_stations
 
 def main():
     # Paths
-    data_dir = "/Users/ahzs645/Github/watertemp/unbcwatertemp-viz/public/data"
+    data_dir = os.path.join(os.path.dirname(__file__), "public", "data")
     
-    # Load metadata
-    print("Loading station metadata...")
-    metadata_df = load_metadata()
-    print(f"Found {len(metadata_df)} stations")
+    # Load existing stations
+    print("Loading existing stations...")
+    stations = load_stations()
+    print(f"Found {len(stations)} existing stations")
     
-    # Create stations.json
+    # Update stations with new CSV data
     print("Processing station data...")
-    stations = create_stations_json(metadata_df, data_dir)
+    updated_stations = update_stations_data(stations, data_dir)
     
-    # Save stations.json
+    # Save updated stations.json
     with open(f"{data_dir}/stations.json", 'w') as f:
-        json.dump(stations, f, indent=2)
+        json.dump(updated_stations, f, indent=2)
     
-    print(f"Created stations.json with {len(stations)} stations")
+    print(f"Updated stations.json with {len(updated_stations)} stations")
     
     # Update config.json
     config = {
