@@ -64,8 +64,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW022",
     "filename": "01FW022_ChilakoRiverAboveNechakoRiver.json",
     "start": "2020-07-09",
-    "end": "2025-06-26",
-    "n": 1814
+    "end": "2025-09-18",
+    "n": 1898
   },
   {
     "station_id": "01FW018",
@@ -200,8 +200,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW024",
     "filename": "01FW024_McMillanCreekAboveNechakoRiver.json",
     "start": "2023-05-04",
-    "end": "2025-06-26",
-    "n": 785
+    "end": "2025-09-18",
+    "n": 869
   },
   {
     "station_id": "01FW019",
@@ -302,8 +302,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW005",
     "filename": "01FW005_NechakoAtMiworth.json",
     "start": "2020-07-09",
-    "end": "2025-05-07",
-    "n": 1764
+    "end": "2025-09-18",
+    "n": 1898
   },
   {
     "station_id": "01FW025",
@@ -319,8 +319,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW025",
     "filename": "01FW025_NechakoAtPulpmillRoad.json",
     "start": "2023-05-04",
-    "end": "2025-05-07",
-    "n": 735
+    "end": "2025-09-18",
+    "n": 869
   },
   {
     "station_id": "01FW013",
@@ -421,8 +421,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01NE004",
     "filename": "01NE004_RhineCreekAboveSweeneyCreek.json",
     "start": "2020-08-24",
-    "end": "2025-07-23",
-    "n": 1795
+    "end": "2025-09-23",
+    "n": 1857
   },
   {
     "station_id": "01FW010",
@@ -523,8 +523,8 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01NE002",
     "filename": "01NE002_WhitesailMiddleCreekAboveTahtsaReach.json",
     "start": "2020-07-29",
-    "end": "2024-06-26",
-    "n": 1429
+    "end": "2025-09-24",
+    "n": 1884
   },
   {
     "station_id": "01NE003",
@@ -540,7 +540,24 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01NE003",
     "filename": "01NE003_WhitingCreek.json",
     "start": "2021-09-18",
-    "end": "2025-07-23",
-    "n": 1405
+    "end": "2025-09-23",
+    "n": 1467
+  },
+  {
+    "station_id": "01FW026",
+    "provider_station_code": "UNBC:01FW026",
+    "station_code": "01FW026",
+    "station_description": "BlackWater",
+    "waterbody_name": "BlackWater",
+    "latitude": 53.287327,
+    "longitude": -123.142379,
+    "provider_code": "UNBC",
+    "provider_name": "University of Northern British Columbia",
+    "dataset": "UNBC",
+    "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW026",
+    "filename": "01FW026_BlackWater.json",
+    "start": "2025-05-15",
+    "end": "2025-09-18",
+    "n": 127
   }
 ]
