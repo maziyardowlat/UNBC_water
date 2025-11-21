@@ -374,6 +374,23 @@
     "n": 1991
   },
   {
+    "station_id": "02FW006",
+    "provider_station_code": "UNBC:02FW006",
+    "station_code": "02FW006",
+    "station_description": "Nulki Lake",
+    "waterbody_name": "Nulki Lake",
+    "latitude": 53.913409,
+    "longitude": -124.151613,
+    "provider_code": "UNBC",
+    "provider_name": "University of Northern British Columbia",
+    "dataset": "UNBC",
+    "url": "https://watertemp.unbc.ca/#/explorer/stations/02FW006",
+    "filename": "02FW006_NulkiLake.json",
+    "start": "2024-05-28",
+    "end": "2025-07-11",
+    "n": 410
+  },
+  {
     "station_id": "01FW007",
     "provider_station_code": "UNBC:01FW007",
     "station_code": "01FW007",
