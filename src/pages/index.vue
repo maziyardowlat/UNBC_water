@@ -308,17 +308,6 @@
                         >
                           View on {{ station.dataset }}
                         </v-btn>
-                        <v-btn
-                          v-if="station.csv_filename"
-                          prepend-icon="mdi-download"
-                          variant="text"
-                          size="x-small"
-                          :href="`/data/csv/${station.csv_filename}`"
-                          target="_blank"
-                          class="text-decoration-none ml-2"
-                        >
-                          Download Compiled CSV
-                        </v-btn>
                       </div>
                     </div>
                   </v-alert>
@@ -637,7 +626,18 @@
                     :disabled="selectedStations.length === 0"
                     data-step="download"
                   >
-                    Download Data
+                    Download Daily Data
+                  </v-btn>
+                  <v-btn
+                    color="primary"
+                    variant="outlined"
+                    prepend-icon="mdi-file-delimited"
+                    size="small"
+                    class="ml-2"
+                    @click="downloadCompiledData"
+                    :disabled="!hasCompiledData"
+                  >
+                    Download Compiled CSV
                   </v-btn>
                 </div>
               </div>
@@ -1294,6 +1294,23 @@ const timeAggregationLabel = computed(() => {
 function downloadData() {
   downloadCSV(selectedStations.value, config.value.last_updated)
 }
+
+function downloadCompiledData() {
+  selectedStations.value.forEach(station => {
+    if (station.csv_filename) {
+      const link = document.createElement('a')
+      link.href = `/data/csv/${station.csv_filename}`
+      link.download = station.csv_filename
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+    }
+  })
+}
+
+const hasCompiledData = computed(() => {
+  return selectedStations.value.some(s => s.csv_filename)
+})
 
 // Add this with the other refs
 const mobileMenu = ref(false)
