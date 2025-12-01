@@ -308,6 +308,17 @@
                         >
                           View on {{ station.dataset }}
                         </v-btn>
+                        <v-btn
+                          v-if="station.csv_filename"
+                          prepend-icon="mdi-download"
+                          variant="text"
+                          size="x-small"
+                          :href="`/data/csv/${station.csv_filename}`"
+                          target="_blank"
+                          class="text-decoration-none ml-2"
+                        >
+                          Download Compiled CSV
+                        </v-btn>
                       </div>
                     </div>
                   </v-alert>

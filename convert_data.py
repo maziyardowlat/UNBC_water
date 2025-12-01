@@ -74,6 +74,10 @@ def update_stations_data(stations, data_dir):
     # Look for CSV files in the correct directory
     csv_dir = os.path.join(os.path.dirname(__file__), "data", "01_Data")
     
+    # Create public CSV directory if it doesn't exist
+    public_csv_dir = os.path.join(data_dir, "csv")
+    os.makedirs(public_csv_dir, exist_ok=True)
+    
     # Find all CSV files
     csv_files = glob.glob(f"{csv_dir}/*.csv")
     print(f"Found {len(csv_files)} CSV files to process")
@@ -96,6 +100,12 @@ def update_stations_data(stations, data_dir):
             continue
         
         print(f"Found CSV file for {station_code}: {os.path.basename(matching_csv)}")
+        
+        # Copy the CSV file to public directory
+        import shutil
+        csv_filename = os.path.basename(matching_csv)
+        shutil.copy2(matching_csv, os.path.join(public_csv_dir, csv_filename))
+        station['csv_filename'] = csv_filename
         
         # Process the CSV data
         try:

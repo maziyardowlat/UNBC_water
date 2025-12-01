@@ -14,7 +14,8 @@
     "filename": "01NE006_ChedakuzCreekAboveNechakoReservoir.json",
     "start": "2020-08-13",
     "end": "2025-08-11",
-    "n": 1825
+    "n": 1825,
+    "csv_filename": "01NE006_compiled_2025-09-12 (1).csv"
   },
   {
     "station_id": "01FW003",
@@ -31,7 +32,8 @@
     "filename": "01FW003_CheslattaLakeAboveSatherCreek.json",
     "start": "2020-07-31",
     "end": "2025-05-21",
-    "n": 1756
+    "n": 1756,
+    "csv_filename": "01FW003_compiled_2025-09-12.csv"
   },
   {
     "station_id": "01FW008",
@@ -48,7 +50,8 @@
     "filename": "01FW008_CheslattaRiverBelowMurrayLake.json",
     "start": "2022-06-15",
     "end": "2025-05-27",
-    "n": 1078
+    "n": 1078,
+    "csv_filename": "01FW008_compiled_2025-09-12.csv"
   },
   {
     "station_id": "01FW022",
@@ -65,7 +68,8 @@
     "filename": "01FW022_ChilakoRiverAboveNechakoRiver.json",
     "start": "2020-07-09",
     "end": "2025-09-18",
-    "n": 1898
+    "n": 1898,
+    "csv_filename": "01FW022_compiled_2025-10-02 (1).csv"
   },
   {
     "station_id": "01FW018",
@@ -82,7 +86,8 @@
     "filename": "01FW018_ChilakoRiverBelowTatukLake.json",
     "start": "2020-08-13",
     "end": "2025-06-26",
-    "n": 1779
+    "n": 1779,
+    "csv_filename": "01FW018_compiled_2025-09-12.csv"
   },
   {
     "station_id": "01FW002",
@@ -99,7 +104,8 @@
     "filename": "01FW002_EndakoRiverAboveStellakoRiver.json",
     "start": "2020-11-12",
     "end": "2025-07-04",
-    "n": 1696
+    "n": 1696,
+    "csv_filename": "01FW002_compiled_2025-09-12.csv"
   },
   {
     "station_id": "01FW006",
@@ -116,7 +122,8 @@
     "filename": "01FW006_GlacierCreekAboveNadinaLake.json",
     "start": "2022-07-13",
     "end": "2025-07-23",
-    "n": 1107
+    "n": 1107,
+    "csv_filename": "01FW006_compiled_2025-09-12.csv"
   },
   {
     "station_id": "01NE001",
@@ -133,7 +140,8 @@
     "filename": "01NE001_KasalkaCreekAboveTahtsaLake.json",
     "start": "2021-08-12",
     "end": "2025-07-23",
-    "n": 1442
+    "n": 1442,
+    "csv_filename": "01NE001_compiled_2025-09-12.csv"
   },
   {
     "station_id": "01FW023",
@@ -150,7 +158,8 @@
     "filename": "01FW023_KazchekCreekAboveMiddleRiver.json",
     "start": "2020-07-17",
     "end": "2024-09-24",
-    "n": 1531
+    "n": 1531,
+    "csv_filename": "01FW023_compiled_2025-09-12.csv"
   },
   {
     "station_id": "01FW001",
@@ -167,7 +176,8 @@
     "filename": "01FW001_KuzkwaRiverBelowTezzeronLake.json",
     "start": "2020-07-16",
     "end": "2025-06-10",
-    "n": 1791
+    "n": 1791,
+    "csv_filename": "01FW001_compiled_2025-09-12.csv"
   },
   {
     "station_id": "01NE005",
@@ -184,7 +194,8 @@
     "filename": "01NE005_LaventieCreekAboveTahtsaLake.json",
     "start": "2020-07-30",
     "end": "2025-07-23",
-    "n": 1820
+    "n": 1820,
+    "csv_filename": "01NE005_compiled_2025-09-12.csv"
   },
   {
     "station_id": "01FW024",
@@ -201,7 +212,8 @@
     "filename": "01FW024_McMillanCreekAboveNechakoRiver.json",
     "start": "2023-05-04",
     "end": "2025-09-18",
-    "n": 869
+    "n": 869,
+    "csv_filename": "01FW024_compiled_2025-10-02 (1).csv"
   },
   {
     "station_id": "01FW019",
@@ -218,7 +230,8 @@
     "filename": "01FW019_MiddleRiverAboveTrembleurLake.json",
     "start": "2020-07-17",
     "end": "2025-06-11",
-    "n": 1791
+    "n": 1791,
+    "csv_filename": "01FW019_compiled_2025-09-12.csv"
   },
   {
     "station_id": "01FW009",
@@ -235,7 +248,8 @@
     "filename": "01FW009_NadinaLake.json",
     "start": "2022-07-12",
     "end": "2025-07-23",
-    "n": 1108
+    "n": 1108,
+    "csv_filename": "01FW009_compiled_2025-09-12.csv"
   },
   {
     "station_id": "01FW012",
@@ -252,7 +266,8 @@
     "filename": "01FW012_NadinaRiverAboveFrancoisLake.json",
     "start": "2020-07-30",
     "end": "2025-07-23",
-    "n": 1820
+    "n": 1820,
+    "csv_filename": "01FW012_compiled_2025-09-12.csv"
   },
   {
     "station_id": "01FW014",
@@ -269,7 +284,8 @@
     "filename": "01FW014_NadinaRiverAboveNadinaLake.json",
     "start": "2023-08-16",
     "end": "2025-08-20",
-    "n": 736
+    "n": 736,
+    "csv_filename": "01FW014_compiled_2025-09-12.csv"
   },
   {
     "station_id": "01FW017",
@@ -286,7 +302,8 @@
     "filename": "01FW017_NechakoAboveCluculzCreek.json",
     "start": "2019-06-27",
     "end": "2023-12-07",
-    "n": 1625
+    "n": 1625,
+    "csv_filename": "01FW017_compiled_2025-09-12.csv"
   },
   {
     "station_id": "01FW005",
@@ -303,7 +320,8 @@
     "filename": "01FW005_NechakoAtMiworth.json",
     "start": "2020-07-09",
     "end": "2025-09-18",
-    "n": 1898
+    "n": 1898,
+    "csv_filename": "01FW005_compiled_2025-10-02 (1).csv"
   },
   {
     "station_id": "01FW025",
@@ -320,7 +338,8 @@
     "filename": "01FW025_NechakoAtPulpmillRoad.json",
     "start": "2023-05-04",
     "end": "2025-09-18",
-    "n": 869
+    "n": 869,
+    "csv_filename": "01FW025_compiled_2025-10-02 (1).csv"
   },
   {
     "station_id": "01FW013",
@@ -337,7 +356,8 @@
     "filename": "01FW013_NechakoRiverOffDellwoodRoad.json",
     "start": "2019-07-13",
     "end": "2025-04-11",
-    "n": 2100
+    "n": 2100,
+    "csv_filename": "01FW013_compiled_2025-09-12.csv"
   },
   {
     "station_id": "01FW016",
@@ -354,7 +374,8 @@
     "filename": "01FW016_NecoslieRiverAboveStuartLake.json",
     "start": "2020-07-17",
     "end": "2025-06-10",
-    "n": 1790
+    "n": 1790,
+    "csv_filename": "01FW016_compiled_2025-09-12.csv"
   },
   {
     "station_id": "02FW002",
@@ -371,7 +392,8 @@
     "filename": "02FW002_NessLake.json",
     "start": "2019-07-05",
     "end": "2024-12-15",
-    "n": 1991
+    "n": 1991,
+    "csv_filename": "02FW002_compiled_2025-03-27.csv"
   },
   {
     "station_id": "02FW006",
@@ -388,7 +410,8 @@
     "filename": "02FW006_NulkiLake.json",
     "start": "2024-05-28",
     "end": "2025-07-11",
-    "n": 410
+    "n": 410,
+    "csv_filename": "02FW006_compiled_2025-11-20.csv"
   },
   {
     "station_id": "01FW007",
@@ -405,7 +428,8 @@
     "filename": "01FW007_OtterCreekBelowFingerLake.json",
     "start": "2020-06-03",
     "end": "2025-07-11",
-    "n": 1865
+    "n": 1865,
+    "csv_filename": "01FW007_compiled_2025-09-12.csv"
   },
   {
     "station_id": "01FW021",
@@ -422,7 +446,8 @@
     "filename": "01FW021_PinchiCreekAboveStuartLake.json",
     "start": "2020-07-16",
     "end": "2025-06-11",
-    "n": 1792
+    "n": 1792,
+    "csv_filename": "01FW021_compiled_2025-09-12.csv"
   },
   {
     "station_id": "01NE004",
@@ -439,7 +464,8 @@
     "filename": "01NE004_RhineCreekAboveSweeneyCreek.json",
     "start": "2020-08-24",
     "end": "2025-09-23",
-    "n": 1857
+    "n": 1857,
+    "csv_filename": "01NE004_compiled_2025-10-02 (1).csv"
   },
   {
     "station_id": "01FW010",
@@ -456,7 +482,8 @@
     "filename": "01FW010_SkinsLakeSpillway.json",
     "start": "2019-08-12",
     "end": "2024-07-17",
-    "n": 1802
+    "n": 1802,
+    "csv_filename": "01FW010_compiled_2025-09-12.csv"
   },
   {
     "station_id": "01FW004",
@@ -473,7 +500,8 @@
     "filename": "01FW004_StellakoRiverAboveFraserLake.json",
     "start": "2020-11-12",
     "end": "2025-07-04",
-    "n": 1556
+    "n": 1556,
+    "csv_filename": "01FW004_compiled_2025-09-12.csv"
   },
   {
     "station_id": "01FW015",
@@ -490,7 +518,8 @@
     "filename": "01FW015_StuartRiverAboveNechakoRiver.json",
     "start": "2020-07-08",
     "end": "2025-06-11",
-    "n": 1800
+    "n": 1800,
+    "csv_filename": "01FW015_compiled_2025-09-12.csv"
   },
   {
     "station_id": "01FW011",
@@ -507,7 +536,8 @@
     "filename": "01FW011_TachieRiverAboveStuartLake.json",
     "start": "2020-07-16",
     "end": "2025-06-10",
-    "n": 1791
+    "n": 1791,
+    "csv_filename": "01FW011_compiled_2025-09-12.csv"
   },
   {
     "station_id": "01FW020",
@@ -524,7 +554,8 @@
     "filename": "01FW020_TsilcohRiverAbovePinchiLake.json",
     "start": "2020-07-17",
     "end": "2025-06-10",
-    "n": 1790
+    "n": 1790,
+    "csv_filename": "01FW020_compiled_2025-09-12 (1).csv"
   },
   {
     "station_id": "01NE002",
@@ -541,7 +572,8 @@
     "filename": "01NE002_WhitesailMiddleCreekAboveTahtsaReach.json",
     "start": "2020-07-29",
     "end": "2025-09-24",
-    "n": 1884
+    "n": 1884,
+    "csv_filename": "01NE002_compiled_2025-10-02 (1).csv"
   },
   {
     "station_id": "01NE003",
@@ -558,7 +590,8 @@
     "filename": "01NE003_WhitingCreek.json",
     "start": "2021-09-18",
     "end": "2025-09-23",
-    "n": 1467
+    "n": 1467,
+    "csv_filename": "01NE003_compiled_2025-10-02 (1).csv"
   },
   {
     "station_id": "01FW026",
@@ -575,7 +608,8 @@
     "filename": "01FW026_BlackWater.json",
     "start": "2025-05-15",
     "end": "2025-09-18",
-    "n": 127
+    "n": 127,
+    "csv_filename": "01FW026_compiled_2025-10-02 (1).csv"
   },
   {
     "station_id": "01MF001",
@@ -592,7 +626,8 @@
     "filename": "01MF001_LowerHorsefly.json",
     "start": "2023-07-26",
     "end": "2025-08-05",
-    "n": 742
+    "n": 742,
+    "csv_filename": "01MF001_compiled_2025-10-06 (1).csv"
   },
   {
     "station_id": "01MF002",
@@ -609,7 +644,8 @@
     "filename": "01MF002_UpperHorsefly.json",
     "start": "2024-07-10",
     "end": "2025-08-05",
-    "n": 392
+    "n": 392,
+    "csv_filename": "01MF002_compiled_2025-10-06 (2).csv"
   },
   {
     "station_id": "01MF003",
@@ -626,7 +662,8 @@
     "filename": "01MF003_UpperMcKinsley.json",
     "start": "2023-07-26",
     "end": "2025-08-05",
-    "n": 742
+    "n": 742,
+    "csv_filename": "01MF003_compiled_2025-10-06 (2).csv"
   },
   {
     "station_id": "01MF004",
@@ -643,6 +680,7 @@
     "filename": "01MF004_LowerMcKinsley.json",
     "start": "2023-07-26",
     "end": "2025-08-05",
-    "n": 742
+    "n": 742,
+    "csv_filename": "01MF004_compiled_2025-10-06 (1).csv"
   }
 ]
