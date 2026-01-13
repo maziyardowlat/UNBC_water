@@ -11113,9 +11113,9 @@
   },
   {
     "date": "2024-06-13",
-    "temp_c": 4.07,
+    "temp_c": 4.1,
     "min_temp_c": 2.3,
-    "max_temp_c": 7.61,
+    "max_temp_c": 9.08,
     "n_values": 96,
     "airtemp_c": null
   },
@@ -14849,10 +14849,146 @@
   },
   {
     "date": "2025-09-23",
-    "temp_c": 6.16,
+    "temp_c": 6.34,
     "min_temp_c": 5.31,
-    "max_temp_c": 6.88,
-    "n_values": 73,
+    "max_temp_c": 7.82,
+    "n_values": 96,
+    "airtemp_c": null
+  },
+  {
+    "date": "2025-09-24",
+    "temp_c": 6.42,
+    "min_temp_c": 5.12,
+    "max_temp_c": 7.76,
+    "n_values": 96,
+    "airtemp_c": null
+  },
+  {
+    "date": "2025-09-25",
+    "temp_c": 6.71,
+    "min_temp_c": 6.07,
+    "max_temp_c": 7.37,
+    "n_values": 96,
+    "airtemp_c": null
+  },
+  {
+    "date": "2025-09-26",
+    "temp_c": 5.89,
+    "min_temp_c": 4.45,
+    "max_temp_c": 7.12,
+    "n_values": 96,
+    "airtemp_c": null
+  },
+  {
+    "date": "2025-09-27",
+    "temp_c": 4.54,
+    "min_temp_c": 4.03,
+    "max_temp_c": 5.93,
+    "n_values": 96,
+    "airtemp_c": null
+  },
+  {
+    "date": "2025-09-28",
+    "temp_c": 4.19,
+    "min_temp_c": 3.38,
+    "max_temp_c": 5.76,
+    "n_values": 96,
+    "airtemp_c": null
+  },
+  {
+    "date": "2025-09-29",
+    "temp_c": 4.73,
+    "min_temp_c": 4.29,
+    "max_temp_c": 5.96,
+    "n_values": 96,
+    "airtemp_c": null
+  },
+  {
+    "date": "2025-09-30",
+    "temp_c": 4.65,
+    "min_temp_c": 3.55,
+    "max_temp_c": 5.99,
+    "n_values": 96,
+    "airtemp_c": null
+  },
+  {
+    "date": "2025-10-01",
+    "temp_c": 5.83,
+    "min_temp_c": 5.26,
+    "max_temp_c": 6.63,
+    "n_values": 96,
+    "airtemp_c": null
+  },
+  {
+    "date": "2025-10-02",
+    "temp_c": 6.13,
+    "min_temp_c": 5.53,
+    "max_temp_c": 7.05,
+    "n_values": 96,
+    "airtemp_c": null
+  },
+  {
+    "date": "2025-10-03",
+    "temp_c": 6.06,
+    "min_temp_c": 5.46,
+    "max_temp_c": 7.07,
+    "n_values": 96,
+    "airtemp_c": null
+  },
+  {
+    "date": "2025-10-04",
+    "temp_c": 5.17,
+    "min_temp_c": 4.37,
+    "max_temp_c": 6.29,
+    "n_values": 96,
+    "airtemp_c": null
+  },
+  {
+    "date": "2025-10-05",
+    "temp_c": 4.9,
+    "min_temp_c": 4.18,
+    "max_temp_c": 6.53,
+    "n_values": 96,
+    "airtemp_c": null
+  },
+  {
+    "date": "2025-10-06",
+    "temp_c": 7.24,
+    "min_temp_c": 6.59,
+    "max_temp_c": 8.46,
+    "n_values": 96,
+    "airtemp_c": null
+  },
+  {
+    "date": "2025-10-07",
+    "temp_c": 6.79,
+    "min_temp_c": 5.57,
+    "max_temp_c": 8.42,
+    "n_values": 96,
+    "airtemp_c": null
+  },
+  {
+    "date": "2025-10-08",
+    "temp_c": 3.76,
+    "min_temp_c": 2.51,
+    "max_temp_c": 5.61,
+    "n_values": 96,
+    "airtemp_c": null
+  },
+  {
+    "date": "2025-10-09",
+    "temp_c": 3.42,
+    "min_temp_c": 2.44,
+    "max_temp_c": 4.86,
+    "n_values": 96,
+    "airtemp_c": null
+  },
+  {
+    "date": "2025-10-10",
+    "temp_c": 3.86,
+    "min_temp_c": 3.05,
+    "max_temp_c": 4.87,
+    "n_values": 66,
     "airtemp_c": null
   }
 ]

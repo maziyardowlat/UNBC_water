@@ -337,9 +337,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW025",
     "filename": "01FW025_NechakoAtPulpmillRoad.json",
     "start": "2023-05-04",
-    "end": "2025-09-18",
-    "n": 869,
-    "csv_filename": "01FW025_compiled_2025-10-02 (1).csv"
+    "end": "2025-10-06",
+    "n": 887,
+    "csv_filename": "01FW025_compiled_2026.csv"
   },
   {
     "station_id": "01FW013",
@@ -391,9 +391,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/02FW002",
     "filename": "02FW002_NessLake.json",
     "start": "2019-07-05",
-    "end": "2024-12-15",
-    "n": 1991,
-    "csv_filename": "02FW002_compiled_2025-03-27.csv"
+    "end": "2026-01-04",
+    "n": 2376,
+    "csv_filename": "02FW002_compiled_2026 (1).csv"
   },
   {
     "station_id": "02FW006",
@@ -463,9 +463,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01NE004",
     "filename": "01NE004_RhineCreekAboveSweeneyCreek.json",
     "start": "2020-08-24",
-    "end": "2025-09-23",
-    "n": 1857,
-    "csv_filename": "01NE004_compiled_2025-10-02 (1).csv"
+    "end": "2025-10-10",
+    "n": 1874,
+    "csv_filename": "01NE004_compiled_2026.csv"
   },
   {
     "station_id": "01FW010",
@@ -499,9 +499,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW004",
     "filename": "01FW004_StellakoRiverAboveFraserLake.json",
     "start": "2020-11-12",
-    "end": "2025-07-04",
-    "n": 1556,
-    "csv_filename": "01FW004_compiled_2025-09-12.csv"
+    "end": "2025-10-23",
+    "n": 1667,
+    "csv_filename": "01FW004_compiled_2026.csv"
   },
   {
     "station_id": "01FW015",
@@ -517,9 +517,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW015",
     "filename": "01FW015_StuartRiverAboveNechakoRiver.json",
     "start": "2020-07-08",
-    "end": "2025-06-11",
-    "n": 1800,
-    "csv_filename": "01FW015_compiled_2025-09-12.csv"
+    "end": "2025-10-30",
+    "n": 1941,
+    "csv_filename": "01FW015_compiled_2026.csv"
   },
   {
     "station_id": "01FW011",
@@ -589,9 +589,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01NE003",
     "filename": "01NE003_WhitingCreek.json",
     "start": "2021-09-18",
-    "end": "2025-09-23",
-    "n": 1467,
-    "csv_filename": "01NE003_compiled_2025-10-02 (1).csv"
+    "end": "2025-10-10",
+    "n": 1484,
+    "csv_filename": "01NE003_compiled_2026.csv"
   },
   {
     "station_id": "01FW026",
@@ -682,5 +682,23 @@
     "end": "2025-08-05",
     "n": 742,
     "csv_filename": "01MF004_compiled_2025-10-06 (1).csv"
+  },
+  {
+    "station_id": "04FW001",
+    "provider_station_code": "UNBC:04FW001",
+    "station_code": "04FW001",
+    "station_description": "Stellako River above Fraser Lake",
+    "waterbody_name": "Stellako River Above Fraser Lake",
+    "latitude": 54.046485,
+    "longitude": -124.926806,
+    "provider_code": "UNBC",
+    "provider_name": "University of Northern British Columbia",
+    "dataset": "UNBC",
+    "url": "https://watertemp.unbc.ca/#/explorer/stations/04FW001",
+    "filename": "04FW001_stellako.json",
+    "start": "2025-07-04",
+    "end": "2025-10-23",
+    "n": 112,
+    "csv_filename": "04FW001_compiled_2026.csv"
   }
 ]

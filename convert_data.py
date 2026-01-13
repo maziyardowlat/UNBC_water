@@ -28,6 +28,9 @@ def process_csv_file(csv_file, station_code):
     # Convert timestamp to datetime
     df['timestamp'] = pd.to_datetime(df['timestamp'])
     
+    # Ensure wtmp is numeric, coercing errors to NaN
+    df['wtmp'] = pd.to_numeric(df['wtmp'], errors='coerce')
+    
     # Extract date
     df['date'] = df['timestamp'].dt.date
     
