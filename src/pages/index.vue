@@ -616,7 +616,7 @@
               <v-divider></v-divider>
               <div class="d-flex mx-4 my-2">
                 <v-spacer></v-spacer>
-                <div class="d-flex align-center">
+                <div class="d-flex align-center flex-wrap">
                   <v-btn
                     color="primary"
                     variant="outlined"
@@ -626,7 +626,7 @@
                     :disabled="selectedStations.length === 0"
                     data-step="download"
                   >
-                    Download Daily Data
+                    Download Daily Data (All data)
                   </v-btn>
                   <v-btn
                     color="primary"
@@ -637,10 +637,112 @@
                     @click="downloadCompiledData"
                     :disabled="!hasCompiledData"
                   >
-                    Download Compiled CSV
+                    Download Compiled CSV (All Data)
+                  </v-btn>
+                  <v-btn
+                    color="primary"
+                    variant="outlined"
+                    prepend-icon="mdi-calendar-range"
+                    size="small"
+                    class="ml-2"
+                    @click="openCustomDateDownload"
+                    :disabled="selectedStations.length === 0"
+                  >
+                    Custom Date Range
                   </v-btn>
                 </div>
               </div>
+
+              <!-- Custom Date Range Download Dialog -->
+              <v-dialog v-model="showCustomDateDialog" max-width="650">
+                <v-card>
+                  <v-toolbar color="grey-lighten-2" flat density="compact">
+                    <v-toolbar-title>Download Custom Date Range</v-toolbar-title>
+                    <v-spacer></v-spacer>
+                    <v-btn icon="mdi-close" variant="text" @click="showCustomDateDialog = false"></v-btn>
+                  </v-toolbar>
+                  <v-card-text>
+                    <v-alert
+                      color="info"
+                      variant="tonal"
+                      density="compact"
+                      class="mb-4"
+                      icon="mdi-clock-outline"
+                    >
+                      All dates and times are in <strong>UTC</strong> (Coordinated Universal Time).
+                    </v-alert>
+
+                    <div class="text-subtitle-2 mb-2">Select Date Range:</div>
+                    <v-row>
+                      <v-col cols="6">
+                        <v-text-field
+                          v-model="customStartDate"
+                          label="Start Date"
+                          placeholder="YYYY-MM-DD"
+                          variant="outlined"
+                          density="compact"
+                          hide-details
+                          :error="!!customDateError"
+                        ></v-text-field>
+                      </v-col>
+                      <v-col cols="6">
+                        <v-text-field
+                          v-model="customEndDate"
+                          label="End Date"
+                          placeholder="YYYY-MM-DD"
+                          variant="outlined"
+                          density="compact"
+                          hide-details
+                          :error="!!customDateError"
+                        ></v-text-field>
+                      </v-col>
+                    </v-row>
+
+                    <v-alert
+                      v-if="customDateError"
+                      type="error"
+                      variant="tonal"
+                      density="compact"
+                      class="mt-4"
+                      icon="mdi-alert"
+                    >
+                      {{ customDateError }}
+                    </v-alert>
+
+                    <div class="text-caption mt-4 text-grey-darken-1">
+                      <strong>Available date ranges for selected stations:</strong>
+                      <ul class="ml-4 mt-2">
+                        <li v-for="station in selectedStations" :key="station.station_id">
+                          <strong>{{ station.provider_station_code }}</strong>: {{ station.start }} to {{ station.end }}
+                        </li>
+                      </ul>
+                    </div>
+                  </v-card-text>
+                  <v-divider></v-divider>
+                  <v-card-actions class="pa-4 d-flex flex-wrap justify-end ga-2">
+                    <v-btn variant="outlined" color="grey-darken-1" @click="showCustomDateDialog = false" class="mr-auto">Cancel</v-btn>
+                    <v-btn
+                      color="primary"
+                      variant="outlined"
+                      prepend-icon="mdi-download"
+                      @click="downloadCustomDateData"
+                      :disabled="customDownloadLoading"
+                    >
+                      Download Daily Data
+                    </v-btn>
+                    <v-btn
+                      color="primary"
+                      variant="elevated"
+                      prepend-icon="mdi-file-delimited"
+                      @click="downloadCustomDateCompiledData"
+                      :loading="customDownloadLoading"
+                      :disabled="!hasCompiledDataForCustom"
+                    >
+                      Download 15-min CSV
+                    </v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-dialog>
             </v-card>
           </v-col>
         </v-row>
@@ -759,6 +861,13 @@ const showDatasets = ref(false)
 const showTimeseriesHelp = ref(false)
 const showSeasonalHelp = ref(false)
 const showScatterHelp = ref(false)
+
+// Custom date download dialog refs
+const showCustomDateDialog = ref(false)
+const customStartDate = ref('')
+const customEndDate = ref('')
+const customDateError = ref('')
+const customDownloadLoading = ref(false)
 
 const stations = ref([])
 const selectedStations = ref([])
@@ -1308,9 +1417,200 @@ function downloadCompiledData() {
   })
 }
 
+/**
+ * Opens the custom date download dialog and pre-fills the date range
+ * based on the earliest start and latest end dates of selected stations.
+ */
+function openCustomDateDownload() {
+  // Pre-fill with the intersection of all selected stations' date ranges
+  if (selectedStations.value.length > 0) {
+    // Find the latest start date (most restrictive)
+    const latestStart = selectedStations.value.reduce((latest, station) => {
+      return station.start > latest ? station.start : latest
+    }, selectedStations.value[0].start)
+
+    // Find the earliest end date (most restrictive)
+    const earliestEnd = selectedStations.value.reduce((earliest, station) => {
+      return station.end < earliest ? station.end : earliest
+    }, selectedStations.value[0].end)
+
+    customStartDate.value = latestStart
+    customEndDate.value = earliestEnd
+  }
+
+  customDateError.value = ''
+  showCustomDateDialog.value = true
+}
+
+/**
+ * Validates the custom date range against each station's available data.
+ * Returns an error message if dates are invalid, or empty string if valid.
+ * @returns {string} Error message or empty string
+ */
+function validateCustomDates() {
+  const startDate = customStartDate.value
+  const endDate = customEndDate.value
+
+  // Check date format (YYYY-MM-DD)
+  const dateRegex = /^\d{4}-\d{2}-\d{2}$/
+  if (!dateRegex.test(startDate)) {
+    return 'Start date must be in YYYY-MM-DD format (e.g., 2020-01-15)'
+  }
+  if (!dateRegex.test(endDate)) {
+    return 'End date must be in YYYY-MM-DD format (e.g., 2020-12-31)'
+  }
+
+  // Check that start is before end
+  if (startDate > endDate) {
+    return 'Start date must be before or equal to end date'
+  }
+
+  // Check each station's date range
+  const invalidStations = []
+  for (const station of selectedStations.value) {
+    if (startDate < station.start || endDate > station.end) {
+      invalidStations.push({
+        code: station.provider_station_code,
+        start: station.start,
+        end: station.end
+      })
+    }
+  }
+
+  if (invalidStations.length > 0) {
+    const stationList = invalidStations
+      .map(s => `${s.code}: ${s.start} to ${s.end}`)
+      .join(', ')
+    return `Selected dates are outside the available range for: ${stationList}`
+  }
+
+  return ''
+}
+
+/**
+ * Downloads CSV data filtered by the custom date range.
+ * Validates dates first and shows error if invalid.
+ */
+function downloadCustomDateData() {
+  // Validate dates
+  const error = validateCustomDates()
+  if (error) {
+    customDateError.value = error
+    return
+  }
+
+  // Filter each station's data by the date range
+  const startDate = customStartDate.value
+  const endDate = customEndDate.value
+
+  // Create filtered station copies for download
+  const filteredStations = selectedStations.value.map(station => {
+    return {
+      ...station,
+      data: station.data.filter(d => d.date >= startDate && d.date <= endDate)
+    }
+  })
+
+  // Download using the existing CSV function
+  downloadCSV(filteredStations, config.value.last_updated, startDate, endDate)
+
+  // Close dialog on success
+  showCustomDateDialog.value = false
+}
+
+
 const hasCompiledData = computed(() => {
   return selectedStations.value.some(s => s.csv_filename)
 })
+
+// Check if any selected station has compiled CSV available (for custom date dialog)
+const hasCompiledDataForCustom = computed(() => {
+  return selectedStations.value.some(s => s.csv_filename)
+})
+
+/**
+ * Downloads compiled (15-min) CSV data filtered by the custom date range.
+ * Fetches the CSV files, parses them, filters by date, and creates a combined download.
+ */
+async function downloadCustomDateCompiledData() {
+  // Validate dates first
+  const error = validateCustomDates()
+  if (error) {
+    customDateError.value = error
+    return
+  }
+
+  customDownloadLoading.value = true
+  customDateError.value = ''
+
+  const startDate = customStartDate.value
+  const endDate = customEndDate.value
+
+  try {
+    // Process each station that has a compiled CSV
+    for (const station of selectedStations.value) {
+      if (!station.csv_filename) continue
+
+      // Fetch the compiled CSV file
+      const response = await fetch(`/data/csv/${station.csv_filename}`)
+      if (!response.ok) {
+        throw new Error(`Failed to fetch ${station.csv_filename}`)
+      }
+
+      const csvText = await response.text()
+      const lines = csvText.split('\n')
+
+      // Get header row
+      const header = lines[0]
+
+      // Filter data rows by date range
+      // The timestamp column format is: "YYYY-MM-DD HH:MM:SS"
+      const filteredLines = lines.slice(1).filter(line => {
+        if (!line.trim()) return false
+        const columns = line.split(',')
+        // timestamp is the 3rd column (index 2)
+        const timestamp = columns[2]
+        if (!timestamp) return false
+        // Extract just the date part (YYYY-MM-DD)
+        const dateOnly = timestamp.split(' ')[0]
+        return dateOnly >= startDate && dateOnly <= endDate
+      })
+
+      if (filteredLines.length === 0) {
+        console.warn(`No data found for ${station.provider_station_code} in the selected date range`)
+        continue
+      }
+
+      // Create filtered CSV content
+      const filteredCsv = [header, ...filteredLines].join('\n')
+      const blob = new Blob([filteredCsv], { type: 'text/csv;charset=utf-8' })
+
+      // Create filename with date range
+      const baseFilename = station.csv_filename.replace('.csv', '')
+      const filename = `${baseFilename}_${startDate}_to_${endDate}.csv`
+
+      // Download the file
+      const link = document.createElement('a')
+      link.href = URL.createObjectURL(blob)
+      link.download = filename
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      URL.revokeObjectURL(link.href)
+
+      // Small delay between downloads
+      await new Promise(resolve => setTimeout(resolve, 100))
+    }
+
+    // Close dialog on success
+    showCustomDateDialog.value = false
+  } catch (err) {
+    console.error('Error downloading compiled CSV:', err)
+    customDateError.value = `Error downloading compiled CSV: ${err.message}`
+  } finally {
+    customDownloadLoading.value = false
+  }
+}
 
 // Add this with the other refs
 const mobileMenu = ref(false)

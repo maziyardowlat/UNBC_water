@@ -32,14 +32,32 @@ function dataSourceCitations (dataSources, providers, lastUpdated) {
   return citations.join('\n')
 }
 
-function fileHeader (dataSources, providers, lastUpdated) {
+/**
+ * Generates the file header for the CSV download.
+ * Includes data source citations, timestamp info, and optional date range.
+ * @param {Array} dataSources - List of data source names (USGS, NPS, AKTEMP)
+ * @param {Array} providers - List of provider codes
+ * @param {string} lastUpdated - ISO timestamp of last data update
+ * @param {string} startDate - Optional start date filter (YYYY-MM-DD)
+ * @param {string} endDate - Optional end date filter (YYYY-MM-DD)
+ * @returns {string} CSV header comment block
+ */
+function fileHeader (dataSources, providers, lastUpdated, startDate, endDate) {
+  // Build the date range line if custom dates are provided
+  const dateRangeLine = startDate && endDate
+    ? `# Date Range Filter: ${startDate} to ${endDate} (UTC)\n#`
+    : ''
+
   return `# AKTEMP-VIZ | Alaska Stream Temperature Data Visualization Tool
 # https://aktemp.uaa.alaska.edu/dataviz
 #
 # Daily Mean Water and Air Temperature at Select Stations
 #
-# Data Last Updated: ${DateTime.fromISO(lastUpdated).setZone('US/Alaska').toFormat('D t ZZZZ')}
-# File Downloaded At: ${DateTime.now().setZone('US/Alaska').toFormat('D t ZZZZ')}
+# IMPORTANT: All dates and times are in UTC (Coordinated Universal Time).
+#
+# Data Last Updated: ${DateTime.fromISO(lastUpdated).setZone('UTC').toFormat('D t')} UTC
+# File Downloaded At: ${DateTime.now().setZone('UTC').toFormat('D t')} UTC
+${dateRangeLine}
 #
 # Data Sources (note: Excel will break citations at commas -- open in text editor like Notepad to view correctly)
 #
@@ -82,7 +100,14 @@ function stationsTable (stations) {
   })
 }
 
-export function downloadCSV(stations, lastUpdated) {
+/**
+ * Downloads station data as a CSV file with optional date range filtering.
+ * @param {Array} stations - Array of station objects with data
+ * @param {string} lastUpdated - ISO timestamp of last data update
+ * @param {string} startDate - Optional start date filter (YYYY-MM-DD)
+ * @param {string} endDate - Optional end date filter (YYYY-MM-DD)
+ */
+export function downloadCSV(stations, lastUpdated, startDate, endDate) {
   if (stations.length === 0) {
     alert('No stations selected')
     return
@@ -91,7 +116,7 @@ export function downloadCSV(stations, lastUpdated) {
   const dataSources = uniq(stations.map(s => s.dataset))
   const providers = uniq(stations.map(s => s.provider_code))
 
-  const header = fileHeader(dataSources, providers, lastUpdated)
+  const header = fileHeader(dataSources, providers, lastUpdated, startDate, endDate)
   const stationsCsv = Papa.unparse(stationsTable(stations))
   const valuesCsv = Papa.unparse(valuesData(stations))
 
@@ -104,14 +129,16 @@ export function downloadCSV(stations, lastUpdated) {
     stationsCsv,
     '#',
     '# ---------------------------------------------------------------',
-    '# Daily Mean Water and Air Temperature',
+    '# Daily Mean Water and Air Temperature (UTC)',
     '#',
     valuesCsv
   ].join('\n')
   const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' })
 
   const timestamp = DateTime.now().toFormat('yyyyMMdd_HHmmss')
-  const filename = `aktemp_viz_data_${timestamp}.csv`
+  const filename = startDate && endDate
+    ? `aktemp_viz_data_${startDate}_to_${endDate}_${timestamp}.csv`
+    : `aktemp_viz_data_${timestamp}.csv`
 
   saveAs(blob, filename)
 }
