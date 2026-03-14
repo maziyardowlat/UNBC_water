@@ -18,6 +18,7 @@
     "file-saver": "^2.0.5",
     "highcharts": "^11.4.8",
     "highcharts-vue": "^2.0.1",
+    "jszip": "^3.10.1",
     "leaflet": "^1.9.4",
     "lodash": "^4.17.21",
     "luxon": "^3.4.4",
