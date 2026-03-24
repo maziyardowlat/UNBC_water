@@ -140,7 +140,7 @@
               </div>
             </v-col>
             <v-col cols="12" md="6">
-              <v-img src="/img/maddox-furlong-z3lsfr6jDF8-unsplash.jpg" height="400" cover class="rounded-lg" alt="A river in Alaska with snow-capped mountains in the background">
+              <v-img src="/img/Sunset_22January2026.jpg" height="400" cover class="rounded-lg" alt="A river in Alaska with snow-capped mountains in the background">
                 <template v-slot:placeholder>
                   <v-row class="fill-height ma-0" align="center" justify="center">
                     <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
@@ -148,7 +148,7 @@
                 </template>
               </v-img>
               <div class="text-caption text-right mt-1">
-                Photo by <a href="https://unsplash.com/photos/a-lake-surrounded-by-trees-and-mountains-z3lsfr6jDF8" target="_blank" rel="noopener noreferrer">Maddox Furlong on Unsplash</a>
+                Photo by <a href="https://www.unbc.ca/people/dery-dr-stephen" target="_blank" rel="noopener noreferrer">Professor Stephen Déry</a>
               </div>
             </v-col>
           </v-row>
