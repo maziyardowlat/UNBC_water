@@ -55,11 +55,11 @@ function tooltipFormatter ({ station_id, date, temp_c }) {
       </tr>
       <tr>
         <td class="pr-2 text-right">Day of Year</td>
-        <td><b>${DateTime.fromISO(date, { zone: 'US/Alaska' }).toFormat('MMMM d')}</b></td>
+        <td><b>${DateTime.fromISO(date, { zone: 'America/Vancouver' }).toFormat('MMMM d')}</b></td>
       </tr>
       <tr>
         <td class="pr-2 text-right">Year</td>
-        <td><b>${DateTime.fromISO(date, { zone: 'US/Alaska' }).toFormat('yyyy')}</b></td>
+        <td><b>${DateTime.fromISO(date, { zone: 'America/Vancouver' }).toFormat('yyyy')}</b></td>
       </tr>
       <tr>
         <td class="pr-2 text-right">Water Temp</td>
@@ -70,7 +70,7 @@ function tooltipFormatter ({ station_id, date, temp_c }) {
 }
 
 function julianDay (dateString) {
-  const d = DateTime.fromISO(dateString, { zone: 'US/Alaska' })
+  const d = DateTime.fromISO(dateString, { zone: 'America/Vancouver' })
   return Math.round(d.diff(d.startOf('year'), 'days').days)
 }
 
@@ -258,11 +258,11 @@ const settings = {
                     </tr>
                     <tr>
                       <td class="pr-2 text-right">Day of Year</td>
-                      <td><b>${DateTime.fromISO(point.date, { zone: 'US/Alaska' }).toFormat('MMMM d')}</b></td>
+                      <td><b>${DateTime.fromISO(point.date, { zone: 'America/Vancouver' }).toFormat('MMMM d')}</b></td>
                     </tr>
                     <tr>
                       <td class="pr-2 text-right">Year</td>
-                      <td><b>${DateTime.fromISO(point.date, { zone: 'US/Alaska' }).toFormat('yyyy')}</b></td>
+                      <td><b>${DateTime.fromISO(point.date, { zone: 'America/Vancouver' }).toFormat('yyyy')}</b></td>
                     </tr>
                     <tr>
                       <td class="pr-2 text-right">Water Temp</td>

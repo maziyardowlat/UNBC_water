@@ -14,8 +14,8 @@ function concatItems (items) {
 function dataSourceCitations (dataSources, providers, lastUpdated) {
   if (!dataSources || dataSources.length === 0) return '# No data sources selected'
 
-  const lastUpdatedYear = DateTime.fromISO(lastUpdated).setZone('US/Alaska').toFormat('yyyy')
-  const lastUpdatedDate = DateTime.fromISO(lastUpdated).setZone('US/Alaska').toFormat('DD')
+  const lastUpdatedYear = DateTime.fromISO(lastUpdated).setZone('America/Vancouver').toFormat('yyyy')
+  const lastUpdatedDate = DateTime.fromISO(lastUpdated).setZone('America/Vancouver').toFormat('DD')
   const citations = []
   for (const ds of dataSources) {
     if (ds === 'USGS') {
@@ -25,7 +25,7 @@ function dataSourceCitations (dataSources, providers, lastUpdated) {
       const citation = `#     National Park Service (NPS) (${lastUpdatedYear}). National Park Service IRMA Portal (Integrated Resource Management Applications) for Continuous Water Data. Accessed [${lastUpdatedDate}] at URL [https://irma.nps.gov/AQWebPortal/].`
       citations.push(citation)
     } else if (ds === 'AKTEMP') {
-      const citation = `#     Alaska Water Temperature Database (AKTEMP-DB) (${lastUpdatedYear}). Water temperature data collected by ${concatItems(providers)}. Accessed [${lastUpdatedDate}] at URL [https://aktemp.uaa.alaska.edu/database].`
+      const citation = `#     Northern Hydrology Group (NHG) (${lastUpdatedYear}). Water temperature data collected by ${concatItems(providers)}. Accessed [${lastUpdatedDate}] at URL [https://zenodo.org/records/15053907].`
       citations.push(citation)
     }
   }
@@ -48,8 +48,8 @@ function fileHeader (dataSources, providers, lastUpdated, startDate, endDate) {
     ? `# Date Range Filter: ${startDate} to ${endDate} (UTC)\n#`
     : ''
 
-  return `# AKTEMP-VIZ | Alaska Stream Temperature Data Visualization Tool
-# https://aktemp.uaa.alaska.edu/dataviz
+  return `# NHG WaterTemp | Water Temperature Data Visualization Tool
+# https://nhgwatertemp.unbc.ca
 #
 # Daily Mean Water and Air Temperature at Select Stations
 #
@@ -137,8 +137,8 @@ export function downloadCSV(stations, lastUpdated, startDate, endDate) {
 
   const timestamp = DateTime.now().toFormat('yyyyMMdd_HHmmss')
   const filename = startDate && endDate
-    ? `aktemp_viz_data_${startDate}_to_${endDate}_${timestamp}.csv`
-    : `aktemp_viz_data_${timestamp}.csv`
+    ? `nhg_watertemp_data_${startDate}_to_${endDate}_${timestamp}.csv`
+    : `nhg_watertemp_data_${timestamp}.csv`
 
   saveAs(blob, filename)
 }

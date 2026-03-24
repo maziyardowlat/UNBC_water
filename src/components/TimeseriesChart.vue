@@ -104,9 +104,9 @@ function tooltipFormatter(date, points) {
 
   let header
   if (props.aggregation === 'day') {
-    header = DateTime.fromISO(date, { zone: 'US/Alaska' }).toFormat('MMMM d, yyyy')
+    header = DateTime.fromISO(date, { zone: 'America/Vancouver' }).toFormat('MMMM d, yyyy')
   } else if (props.aggregation === 'month') {
-    header = DateTime.fromISO(date, { zone: 'US/Alaska' }).toFormat('MMMM yyyy')
+    header = DateTime.fromISO(date, { zone: 'America/Vancouver' }).toFormat('MMMM yyyy')
   } else if (props.aggregation === 'season') {
     const startMonthLabel = monthOptions.find(m => m.value === props.season[0])?.label.substring(0,3)
     const endMonthLabel = monthOptions.find(m => m.value === props.season[1])?.label.substring(0,3)
@@ -114,9 +114,9 @@ function tooltipFormatter(date, points) {
     if (startMonthLabel === endMonthLabel) {
       seasonLabel = startMonthLabel
     }
-    header = `${seasonLabel} ${DateTime.fromISO(date, { zone: 'US/Alaska' }).toFormat('yyyy')}`
+    header = `${seasonLabel} ${DateTime.fromISO(date, { zone: 'America/Vancouver' }).toFormat('yyyy')}`
   } else {
-    header = DateTime.fromISO(date, { zone: 'US/Alaska' }).toFormat('MMMM d, yyyy')
+    header = DateTime.fromISO(date, { zone: 'America/Vancouver' }).toFormat('MMMM d, yyyy')
   }
 
   const rows = points.map(d => `
@@ -157,7 +157,7 @@ const settings = {
     }
   },
   time: {
-    timezone: 'US/Alaska'
+    timezone: 'America/Vancouver'
   },
   title: {
     text: null

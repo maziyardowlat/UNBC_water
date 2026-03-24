@@ -68,7 +68,7 @@ function tooltipFormatter ({ station_id, date, temp_c, airtemp_c }) {
       </tr>
       <tr>
         <td class="pr-2 text-right">Date</td>
-        <td><b>${DateTime.fromISO(date, { zone: 'US/Alaska' }).toFormat('MMMM d, yyyy')}</b></td>
+        <td><b>${DateTime.fromISO(date, { zone: 'America/Vancouver' }).toFormat('MMMM d, yyyy')}</b></td>
       </tr>
       <tr>
         <td class="pr-2 text-right">Water Temp</td>

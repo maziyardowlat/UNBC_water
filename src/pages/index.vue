@@ -57,12 +57,12 @@
       <v-btn
         color="white"
         variant="outlined"
-        href="https://aktemp.uaa.alaska.edu"
+        href="https://nhgwatertemp.unbc.ca"
         size="small"
         class="mr-4"
       >
         <v-icon start>mdi-arrow-left</v-icon>
-        Back to AKTEMP
+        Back to NHG DVT
       </v-btn>
     </template>
 
@@ -107,11 +107,11 @@
           <v-divider class="my-2"></v-divider>
 
           <v-list-item
-            href="https://aktemp.uaa.alaska.edu"
+            href="https://nhgwatertemp.unbc.ca"
             target="_blank"
             prepend-icon="mdi-arrow-left"
           >
-            <v-list-item-title>Back to AKTEMP</v-list-item-title>
+            <v-list-item-title>Back to NHG DVT</v-list-item-title>
           </v-list-item>
         </v-list>
       </v-card>
@@ -128,19 +128,16 @@
         <v-card-text>
           <v-row>
             <v-col cols="12" md="6">
-              <p class="text-h6 font-weight-medium mb-4">Uncover water temperature trends and patterns in the Nechako watershed's streams and rivers.</p>
+              <p class="text-h6 font-weight-medium mb-4">Uncover water temperature trends and patterns in northern BC waterways and water bodies.</p>
               <v-list class="mb-4">
                 <v-list-item v-for="(feature, index) in welcomeFeatures" :key="index" :prepend-icon="feature.icon" class="my-2">
                   <v-list-item-title class="font-weight-medium">{{ feature.title }}</v-list-item-title>
                   <div class="text-body-2">{{ feature.description }}</div>
                 </v-list-item>
               </v-list>
-              <div class="text-body-2">
-                <i>Data Sources:</i> Water temperature data from <a href="https://aktemp.uaa.alaska.edu">AKTEMP</a>, <a href="https://waterdata.usgs.gov/nwis" target="_blank">U.S. Geological Survey</a>, and <a href="https://irma.nps.gov/aqwebportal" target="_blank">National Park Service</a>. Air temperature data from <a href="https://daymet.ornl.gov" target="_blank">Daymet</a>. <a href="#" @click.prevent="showWelcome = false; showDatasets = true">Click here</a> to learn more about the data.
-              </div>
             </v-col>
             <v-col cols="12" md="6">
-              <v-img src="/img/Sunset_22January2026.jpg" height="400" cover class="rounded-lg" alt="A river in Alaska with snow-capped mountains in the background">
+              <v-img src="/img/Sunset_22January2026.jpg" height="400" cover class="rounded-lg" alt="Sunset over northern BC waterways">
                 <template v-slot:placeholder>
                   <v-row class="fill-height ma-0" align="center" justify="center">
                     <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
@@ -176,20 +173,16 @@
         </v-toolbar>
         <v-card-text>
           <div class="text-h6">Water Temperature Data</div>
-          <p>AKTEMPVIZ shows water temperature data obtained from the following data sources:</p>
+          <p>NHG WaterTemp shows water temperature data obtained from the following data sources:</p>
           <ul class="ml-8 my-4">
-            <li><strong><a href="https://aktemp.uaa.alaska.edu">AKTEMP Database</a></strong></li>
-            <li><strong><a href="https://waterdata.usgs.gov/nwis" target="_blank">U.S. Geological Survey (USGS) National Water Information System (NWIS)</a></strong></li>
-            <li><strong><a href="https://irma.nps.gov/aqwebportal" target="_blank">National Park Service (NPS) Aquarius Web Portal:</a></strong></li>
+            <li><strong><a href="https://zenodo.org/records/15053907" target="_blank">NHG Water Temperature Data (Zenodo)</a></strong></li>
+            <li><strong><a href="https://zenodo.org/records/6426024" target="_blank">NHG Water Temperature Data (Zenodo)</a></strong></li>
           </ul>
 
-          <p>Data are only shown for stations located on streams and rivers (lakes and reservoirs are excluded).</p>
-
-          <div class="text-h6 mt-4">Air Temperature Data</div>
-          <p>Air temperature data was obtained from <a href="https://daymet.ornl.gov" target="_blank">Daymet</a>, which provides a 1-km gridded dataset of daily weather data. For each station, the air temperature was extracted from the Daymet tiles based on that station's latitude and longitude. Because Daymet releases new data on an annual cycle, <b>air temperature data for the current year will not be available until sometime the following year</b>. Air temperature data are currently <strong>available through {{ config.daymet_last_year }}</strong>.</p>
+          <p>Data are only shown for stations located on streams and rivers, and it comes from both water temperature loggers as well as weather stations.</p>
 
           <div class="text-h6 mt-4">Dataset Updates</div>
-          <p>The datasets from each source are automatically updated on a weekly cycle (each Sunday).</p>
+          <p>The datasets from each source are updated as new data is collected from the field team.</p>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -1089,7 +1082,7 @@ const aggregationOptions = [
 const dailySeries = computed(() => {
   return selectedStations.value.map(station => {
     const rawData = station.data.map(d => ({
-      millis: DateTime.fromISO(d.date, { zone: 'US/Alaska' }).toMillis(),
+      millis: DateTime.fromISO(d.date, { zone: 'America/Vancouver' }).toMillis(),
       date: d.date,
       year: +d.date.slice(0, 4),
       month: +d.date.slice(5, 7),
@@ -1291,7 +1284,7 @@ const driverTour = driver({
         description: `Hover the layers icon on the left to change basemaps. Select a basin layer to see low, medium, or high resolution watershed boundaries, which can then be used to filter stations by basin. Click on a station to select it (you can select up to ${maxSelected} stations at a time).<br><br>Select a station now or press Next and we\'ll select the first station for you.`,
         onNextClick: (el, step, opts) => {
           if (selectedStations.value.length === 0) {
-            let station = stations.value.find(s => s.provider_station_code === 'USGS:15302812')
+            let station = stations.value.find(s => s.provider_station_code === '01FW001')
             if (!station) {
               station = stations[Math.floor(Math.random() * stations.length)]
             }
