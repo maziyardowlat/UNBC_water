@@ -290,18 +290,7 @@
                         {{ station.start }} to {{ station.end }} | {{ station.n.toLocaleString() }} daily values
                       </div>
 
-                      <div class="text-caption">
-                        <v-btn
-                          prepend-icon="mdi-open-in-new"
-                          variant="text"
-                          size="x-small"
-                          :href="station.url"
-                          target="_blank"
-                          class="text-decoration-none"
-                        >
-                          View on {{ station.dataset }}
-                        </v-btn>
-                      </div>
+
                     </div>
                   </v-alert>
                 </div>
