@@ -42,16 +42,19 @@ function dataSourceCitations (dataSources, providers, lastUpdated) {
  * @param {string} endDate - Optional end date filter (YYYY-MM-DD)
  * @returns {string} CSV header comment block
  */
-function fileHeader (dataSources, providers, lastUpdated, startDate, endDate) {
+function fileHeader (dataSources, providers, lastUpdated, startDate, endDate, temperatureType = 'all') {
   // Build the date range line if custom dates are provided
   const dateRangeLine = startDate && endDate
     ? `# Date Range Filter: ${startDate} to ${endDate} (UTC)\n#`
     : ''
+  const title = temperatureType === 'air'
+    ? 'Daily Mean Air Temperature at Select Stations'
+    : 'Daily Mean Water and Air Temperature at Select Stations'
 
   return `# NHG WaterTemp | Water Temperature Data Visualization Tool
 # https://nhgwatertemp.unbc.ca
 #
-# Daily Mean Water and Air Temperature at Select Stations
+# ${title}
 #
 # IMPORTANT: All dates and times are in UTC (Coordinated Universal Time).
 #
@@ -64,18 +67,29 @@ ${dateRangeLine}
 ${dataSourceCitations(dataSources, providers, lastUpdated)}`
 }
 
-function valuesData (stations) {
+function valuesData (stations, temperatureType = 'all') {
   return stations.flatMap(station => {
     return station.data.map(d => {
-      return {
+      const commonFields = {
         data_source: station.dataset,
         provider_code: station.provider_code,
         station_code: station.station_code,
         station_description: station.station_description || '',
         waterbody_name: station.waterbody_name || '',
-        date: d.date,
+        date: d.date
+      }
+
+      if (temperatureType === 'air') {
+        return {
+          ...commonFields,
+          air_temp_c: d.airtemp_c !== null && d.airtemp_c !== undefined ? d.airtemp_c : ''
+        }
+      }
+
+      return {
+        ...commonFields,
         water_temp_c: d.temp_c !== null ? d.temp_c : '',
-        air_temp_c: d.airtemp_c !== null ? d.airtemp_c : ''
+        air_temp_c: d.airtemp_c !== null && d.airtemp_c !== undefined ? d.airtemp_c : ''
       }
     })
   })
@@ -106,19 +120,25 @@ function stationsTable (stations) {
  * @param {string} lastUpdated - ISO timestamp of last data update
  * @param {string} startDate - Optional start date filter (YYYY-MM-DD)
  * @param {string} endDate - Optional end date filter (YYYY-MM-DD)
+ * @param {Object} options - Optional download settings
+ * @param {string} options.temperatureType - all or air
  */
-export function downloadCSV(stations, lastUpdated, startDate, endDate) {
+export function downloadCSV(stations, lastUpdated, startDate, endDate, options = {}) {
   if (stations.length === 0) {
     alert('No stations selected')
     return
   }
+  const temperatureType = options.temperatureType || 'all'
 
   const dataSources = uniq(stations.map(s => s.dataset))
   const providers = uniq(stations.map(s => s.provider_code))
 
-  const header = fileHeader(dataSources, providers, lastUpdated, startDate, endDate)
+  const header = fileHeader(dataSources, providers, lastUpdated, startDate, endDate, temperatureType)
   const stationsCsv = Papa.unparse(stationsTable(stations))
-  const valuesCsv = Papa.unparse(valuesData(stations))
+  const valuesCsv = Papa.unparse(valuesData(stations, temperatureType))
+  const valuesTitle = temperatureType === 'air'
+    ? '# Daily Mean Air Temperature (UTC)'
+    : '# Daily Mean Water and Air Temperature (UTC)'
 
   const csv = [
     header,
@@ -129,16 +149,17 @@ export function downloadCSV(stations, lastUpdated, startDate, endDate) {
     stationsCsv,
     '#',
     '# ---------------------------------------------------------------',
-    '# Daily Mean Water and Air Temperature (UTC)',
+    valuesTitle,
     '#',
     valuesCsv
   ].join('\n')
   const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' })
 
   const timestamp = DateTime.now().toFormat('yyyyMMdd_HHmmss')
+  const baseName = temperatureType === 'air' ? 'nhg_airtemp_data' : 'nhg_watertemp_data'
   const filename = startDate && endDate
-    ? `nhg_watertemp_data_${startDate}_to_${endDate}_${timestamp}.csv`
-    : `nhg_watertemp_data_${timestamp}.csv`
+    ? `${baseName}_${startDate}_to_${endDate}_${timestamp}.csv`
+    : `${baseName}_${timestamp}.csv`
 
   saveAs(blob, filename)
 }

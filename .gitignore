@@ -27,6 +27,7 @@ pnpm-debug.log*
 
 # Daymet data
 daymet_data/
+airtemp_data/
 .vercel
 
 # Python virtual environment

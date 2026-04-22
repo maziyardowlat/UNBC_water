@@ -534,6 +534,25 @@
                     </v-btn>
                   </v-btn-toggle>
                 </div>
+                <div class="d-flex align-center my-2 mr-2">
+                  <div class="text-subtitle-2 mr-2">Show:</div>
+                  <v-btn-toggle
+                    v-model="selectedTemperatureMetric"
+                    density="compact"
+                    class="mx-2"
+                    variant="outlined"
+                    mandatory
+                    style="height:42px;"
+                  >
+                    <v-btn
+                      v-for="metric in temperatureMetricOptions"
+                      :key="metric.value"
+                      :value="metric.value"
+                    >
+                      {{ metric.label }}
+                    </v-btn>
+                  </v-btn-toggle>
+                </div>
                 <div class="d-flex align-center my-2 mr-2" v-if="selectedAggregation === 'season'">
                   <div class="text-subtitle-2 mr-2">
                     <v-icon start>mdi-arrow-right</v-icon>
@@ -590,6 +609,7 @@
                   :loading="loadingData"
                   :aggregation="selectedAggregation"
                   :aggregation-label="timeAggregationLabel"
+                  :temperature-metric="selectedTemperatureMetric"
                   :season="[startMonth, endMonth]"
                   @zoom="onTimeseriesZoom"
                 />
@@ -613,13 +633,35 @@
                   <v-btn
                     color="primary"
                     variant="outlined"
+                    prepend-icon="mdi-weather-partly-cloudy"
+                    size="small"
+                    class="ml-2"
+                    @click="downloadAirTempData"
+                    :disabled="!hasDailyAirTempData"
+                  >
+                    Download Daily Air Temp
+                  </v-btn>
+                  <v-btn
+                    color="primary"
+                    variant="outlined"
                     prepend-icon="mdi-file-delimited"
                     size="small"
                     class="ml-2"
                     @click="downloadCompiledData"
                     :disabled="!hasCompiledData"
                   >
-                    Download Compiled CSV (All Data)
+                    Download 15 minute compiled water temperature
+                  </v-btn>
+                  <v-btn
+                    color="primary"
+                    variant="outlined"
+                    prepend-icon="mdi-thermometer-lines"
+                    size="small"
+                    class="ml-2"
+                    @click="downloadAirTempCsv"
+                    :disabled="!hasAirTempCsv"
+                  >
+                    Download hourly air temperature
                   </v-btn>
                   <v-btn
                     color="primary"
@@ -714,13 +756,32 @@
                     </v-btn>
                     <v-btn
                       color="primary"
+                      variant="outlined"
+                      prepend-icon="mdi-weather-partly-cloudy"
+                      @click="downloadCustomDateAirTempData"
+                      :disabled="customDownloadLoading || !hasDailyAirTempData"
+                    >
+                      Daily Air Temp
+                    </v-btn>
+                    <v-btn
+                      color="primary"
                       variant="elevated"
                       prepend-icon="mdi-file-delimited"
                       @click="downloadCustomDateCompiledData"
                       :loading="customDownloadLoading"
                       :disabled="!hasCompiledDataForCustom"
                     >
-                      Download 15-min CSV
+                      Download 15 minute compiled water temperature
+                    </v-btn>
+                    <v-btn
+                      color="primary"
+                      variant="elevated"
+                      prepend-icon="mdi-thermometer-lines"
+                      @click="downloadCustomDateAirTempCsv"
+                      :loading="customDownloadLoading"
+                      :disabled="!hasAirTempCsvForCustom"
+                    >
+                      Download hourly air temperature
                     </v-btn>
                   </v-card-actions>
                 </v-card>
@@ -797,7 +858,7 @@
                         variant="tonal"
                         icon="mdi-alert"
                       >
-                        Air temperature data is obtained from <a href="https://daymet.ornl.gov/" target="_blank">Daymet</a>, which is currently available through calendar year {{ config.daymet_last_year }}. Any more recent water temperature data will not be shown in this chart until the next year of Daymet data becomes available (sometime in following year).
+                        Air temperature data is shown when it has been loaded for the selected station. Stations without air temperature values will not appear in this chart.
                       </v-alert>
                     </v-card-text>
                     <v-divider></v-divider>
@@ -1061,11 +1122,18 @@ async function selectStation (station) {
 }
 
 const selectedAggregation = ref('day')
+const selectedTemperatureMetric = ref('water')
 
 const aggregationOptions = [
   { label: 'Day', value: 'day' },
   { label: 'Month', value: 'month' },
   { label: 'Season', value: 'season' }
+]
+
+const temperatureMetricOptions = [
+  { label: 'Water', value: 'water' },
+  { label: 'Air', value: 'air' },
+  { label: 'Both', value: 'both' }
 ]
 
 const dailySeries = computed(() => {
@@ -1105,14 +1173,13 @@ const dailyFilteredSeries = computed(() => {
 const aggregatedSeries = computed(() => {
   return dailySeries.value.map(series => {
     const { data, station } = series
-    const nonNullData = data.filter(d => d.temp_c !== null && d.temp_c !== undefined)
     let aggregatedData
     switch (selectedAggregation.value) {
       case 'month':
-        aggregatedData = aggregateByMonth(station.provider_station_code, nonNullData)
+        aggregatedData = aggregateByMonth(station.provider_station_code, data)
         break
       case 'season':
-        aggregatedData = aggregateBySeason(station.provider_station_code, nonNullData, selectedMonths.value)
+        aggregatedData = aggregateBySeason(station.provider_station_code, data, selectedMonths.value)
         break
       default:
         aggregatedData = data
@@ -1128,6 +1195,13 @@ const aggregatedSeries = computed(() => {
   })
 })
 
+function meanWhenComplete (temps, key, minDays) {
+  const values = temps
+    .map(d => d[key])
+    .filter(value => value !== null && value !== undefined)
+  return values.length >= minDays ? mean(values) : null
+}
+
 function aggregateByMonth(station_id, data) {
   // Require 75% of 30 days = 23 days minimum
   const MIN_DAYS = 23
@@ -1137,7 +1211,8 @@ function aggregateByMonth(station_id, data) {
     station_id,
     millis: DateTime.fromISO(`${date}-01`).toMillis(),
     date,
-    temp_c: temps.length >= MIN_DAYS ? mean(temps.map(d => d.temp_c)) : null,
+    temp_c: meanWhenComplete(temps, 'temp_c', MIN_DAYS),
+    airtemp_c: meanWhenComplete(temps, 'airtemp_c', MIN_DAYS),
     year: +date.slice(0, 4),
     n: temps.length
   }))
@@ -1171,7 +1246,8 @@ function aggregateBySeason(station_id, data, months) {
     station_id,
     millis: DateTime.fromISO(`${year}-01-01`).toMillis(),
     date: `${year}-01-01`,
-    temp_c: temps.length >= MIN_DAYS ? mean(temps.map(d => d.temp_c)) : null,
+    temp_c: meanWhenComplete(temps, 'temp_c', MIN_DAYS),
+    airtemp_c: meanWhenComplete(temps, 'airtemp_c', MIN_DAYS),
     year: +year,
     n: temps.length
   }))
@@ -1317,7 +1393,7 @@ const driverTour = driver({
       element: '[data-step="scatter"]',
       popover: {
         title: 'Air vs Water Temp Chart',
-        description: `This chart shows the relationship between daily mean air and water temperatures. Differences in the shape of this relationship indicate different dynamics and thermal regimes at different stations.<br><br>Note that air temperature data is only currently available through ${config.value.daymet_last_year}, more recent water temperature data will not appear on this chart until the next year of Daymet data becomes available (sometime in following year).`,
+        description: 'This chart shows the relationship between daily mean air and water temperatures. Differences in the shape of this relationship indicate different dynamics and thermal regimes at different stations.<br><br>Air temperature data is shown when it has been loaded for the selected station.',
         onNextClick: (el, step, opts) => {
           clearSelection()
           driverTour.moveNext()
@@ -1386,12 +1462,31 @@ function downloadData() {
   downloadCSV(selectedStations.value, config.value.last_updated)
 }
 
+function downloadAirTempData() {
+  downloadCSV(selectedStations.value, config.value.last_updated, null, null, {
+    temperatureType: 'air'
+  })
+}
+
 function downloadCompiledData() {
   selectedStations.value.forEach(station => {
     if (station.csv_filename) {
       const link = document.createElement('a')
       link.href = `/data/csv/${station.csv_filename}`
       link.download = station.csv_filename
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+    }
+  })
+}
+
+function downloadAirTempCsv() {
+  selectedStations.value.forEach(station => {
+    if (station.airtemp_csv_filename) {
+      const link = document.createElement('a')
+      link.href = `/data/airtemp/${station.airtemp_csv_filename}`
+      link.download = station.airtemp_csv_filename
       document.body.appendChild(link)
       link.click()
       document.body.removeChild(link)
@@ -1500,14 +1595,53 @@ function downloadCustomDateData() {
   showCustomDateDialog.value = false
 }
 
+function downloadCustomDateAirTempData() {
+  // Validate dates
+  const error = validateCustomDates()
+  if (error) {
+    customDateError.value = error
+    return
+  }
+
+  const startDate = customStartDate.value
+  const endDate = customEndDate.value
+
+  const filteredStations = selectedStations.value.map(station => {
+    return {
+      ...station,
+      data: station.data.filter(d => d.date >= startDate && d.date <= endDate)
+    }
+  })
+
+  downloadCSV(filteredStations, config.value.last_updated, startDate, endDate, {
+    temperatureType: 'air'
+  })
+
+  showCustomDateDialog.value = false
+}
+
 
 const hasCompiledData = computed(() => {
   return selectedStations.value.some(s => s.csv_filename)
 })
 
+const hasDailyAirTempData = computed(() => {
+  return selectedStations.value.some(station => {
+    return station.data?.some(d => d.airtemp_c !== null && d.airtemp_c !== undefined)
+  })
+})
+
+const hasAirTempCsv = computed(() => {
+  return selectedStations.value.some(s => s.airtemp_csv_filename)
+})
+
 // Check if any selected station has compiled CSV available (for custom date dialog)
 const hasCompiledDataForCustom = computed(() => {
   return selectedStations.value.some(s => s.csv_filename)
+})
+
+const hasAirTempCsvForCustom = computed(() => {
+  return selectedStations.value.some(s => s.airtemp_csv_filename)
 })
 
 /**
@@ -1589,6 +1723,72 @@ async function downloadCustomDateCompiledData() {
   } catch (err) {
     console.error('Error downloading compiled CSV:', err)
     customDateError.value = `Error downloading compiled CSV: ${err.message}`
+  } finally {
+    customDownloadLoading.value = false
+  }
+}
+
+async function downloadCustomDateAirTempCsv() {
+  // Validate dates first
+  const error = validateCustomDates()
+  if (error) {
+    customDateError.value = error
+    return
+  }
+
+  customDownloadLoading.value = true
+  customDateError.value = ''
+
+  const startDate = customStartDate.value
+  const endDate = customEndDate.value
+
+  try {
+    for (const station of selectedStations.value) {
+      if (!station.airtemp_csv_filename) continue
+
+      const response = await fetch(`/data/airtemp/${station.airtemp_csv_filename}`)
+      if (!response.ok) {
+        throw new Error(`Failed to fetch ${station.airtemp_csv_filename}`)
+      }
+
+      const csvText = await response.text()
+      const lines = csvText.split('\n')
+      const header = lines[0]
+
+      const filteredLines = lines.slice(1).filter(line => {
+        if (!line.trim()) return false
+        const columns = line.split(',')
+        const timestamp = columns[1]
+        if (!timestamp) return false
+        const dateOnly = timestamp.split(' ')[0]
+        return dateOnly >= startDate && dateOnly <= endDate
+      })
+
+      if (filteredLines.length === 0) {
+        console.warn(`No air temperature data found for ${station.provider_station_code} in the selected date range`)
+        continue
+      }
+
+      const filteredCsv = [header, ...filteredLines].join('\n')
+      const blob = new Blob([filteredCsv], { type: 'text/csv;charset=utf-8' })
+      const baseFilename = station.airtemp_csv_filename.replace('.csv', '')
+      const filename = `${baseFilename}_${startDate}_to_${endDate}.csv`
+
+      const link = document.createElement('a')
+      link.href = URL.createObjectURL(blob)
+      link.download = filename
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      URL.revokeObjectURL(link.href)
+
+      await new Promise(resolve => setTimeout(resolve, 100))
+    }
+
+    showCustomDateDialog.value = false
+  } catch (err) {
+    console.error('Error downloading air temperature CSV:', err)
+    customDateError.value = `Error downloading air temperature CSV: ${err.message}`
   } finally {
     customDownloadLoading.value = false
   }

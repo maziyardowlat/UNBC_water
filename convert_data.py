@@ -18,6 +18,43 @@ def load_stations():
     
     return stations
 
+def load_daily_air_temperature(station_code):
+    """Load daily air temperatures from normalized hourly ERA5 or Daymet data."""
+    base_dir = os.path.dirname(__file__)
+    hourly_airtemp_file = os.path.join(base_dir, "airtemp_data", f"{station_code}_airtemp_hourly.csv")
+    
+    if os.path.exists(hourly_airtemp_file):
+        print(f"Loading ERA5-Land hourly air temperature for {station_code}")
+        airtemp_df = pd.read_csv(hourly_airtemp_file)
+        
+        if "timestamp" not in airtemp_df.columns:
+            raise ValueError(f"{hourly_airtemp_file} is missing required timestamp column")
+        
+        airtemp_col = None
+        for candidate in ["air_temp_c", "airtemp_c"]:
+            if candidate in airtemp_df.columns:
+                airtemp_col = candidate
+                break
+        
+        if airtemp_col is None:
+            raise ValueError(f"{hourly_airtemp_file} is missing required air_temp_c column")
+        
+        airtemp_df["timestamp"] = pd.to_datetime(airtemp_df["timestamp"], errors="coerce")
+        airtemp_df["airtemp_c"] = pd.to_numeric(airtemp_df[airtemp_col], errors="coerce")
+        airtemp_df = airtemp_df.dropna(subset=["timestamp", "airtemp_c"])
+        airtemp_df["date"] = airtemp_df["timestamp"].dt.date.astype(str)
+        
+        daily_airtemp = airtemp_df.groupby("date")["airtemp_c"].mean().round(2)
+        return daily_airtemp.to_dict()
+    
+    airtemp_file = os.path.join(base_dir, "daymet_data", f"{station_code}_airtemp.json")
+    if os.path.exists(airtemp_file):
+        print(f"Loading Daymet daily air temperature for {station_code}")
+        with open(airtemp_file, 'r') as f:
+            return json.load(f)
+    
+    return None
+
 def process_csv_file(csv_file, station_code):
     """Process a single CSV file and convert to daily averages"""
     print(f"Processing {csv_file}")
@@ -51,11 +88,8 @@ def process_csv_file(csv_file, station_code):
     daily_stats['date'] = daily_stats['date'].astype(str)
     
     # Load air temperature data if available
-    airtemp_file = os.path.join(os.path.dirname(__file__), "daymet_data", f"{station_code}_airtemp.json")
-    if os.path.exists(airtemp_file):
-        with open(airtemp_file, 'r') as f:
-            airtemp_data = json.load(f)
-        # Add air temperature to daily stats
+    airtemp_data = load_daily_air_temperature(station_code)
+    if airtemp_data:
         daily_stats['airtemp_c'] = daily_stats['date'].apply(lambda d: airtemp_data.get(d, None))
     else:
         daily_stats['airtemp_c'] = None
@@ -76,10 +110,13 @@ def update_stations_data(stations, data_dir):
     """Update existing stations with new CSV data"""
     # Look for CSV files in the correct directory
     csv_dir = os.path.join(os.path.dirname(__file__), "data", "01_Data")
+    airtemp_dir = os.path.join(os.path.dirname(__file__), "airtemp_data")
     
     # Create public CSV directory if it doesn't exist
     public_csv_dir = os.path.join(data_dir, "csv")
     os.makedirs(public_csv_dir, exist_ok=True)
+    public_airtemp_dir = os.path.join(data_dir, "airtemp")
+    os.makedirs(public_airtemp_dir, exist_ok=True)
     
     # Find all CSV files
     csv_files = glob.glob(f"{csv_dir}/*.csv")
@@ -109,6 +146,14 @@ def update_stations_data(stations, data_dir):
         csv_filename = os.path.basename(matching_csv)
         shutil.copy2(matching_csv, os.path.join(public_csv_dir, csv_filename))
         station['csv_filename'] = csv_filename
+
+        airtemp_csv = os.path.join(airtemp_dir, f"{station_code}_airtemp_hourly.csv")
+        if os.path.exists(airtemp_csv):
+            airtemp_filename = os.path.basename(airtemp_csv)
+            shutil.copy2(airtemp_csv, os.path.join(public_airtemp_dir, airtemp_filename))
+            station['airtemp_csv_filename'] = airtemp_filename
+        else:
+            station.pop('airtemp_csv_filename', None)
         
         # Process the CSV data
         try:

@@ -12,30 +12,18 @@ const props = defineProps({
   loading: Boolean,
   aggregation: String,
   aggregationLabel: String,
-  season: Array
+  season: Array,
+  temperatureMetric: {
+    type: String,
+    default: 'water'
+  }
 })
 const emit = defineEmits(['zoom'])
 const chartEl = ref(null)
 
 watch(() => props.series, update)
 watch(() => props.loading, toggleLoading)
-watch(() => [props.aggregation, props.aggregationLabel], () => {
-  if (chartEl.value?.chart) {
-    chartEl.value.chart.series.forEach(s => {
-      if (s.navigatorSeries) {
-        s.update({
-          marker: {
-            enabled: props.aggregation !== 'day'
-          }
-        }, false)
-      }
-    })
-    chartEl.value.chart.redraw()
-    chartEl.value.chart.yAxis[0].setTitle({
-      text: `${props.aggregationLabel}<br>Water Temperature (°C)`
-    })
-  }
-})
+watch(() => [props.aggregation, props.aggregationLabel, props.temperatureMetric], update)
 
 onMounted(() => {
   if (props.series) update()
@@ -64,29 +52,54 @@ function update () {
   if (!chart || !props.series) return
 
   const nPrevious = chart.series.length
-  const series = props.series.map(s => {
-    return {
-      ...s,
-      name: s.station_id,
-      showInNavigator: true,
-      marker: {
-        enabled: props.aggregation !== 'day'
-      },
-      data: s.data.map(d => ({
-        ...d,
-        x: d.millis,
-        y: d.temp_c ?? null,
-      }))
-    }
-  })
+  const metricKeys = selectedTemperatureKeys.value
+  const series = props.series.flatMap(s => {
+    return metricKeys.map(metricKey => {
+      const metric = temperatureMetrics[metricKey]
+      return {
+        ...s,
+        name: metricKeys.length > 1 ? `${s.station_id} ${metric.shortLabel}` : s.station_id,
+        dashStyle: metric.dashStyle,
+        showInNavigator: metricKeys.length === 1 || metricKey === 'water',
+        marker: {
+          enabled: props.aggregation !== 'day'
+        },
+        data: s.data.map(d => {
+          const temperatureValue = d[metric.field] ?? null
+          return {
+            ...d,
+            x: d.millis,
+            y: temperatureValue,
+            temperature_metric: metricKey,
+            temperature_label: metric.shortLabel,
+            temperature_value: temperatureValue
+          }
+        })
+      }
+    })
+  }).filter(s => s.data.some(d => d.y !== null))
 
+  chart.yAxis[0].update({
+    title: {
+      text: yAxisTitle.value
+    },
+    min: props.temperatureMetric === 'water' ? 0 : null
+  }, false)
+
+  const noData = noDataMessage(series)
   chart.update({
+    lang: {
+      noData
+    },
     series: [],
     tooltip: {
       enabled: false
     }
   }, true, true)
   chart.update({
+    lang: {
+      noData
+    },
     series,
     tooltip: {
       enabled: true
@@ -97,6 +110,16 @@ function update () {
     // reset time filter
     chart.xAxis[0].setExtremes(null, null, true, false)
   }
+}
+
+function noDataMessage (series) {
+  if (!props.series || props.series.length === 0) {
+    return 'Select a station to view data'
+  }
+  if (props.temperatureMetric === 'air' && series.length === 0) {
+    return 'There are no air temp values for this site right now'
+  }
+  return 'No data to display'
 }
 
 function tooltipFormatter(date, points) {
@@ -119,13 +142,20 @@ function tooltipFormatter(date, points) {
     header = DateTime.fromISO(date, { zone: 'America/Vancouver' }).toFormat('MMMM d, yyyy')
   }
 
-  const rows = points.map(d => `
+  const normalizedPoints = points.map(d => d.point || d)
+  const rows = normalizedPoints.map(point => {
+    const value = typeof point.temperature_value === 'number'
+      ? point.temperature_value.toFixed(1)
+      : ''
+    return `
     <tr>
-      <td style="color: ${d.point.color}; padding-right: 10px; font-size: 18px;">&#9679;</td>
-      <td style="font-weight: bold; padding-right: 12px;">${d.point.station_id}</td>
-      <td style="text-align: right; font-weight: bold;">${d.point.temp_c?.toFixed(1)}</td>
+      <td style="color: ${point.color}; padding-right: 10px; font-size: 18px;">&#9679;</td>
+      <td style="font-weight: bold; padding-right: 12px;">${point.station_id}</td>
+      <td style="padding-right: 12px;">${point.temperature_label}</td>
+      <td style="text-align: right; font-weight: bold;">${value}</td>
     </tr>
-  `).join('');
+  `
+  }).join('')
   return `
     <div style="">
       <div style="font-size: 16px; font-weight: bold; margin-bottom: 10px; color: #333;">${header}</div>
@@ -134,17 +164,42 @@ function tooltipFormatter(date, points) {
           <tr>
             <th></th>
             <th style="text-align: left; color: #666; font-weight: normal;">Station</th>
-            <th style="text-align: left; color: #666; font-weight: normal;">Water Temp (°C)</th>
+            <th style="text-align: left; color: #666; font-weight: normal;">Metric</th>
+            <th style="text-align: left; color: #666; font-weight: normal;">Temp (°C)</th>
           </tr>
         </thead>
         <tbody>${rows}</tbody>
       </table>
     </div>
-  `;
+  `
 }
 
+const temperatureMetrics = {
+  water: {
+    field: 'temp_c',
+    shortLabel: 'Water',
+    axisLabel: 'Water Temperature',
+    dashStyle: 'Solid'
+  },
+  air: {
+    field: 'airtemp_c',
+    shortLabel: 'Air',
+    axisLabel: 'Air Temperature',
+    dashStyle: 'ShortDash'
+  }
+}
+
+const selectedTemperatureKeys = computed(() => {
+  return props.temperatureMetric === 'both'
+    ? ['water', 'air']
+    : [props.temperatureMetric || 'water']
+})
+
 const yAxisTitle = computed(() => {
-  return `${props.aggregationLabel}<br>Water Temperature (°C)`
+  const metricLabel = props.temperatureMetric === 'both'
+    ? 'Temperature'
+    : temperatureMetrics[props.temperatureMetric || 'water'].axisLabel
+  return `${props.aggregationLabel}<br>${metricLabel} (°C)`
 })
 
 const settings = {
@@ -200,9 +255,8 @@ const settings = {
   tooltip: {
     shared: false,
     useHTML: true,
-    headerFormat: '<div style="font-size: 16px; font-weight: bold; margin-bottom: 10px; color: #333;">{point.date}asdfs</div>',
     formatter: function () {
-      return tooltipFormatter(this.point.date, this.points)
+      return tooltipFormatter(this.point.date, this.points || [this.point])
     }
   },
   scrollbar: {

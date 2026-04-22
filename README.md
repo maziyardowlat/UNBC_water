@@ -14,6 +14,7 @@ Air temperature data for each water temperature station is obtained from [Daymet
 
 - `public/` - Static assets and processed data files
 - `public/data/` - Raw and intermediate data files (not tracked in git)
+- `airtemp_data/` - Local normalized hourly ERA5-Land air-temperature files generated from `WTQ*.hr` inputs
 - `R/` - R scripts for data collection and processing
 - `src/` - Vue.js frontend application source code
 
@@ -154,6 +155,28 @@ The pipeline will:
 4. Merge water and air temperature data
 5. Generate output files in the data directory
 6. Upload results to S3
+
+### ERA5-Land `WTQ*.hr` Air Temperature Files
+
+Processed `WTQ*.hr` files can be normalized into hourly CSVs before running `convert_data.py`.
+The normalized CSVs use UTC timestamps in the same `YYYY-MM-DD HH:MM:SS` format as the compiled water-temperature CSVs.
+
+The simplest manual workflow is:
+
+1. Drag the `WTQ*.hr` file into `airtemp_data/`.
+2. Run the `.hr` converter with the matching station code.
+3. Run the normal data converter.
+
+For example, for the Ness Lake file:
+
+```bash
+python3 convert_hr_airtemp.py airtemp_data/WTQne.hr --station-code 02FW002
+python3 convert_data.py
+```
+
+The `.hr` converter writes a normalized hourly file like `airtemp_data/02FW002_airtemp_hourly.csv`. Then `convert_data.py` reads that normalized air-temperature file, merges daily air temperature into the station JSON, and copies the hourly air-temperature CSV into `public/data/airtemp/` for UI downloads.
+
+By default, the converter assumes the source hour column is fixed Pacific Standard Time (UTC-8) and converts it to UTC. It also follows the `WTQ*.hr` column description from the sample email: source column 6 is dewpoint temperature and source column 7 is air temperature. If a future file uses the opposite order, pass `--air-column 6`.
 
 ### Cloud Deployment
 

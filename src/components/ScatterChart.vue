@@ -23,7 +23,7 @@
           class="text-caption"
           variant="tonal"
         >
-          Air temp. only available through {{ config.daymet_last_year }}
+          {{ airTempAvailabilityLabel }}
         </v-alert>
       </div>
     </div>
@@ -33,13 +33,33 @@
 </template>
 
 <script setup>
-import { onMounted, watch, ref } from 'vue'
+import { onMounted, watch, ref, computed } from 'vue'
 import { DateTime } from 'luxon'
 
 const props = defineProps(['series', 'loading', 'config'])
 
 const chartEl = ref(null)
 const minAirTemp = ref(-10)
+
+const airTempAvailabilityLabel = computed(() => {
+  const dates = (props.series || [])
+    .flatMap(s => s.data || [])
+    .filter(d => d.airtemp_c !== null && d.airtemp_c !== undefined && d.date)
+    .map(d => d.date)
+    .sort()
+
+  if (dates.length === 0) {
+    return (props.series || []).length > 0
+      ? 'No air temp values for selected stations'
+      : 'Select a station to view air temp availability'
+  }
+
+  const start = dates[0]
+  const end = dates[dates.length - 1]
+  return start === end
+    ? `Air temp available on ${start}`
+    : `Air temp available ${start} to ${end}`
+})
 
 watch(() => [props.series, minAirTemp.value], update)
 watch(() => props.loading, toggleLoading)
@@ -91,7 +111,10 @@ function update () {
 
   // Get the min and max values across all data points
   const allPoints = props.series.flatMap(s => s.data.filter(d =>
-    d.airtemp_c !== undefined && d.temp_c !== undefined
+    d.airtemp_c !== null &&
+    d.airtemp_c !== undefined &&
+    d.temp_c !== null &&
+    d.temp_c !== undefined
   ))
 
   if (allPoints.length === 0) {
@@ -124,7 +147,9 @@ function update () {
       data: s.data
         .filter(d =>
           d.airtemp_c !== undefined &&
+          d.airtemp_c !== null &&
           d.temp_c !== undefined &&
+          d.temp_c !== null &&
           d.airtemp_c >= minAirTemp.value
         )
         .map(d => ({
