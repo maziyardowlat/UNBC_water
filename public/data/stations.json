@@ -14,7 +14,7 @@
     "filename": "01NE006_ChedakuzCreekAboveNechakoReservoir.json",
     "start": "2020-08-13",
     "end": "2025-08-11",
-    "n": 1825,
+    "n": 1397,
     "csv_filename": "01NE006_compiled_2025-09-12 (1).csv"
   },
   {
@@ -68,7 +68,7 @@
     "filename": "01FW022_ChilakoRiverAboveNechakoRiver.json",
     "start": "2020-07-09",
     "end": "2025-09-18",
-    "n": 1898,
+    "n": 1715,
     "csv_filename": "01FW022_compiled_2025-10-02 (1).csv"
   },
   {
@@ -86,7 +86,7 @@
     "filename": "01FW018_ChilakoRiverBelowTatukLake.json",
     "start": "2020-08-13",
     "end": "2025-06-26",
-    "n": 1779,
+    "n": 1127,
     "csv_filename": "01FW018_compiled_2025-09-12.csv"
   },
   {
@@ -104,7 +104,7 @@
     "filename": "01FW002_EndakoRiverAboveStellakoRiver.json",
     "start": "2020-11-12",
     "end": "2025-07-04",
-    "n": 1696,
+    "n": 1354,
     "csv_filename": "01FW002_compiled_2025-09-12.csv"
   },
   {
@@ -158,7 +158,7 @@
     "filename": "01FW023_KazchekCreekAboveMiddleRiver.json",
     "start": "2020-07-17",
     "end": "2024-09-24",
-    "n": 1531,
+    "n": 1375,
     "csv_filename": "01FW023_compiled_2025-09-12.csv"
   },
   {
@@ -176,7 +176,7 @@
     "filename": "01FW001_KuzkwaRiverBelowTezzeronLake.json",
     "start": "2020-07-16",
     "end": "2025-06-10",
-    "n": 1791,
+    "n": 1742,
     "csv_filename": "01FW001_compiled_2025-09-12.csv"
   },
   {
@@ -230,7 +230,7 @@
     "filename": "01FW019_MiddleRiverAboveTrembleurLake.json",
     "start": "2020-07-17",
     "end": "2025-06-11",
-    "n": 1791,
+    "n": 1665,
     "csv_filename": "01FW019_compiled_2025-09-12.csv"
   },
   {
@@ -248,7 +248,7 @@
     "filename": "01FW009_NadinaLake.json",
     "start": "2022-07-12",
     "end": "2025-07-23",
-    "n": 1108,
+    "n": 1076,
     "csv_filename": "01FW009_compiled_2025-09-12.csv"
   },
   {
@@ -302,7 +302,7 @@
     "filename": "01FW017_NechakoAboveCluculzCreek.json",
     "start": "2019-06-27",
     "end": "2023-12-07",
-    "n": 1625,
+    "n": 1371,
     "csv_filename": "01FW017_compiled_2025-09-12.csv"
   },
   {
@@ -320,7 +320,7 @@
     "filename": "01FW005_NechakoAtMiworth.json",
     "start": "2020-07-09",
     "end": "2025-09-18",
-    "n": 1898,
+    "n": 1758,
     "csv_filename": "01FW005_compiled_2025-10-02 (1).csv"
   },
   {
@@ -356,7 +356,7 @@
     "filename": "01FW013_NechakoRiverOffDellwoodRoad.json",
     "start": "2019-07-13",
     "end": "2025-04-11",
-    "n": 2100,
+    "n": 1495,
     "csv_filename": "01FW013_compiled_2025-09-12.csv"
   },
   {
@@ -374,7 +374,7 @@
     "filename": "01FW016_NecoslieRiverAboveStuartLake.json",
     "start": "2020-07-17",
     "end": "2025-06-10",
-    "n": 1790,
+    "n": 1216,
     "csv_filename": "01FW016_compiled_2025-09-12.csv"
   },
   {
@@ -392,7 +392,7 @@
     "filename": "02FW002_NessLake.json",
     "start": "2019-07-05",
     "end": "2026-01-04",
-    "n": 2376,
+    "n": 2363,
     "csv_filename": "02FW002_compiled_2026 (2).csv",
     "airtemp_csv_filename": "02FW002_airtemp_hourly.csv"
   },
@@ -429,7 +429,7 @@
     "filename": "02MF001_DockPoint.json",
     "start": "2023-10-04",
     "end": "2025-08-07",
-    "n": 674,
+    "n": 667,
     "csv_filename": "02MF001_compiled_2026 (2).csv"
   },
   {
@@ -463,9 +463,9 @@
     "dataset": "UNBC",
     "url": "https://watertemp.unbc.ca/#/explorer/stations/02MF003",
     "filename": "02MF003_Plato Point.json",
-    "start": "2016-08-19",
+    "start": "2017-08-29",
     "end": "2025-11-28",
-    "n": 3389,
+    "n": 2643,
     "csv_filename": "02MF003_compiled_2026 (2).csv"
   },
   {
@@ -519,7 +519,7 @@
     "filename": "01FW021_PinchiCreekAboveStuartLake.json",
     "start": "2020-07-16",
     "end": "2025-06-11",
-    "n": 1792,
+    "n": 1535,
     "csv_filename": "01FW021_compiled_2025-09-12.csv"
   },
   {
@@ -537,7 +537,7 @@
     "filename": "01NE004_RhineCreekAboveSweeneyCreek.json",
     "start": "2020-08-24",
     "end": "2025-10-10",
-    "n": 1874,
+    "n": 1810,
     "csv_filename": "01NE004_compiled_2026.csv"
   },
   {
@@ -555,7 +555,7 @@
     "filename": "01FW010_SkinsLakeSpillway.json",
     "start": "2019-08-12",
     "end": "2024-07-17",
-    "n": 1802,
+    "n": 1058,
     "csv_filename": "01FW010_compiled_2025-09-12.csv"
   },
   {
@@ -573,7 +573,7 @@
     "filename": "01FW004_StellakoRiverAboveFraserLake.json",
     "start": "2020-11-12",
     "end": "2025-10-23",
-    "n": 1667,
+    "n": 1366,
     "csv_filename": "01FW004_compiled_2026.csv"
   },
   {
@@ -609,7 +609,7 @@
     "filename": "01FW011_TachieRiverAboveStuartLake.json",
     "start": "2020-07-16",
     "end": "2025-06-10",
-    "n": 1791,
+    "n": 1593,
     "csv_filename": "01FW011_compiled_2025-09-12.csv"
   },
   {
@@ -627,7 +627,7 @@
     "filename": "01FW020_TsilcohRiverAbovePinchiLake.json",
     "start": "2020-07-17",
     "end": "2025-06-10",
-    "n": 1790,
+    "n": 1262,
     "csv_filename": "01FW020_compiled_2025-09-12 (1).csv"
   },
   {
@@ -645,7 +645,7 @@
     "filename": "01NE002_WhitesailMiddleCreekAboveTahtsaReach.json",
     "start": "2020-07-29",
     "end": "2025-09-24",
-    "n": 1884,
+    "n": 1548,
     "csv_filename": "01NE002_compiled_2025-10-02 (1).csv"
   },
   {

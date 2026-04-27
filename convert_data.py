@@ -90,10 +90,14 @@ def process_csv_file(csv_file, station_code):
     # Load air temperature data if available
     airtemp_data = load_daily_air_temperature(station_code)
     if airtemp_data:
-        daily_stats['airtemp_c'] = daily_stats['date'].apply(lambda d: airtemp_data.get(d, None))
+        airtemp_df = pd.DataFrame(
+            [{'date': d, 'airtemp_c': v} for d, v in airtemp_data.items()]
+        )
+        # Outer join so dates with only air temp (no water temp) are still included
+        daily_stats = daily_stats.merge(airtemp_df, on='date', how='outer').sort_values('date')
     else:
         daily_stats['airtemp_c'] = None
-    
+
     # Convert to dict and handle NaN values
     records = daily_stats.to_dict('records')
     
@@ -158,12 +162,14 @@ def update_stations_data(stations, data_dir):
         # Process the CSV data
         try:
             data = process_csv_file(matching_csv, station_code)
-            station['n'] = len(data)
-            
-            # Update start and end dates based on actual data
-            if data:
-                station['start'] = data[0]['date']
-                station['end'] = data[-1]['date']
+            water_rows = [d for d in data if d.get('temp_c') is not None]
+            station['n'] = len(water_rows)
+
+            # Keep start/end aligned with water-temp coverage so the Stations
+            # table reflects daily water values, not the air-only padding.
+            if water_rows:
+                station['start'] = water_rows[0]['date']
+                station['end'] = water_rows[-1]['date']
             
             # Save individual station data file
             data_output_dir = os.path.join(data_dir, "data")
