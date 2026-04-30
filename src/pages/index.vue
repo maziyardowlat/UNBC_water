@@ -628,7 +628,7 @@
                     :disabled="selectedStations.length === 0"
                     data-step="download"
                   >
-                    Download Daily Data (All data)
+                    Daily Data
                   </v-btn>
                   <v-btn
                     color="primary"
@@ -639,7 +639,7 @@
                     @click="downloadAirTempData"
                     :disabled="!hasDailyAirTempData"
                   >
-                    Download Daily Air Temp
+                    Daily Air Temp
                   </v-btn>
                   <v-btn
                     color="primary"
@@ -650,7 +650,7 @@
                     @click="downloadCompiledData"
                     :disabled="!hasCompiledData"
                   >
-                    Download 15 minute compiled water temperature
+                    15-min Water Temp
                   </v-btn>
                   <v-btn
                     color="primary"
@@ -661,7 +661,7 @@
                     @click="downloadAirTempCsv"
                     :disabled="!hasAirTempCsv"
                   >
-                    Download hourly air temperature
+                    Hourly Air Temp
                   </v-btn>
                   <v-btn
                     color="primary"
@@ -672,7 +672,7 @@
                     @click="openCustomDateDownload"
                     :disabled="selectedStations.length === 0"
                   >
-                    Custom Date Range
+                    Custom Range
                   </v-btn>
                 </div>
               </div>
@@ -771,7 +771,7 @@
                       :loading="customDownloadLoading"
                       :disabled="!hasCompiledDataForCustom"
                     >
-                      Download 15 minute compiled water temperature
+                    Download 15 min compiled water temperature
                     </v-btn>
                     <v-btn
                       color="primary"
