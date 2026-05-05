@@ -176,7 +176,7 @@ python3 convert_data.py
 
 The `.hr` converter writes a normalized hourly file like `airtemp_data/02FW002_airtemp_hourly.csv`. Then `convert_data.py` reads that normalized air-temperature file, merges daily air temperature into the station JSON, and copies the hourly air-temperature CSV into `public/data/airtemp/` for UI downloads.
 
-By default, the converter assumes the source hour column is fixed Pacific Standard Time (UTC-8) and converts it to UTC. It also follows the `WTQ*.hr` column description from the sample email: source column 6 is dewpoint temperature and source column 7 is air temperature. If a future file uses the opposite order, pass `--air-column 6`.
+By default, the converter assumes the source hour column is fixed Pacific Standard Time (UTC-8) and converts it to UTC. It also treats source column 6 as air temperature and source column 7 as dewpoint temperature. If a future file uses the opposite order, pass `--air-column 7`.
 
 ### Cloud Deployment
 

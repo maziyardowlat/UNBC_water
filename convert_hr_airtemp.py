@@ -4,7 +4,8 @@ Convert WTQ*.hr hourly files into normalized hourly air-temperature CSVs.
 
 Input files are expected to be whitespace-delimited with seven columns:
 year, day-of-year, local-standard-time hour, water temperature, discharge,
-ERA5-Land dewpoint temperature, and ERA5-Land air temperature.
+and two ERA5-Land temperature columns. Use --air-column to identify which
+of the last two columns contains air temperature.
 
 The output timestamp is UTC and formatted like the compiled water CSVs:
 YYYY-MM-DD HH:MM:SS.
@@ -62,10 +63,10 @@ def parse_args():
         "--air-column",
         type=int,
         choices=(6, 7),
-        default=7,
+        default=6,
         help=(
-            "1-based source column containing air temperature. Defaults to 7 "
-            "to match the WTQ*.hr email description."
+            "1-based source column containing air temperature. Defaults to 6; "
+            "the other temperature column is treated as dewpoint."
         ),
     )
     parser.add_argument(
@@ -114,6 +115,8 @@ def convert(input_path, output_path, station_code, source_utc_offset_hours, air_
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     rows_written = 0
+    comparable_temp_rows = 0
+    dewpoint_above_air_rows = 0
     with input_path.open("r", encoding="utf-8") as source, output_path.open(
         "w", encoding="utf-8", newline=""
     ) as destination:
@@ -157,6 +160,20 @@ def convert(input_path, output_path, station_code, source_utc_offset_hours, air_
                 }
             )
             rows_written += 1
+            if air_temp is not None and dewpoint_temp is not None:
+                comparable_temp_rows += 1
+                if dewpoint_temp > air_temp:
+                    dewpoint_above_air_rows += 1
+
+    if comparable_temp_rows:
+        dewpoint_above_air_fraction = dewpoint_above_air_rows / comparable_temp_rows
+        if dewpoint_above_air_fraction > 0.5:
+            print(
+                "Warning: dewpoint is warmer than air temperature in "
+                f"{dewpoint_above_air_fraction:.1%} of rows. "
+                "The air/dewpoint columns may be swapped; try --air-column 6 or 7.",
+                file=sys.stderr,
+            )
 
     return rows_written
 

@@ -59,6 +59,7 @@ function update () {
       return {
         ...s,
         name: metricKeys.length > 1 ? `${s.station_id} ${metric.shortLabel}` : s.station_id,
+        color: metric.color || s.color,
         dashStyle: metric.dashStyle,
         showInNavigator: metricKeys.length === 1 || metricKey === 'water',
         marker: {
@@ -185,6 +186,7 @@ const temperatureMetrics = {
     field: 'airtemp_c',
     shortLabel: 'Air',
     axisLabel: 'Air Temperature',
+    color: '#56B4E9',
     dashStyle: 'ShortDash'
   }
 }
