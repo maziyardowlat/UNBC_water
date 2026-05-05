@@ -35,19 +35,26 @@ def parse_args():
     parser.add_argument(
         "input",
         type=Path,
-        help="Path to a WTQ*.hr whitespace-delimited file.",
+        help=(
+            "Path to a WTQ*.hr whitespace-delimited file, or a directory "
+            "containing *.hr files (one per station, named <station-code>.hr)."
+        ),
     )
     parser.add_argument(
         "--station-code",
-        required=True,
-        help="Station code to write into the normalized CSV, e.g. 02FW002.",
+        help=(
+            "Station code to write into the normalized CSV, e.g. 02FW002. "
+            "Required for single-file input; inferred from filenames when a "
+            "directory is given."
+        ),
     )
     parser.add_argument(
         "--output",
         type=Path,
         help=(
             "Output CSV path. Defaults to "
-            "airtemp_data/<station-code>_airtemp_hourly.csv."
+            "airtemp_data/<station-code>_airtemp_hourly.csv. "
+            "Ignored when input is a directory."
         ),
     )
     parser.add_argument(
@@ -182,14 +189,48 @@ def main():
     args = parse_args()
     input_path = args.input.expanduser().resolve()
     if not input_path.exists():
-        print(f"Input file not found: {input_path}", file=sys.stderr)
+        print(f"Input path not found: {input_path}", file=sys.stderr)
         return 1
 
-    output_path = args.output or default_output_path(args.station_code)
+    if input_path.is_dir():
+        hr_files = sorted(input_path.glob("*.hr"))
+        if not hr_files:
+            print(f"No *.hr files found in {input_path}", file=sys.stderr)
+            return 1
+        if args.output is not None:
+            print(
+                "--output is ignored when input is a directory; "
+                "outputs are written next to each *.hr file's station code.",
+                file=sys.stderr,
+            )
+
+        total_rows = 0
+        for hr_file in hr_files:
+            station_code = args.station_code or hr_file.stem
+            output_path = default_output_path(station_code)
+            rows_written = convert(
+                input_path=hr_file,
+                output_path=output_path,
+                station_code=station_code,
+                source_utc_offset_hours=args.source_utc_offset_hours,
+                air_column=args.air_column,
+                missing_value=args.missing_value,
+            )
+            total_rows += rows_written
+            print(f"Wrote {rows_written:,} hourly rows to {output_path}")
+
+        print(
+            f"Processed {len(hr_files)} file(s); {total_rows:,} hourly rows total."
+        )
+        print("Timestamps are UTC in YYYY-MM-DD HH:MM:SS format.")
+        return 0
+
+    station_code = args.station_code or input_path.stem
+    output_path = args.output or default_output_path(station_code)
     rows_written = convert(
         input_path=input_path,
         output_path=output_path,
-        station_code=args.station_code,
+        station_code=station_code,
         source_utc_offset_hours=args.source_utc_offset_hours,
         air_column=args.air_column,
         missing_value=args.missing_value,
