@@ -178,6 +178,14 @@ The `.hr` converter writes a normalized hourly file like `airtemp_data/02FW002_a
 
 By default, the converter assumes the source hour column is fixed Pacific Standard Time (UTC-8) and converts it to UTC. It also treats source column 6 as air temperature and source column 7 as dewpoint temperature. If a future file uses the opposite order, pass `--air-column 7`.
 
+To verify that a `.hr` file is aligned with the compiled UTC water-temperature CSV, add `--check-water-sync`:
+
+```bash
+python3 convert_hr_airtemp.py airtemp_data/01FW003.hr --station-code 01FW003 --check-water-sync
+```
+
+The water sync check compares the `.hr` water-temperature column at matching hourly UTC timestamps against `data/01_Data/<station-code>_compiled*.csv`. It uses source column 4 as the `.hr` water temperature by default because column 5 is discharge in the current `.hr` files. If a future file uses source column 5 for water temperature, pass `--water-column 5`.
+
 ### Cloud Deployment
 
 #### Elastic File System (EFS)
