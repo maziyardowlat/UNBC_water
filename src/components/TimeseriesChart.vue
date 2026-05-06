@@ -53,13 +53,15 @@ function update () {
 
   const nPrevious = chart.series.length
   const metricKeys = selectedTemperatureKeys.value
-  const series = props.series.flatMap(s => {
+  const series = props.series.flatMap((s, stationIndex) => {
     return metricKeys.map(metricKey => {
       const metric = temperatureMetrics[metricKey]
+      const airColor = stationIndex === 0 ? '#56B4E9' : s.color
+      const color = metricKey === 'air' ? airColor : (metric.color || s.color)
       return {
         ...s,
         name: metricKeys.length > 1 ? `${s.station_id} ${metric.shortLabel}` : s.station_id,
-        color: metric.color || s.color,
+        color,
         dashStyle: metric.dashStyle,
         showInNavigator: metricKeys.length === 1 || metricKey === 'water',
         marker: {
@@ -186,7 +188,6 @@ const temperatureMetrics = {
     field: 'airtemp_c',
     shortLabel: 'Air',
     axisLabel: 'Air Temperature',
-    color: '#56B4E9',
     dashStyle: 'ShortDash'
   }
 }
