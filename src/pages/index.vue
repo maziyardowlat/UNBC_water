@@ -289,8 +289,12 @@
                       <div class="text-caption">
                         {{ station.start }} to {{ station.end }} | {{ station.n.toLocaleString() }} daily values
                       </div>
-
-
+                      <div
+                        v-if="station.latitude != null && station.longitude != null"
+                        class="text-caption text-right"
+                      >
+                        <v-icon size="x-small" class="mr-1">mdi-map-marker</v-icon>Longitude: {{ Number(station.longitude).toFixed(5) }}, Latitude: {{ Number(station.latitude).toFixed(5) }}
+                      </div>
                     </div>
                   </v-alert>
                 </div>
