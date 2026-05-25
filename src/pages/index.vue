@@ -293,7 +293,7 @@
                         v-if="station.latitude != null && station.longitude != null"
                         class="text-caption text-right"
                       >
-                        <v-icon size="x-small" class="mr-1">mdi-map-marker</v-icon>Longitude: {{ Number(station.longitude).toFixed(5) }}, Latitude: {{ Number(station.latitude).toFixed(5) }}
+                        <v-icon size="x-small" class="mr-1">mdi-map-marker</v-icon>Longitude: {{ Math.abs(Number(station.longitude)).toFixed(5) }}&deg; W, Latitude: {{ Math.abs(Number(station.latitude)).toFixed(5) }}&deg; N
                       </div>
                     </div>
                   </v-alert>
