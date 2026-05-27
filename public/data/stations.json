@@ -70,9 +70,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW022",
     "filename": "01FW022_ChilakoRiverAboveNechakoRiver.json",
     "start": "2020-07-09",
-    "end": "2025-09-18",
-    "n": 1715,
-    "csv_filename": "01FW022_compiled_2025-10-02 (1).csv",
+    "end": "2026-05-07",
+    "n": 1946,
+    "csv_filename": "01FW022_compiled_2026-05-26.csv",
     "airtemp_csv_filename": "01FW022_airtemp_hourly.csv"
   },
   {
@@ -89,9 +89,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW018",
     "filename": "01FW018_ChilakoRiverBelowTatukLake.json",
     "start": "2020-08-13",
-    "end": "2025-06-26",
-    "n": 1127,
-    "csv_filename": "01FW018_compiled_2025-09-12.csv",
+    "end": "2026-05-20",
+    "n": 1455,
+    "csv_filename": "01FW018_compiled_2026-05-26.csv",
     "airtemp_csv_filename": "01FW018_airtemp_hourly.csv"
   },
   {
@@ -222,9 +222,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW024",
     "filename": "01FW024_McMillanCreekAboveNechakoRiver.json",
     "start": "2023-05-04",
-    "end": "2025-09-18",
-    "n": 869,
-    "csv_filename": "01FW024_compiled_2025-10-02 (1).csv",
+    "end": "2026-05-07",
+    "n": 1100,
+    "csv_filename": "01FW024_compiled_2026-05-26.csv",
     "airtemp_csv_filename": "01FW024_airtemp_hourly.csv"
   },
   {
@@ -336,9 +336,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW005",
     "filename": "01FW005_NechakoAtMiworth.json",
     "start": "2020-07-09",
-    "end": "2025-09-18",
-    "n": 1758,
-    "csv_filename": "01FW005_compiled_2025-10-02 (1).csv",
+    "end": "2026-05-07",
+    "n": 1989,
+    "csv_filename": "01FW005_compiled_2026-05-26.csv",
     "airtemp_csv_filename": "01FW005_airtemp_hourly.csv"
   },
   {
@@ -412,9 +412,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/02FW002",
     "filename": "02FW002_NessLake.json",
     "start": "2019-07-05",
-    "end": "2026-01-04",
-    "n": 2363,
-    "csv_filename": "02FW002_compiled_2026 (2).csv",
+    "end": "2026-05-06",
+    "n": 2485,
+    "csv_filename": "02FW002_compiled_2026-05-27.csv",
     "airtemp_csv_filename": "02FW002_airtemp_hourly.csv"
   },
   {
@@ -521,9 +521,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW007",
     "filename": "01FW007_OtterCreekBelowFingerLake.json",
     "start": "2020-06-03",
-    "end": "2025-07-11",
-    "n": 1865,
-    "csv_filename": "01FW007_compiled_2025-09-12.csv",
+    "end": "2026-05-12",
+    "n": 2170,
+    "csv_filename": "01FW007_compiled_2026-05-26.csv",
     "airtemp_csv_filename": "01FW007_airtemp_hourly.csv"
   },
   {
@@ -616,9 +616,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW015",
     "filename": "01FW015_StuartRiverAboveNechakoRiver.json",
     "start": "2020-07-08",
-    "end": "2025-10-30",
-    "n": 1941,
-    "csv_filename": "01FW015_compiled_2026.csv",
+    "end": "2026-05-13",
+    "n": 2136,
+    "csv_filename": "01FW015_compiled_2026-05-26.csv",
     "airtemp_csv_filename": "01FW015_airtemp_hourly.csv"
   },
   {
