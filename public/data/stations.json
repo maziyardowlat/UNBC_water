@@ -13,9 +13,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01NE006",
     "filename": "01NE006_ChedakuzCreekAboveNechakoReservoir.json",
     "start": "2020-08-13",
-    "end": "2025-08-11",
-    "n": 1397,
-    "csv_filename": "01NE006_compiled_2025-09-12 (1).csv",
+    "end": "2026-06-19",
+    "n": 1708,
+    "csv_filename": "01NE006_compiled_2026-08-15.csv",
     "airtemp_csv_filename": "01NE006_airtemp_hourly.csv"
   },
   {
@@ -51,9 +51,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW008",
     "filename": "01FW008_CheslattaRiverBelowMurrayLake.json",
     "start": "2022-06-15",
-    "end": "2025-05-27",
-    "n": 1078,
-    "csv_filename": "01FW008_compiled_2025-09-12.csv",
+    "end": "2026-06-18",
+    "n": 1465,
+    "csv_filename": "01FW008_compiled_2026-08-15.csv",
     "airtemp_csv_filename": "01FW008_airtemp_hourly.csv"
   },
   {
@@ -108,9 +108,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW002",
     "filename": "01FW002_EndakoRiverAboveStellakoRiver.json",
     "start": "2020-11-12",
-    "end": "2025-07-04",
-    "n": 1354,
-    "csv_filename": "01FW002_compiled_2025-09-12.csv",
+    "end": "2026-07-17",
+    "n": 1732,
+    "csv_filename": "01FW002_compiled_2026-08-15.csv",
     "airtemp_csv_filename": "01FW002_airtemp_hourly.csv"
   },
   {
@@ -127,9 +127,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW006",
     "filename": "01FW006_GlacierCreekAboveNadinaLake.json",
     "start": "2022-07-13",
-    "end": "2025-07-23",
-    "n": 1107,
-    "csv_filename": "01FW006_compiled_2025-09-12.csv",
+    "end": "2026-06-10",
+    "n": 1429,
+    "csv_filename": "01FW006_compiled_2026-08-15.csv",
     "airtemp_csv_filename": "01FW006_airtemp_hourly.csv"
   },
   {
@@ -146,9 +146,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01NE001",
     "filename": "01NE001_KasalkaCreekAboveTahtsaLake.json",
     "start": "2021-08-12",
-    "end": "2025-07-23",
-    "n": 1442,
-    "csv_filename": "01NE001_compiled_2025-09-12.csv",
+    "end": "2026-07-23",
+    "n": 1807,
+    "csv_filename": "01NE001_compiled_2026-08-15.csv",
     "airtemp_csv_filename": "01NE001_airtemp_hourly.csv"
   },
   {
@@ -184,9 +184,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW001",
     "filename": "01FW001_KuzkwaRiverBelowTezzeronLake.json",
     "start": "2020-07-16",
-    "end": "2025-06-10",
-    "n": 1742,
-    "csv_filename": "01FW001_compiled_2025-09-12.csv",
+    "end": "2026-07-10",
+    "n": 2137,
+    "csv_filename": "01FW001_compiled_2026-08-15.csv",
     "airtemp_csv_filename": "01FW001_airtemp_hourly.csv"
   },
   {
@@ -241,9 +241,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW019",
     "filename": "01FW019_MiddleRiverAboveTrembleurLake.json",
     "start": "2020-07-17",
-    "end": "2025-06-11",
-    "n": 1665,
-    "csv_filename": "01FW019_compiled_2025-09-12.csv",
+    "end": "2026-07-10",
+    "n": 2059,
+    "csv_filename": "01FW019_compiled_2026-08-15.csv",
     "airtemp_csv_filename": "01FW019_airtemp_hourly.csv"
   },
   {
@@ -260,9 +260,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW009",
     "filename": "01FW009_NadinaLake.json",
     "start": "2022-07-12",
-    "end": "2025-07-23",
-    "n": 1076,
-    "csv_filename": "01FW009_compiled_2025-09-12.csv",
+    "end": "2026-06-10",
+    "n": 1398,
+    "csv_filename": "01FW009_compiled_2026-08-15.csv",
     "airtemp_csv_filename": "01FW009_airtemp_hourly.csv"
   },
   {
@@ -298,9 +298,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW014",
     "filename": "01FW014_NadinaRiverAboveNadinaLake.json",
     "start": "2023-08-16",
-    "end": "2025-08-20",
-    "n": 736,
-    "csv_filename": "01FW014_compiled_2025-09-12.csv",
+    "end": "2026-07-21",
+    "n": 1071,
+    "csv_filename": "01FW014_compiled_2026-08-15.csv",
     "airtemp_csv_filename": "01FW014_airtemp_hourly.csv"
   },
   {
@@ -374,9 +374,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW013",
     "filename": "01FW013_NechakoRiverOffDellwoodRoad.json",
     "start": "2019-07-13",
-    "end": "2025-04-11",
-    "n": 1495,
-    "csv_filename": "01FW013_compiled_2025-09-12.csv",
+    "end": "2026-07-02",
+    "n": 1942,
+    "csv_filename": "01FW013_compiled_2026-08-15.csv",
     "airtemp_csv_filename": "01FW013_airtemp_hourly.csv"
   },
   {
@@ -393,9 +393,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW016",
     "filename": "01FW016_NecoslieRiverAboveStuartLake.json",
     "start": "2020-07-17",
-    "end": "2025-06-10",
-    "n": 1216,
-    "csv_filename": "01FW016_compiled_2025-09-12.csv",
+    "end": "2026-07-09",
+    "n": 1610,
+    "csv_filename": "01FW016_compiled_2026-08-15.csv",
     "airtemp_csv_filename": "01FW016_airtemp_hourly.csv"
   },
   {
@@ -412,9 +412,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/02FW002",
     "filename": "02FW002_NessLake.json",
     "start": "2019-07-05",
-    "end": "2026-05-06",
-    "n": 2485,
-    "csv_filename": "02FW002_compiled_2026-05-27.csv",
+    "end": "2026-06-23",
+    "n": 2533,
+    "csv_filename": "02FW002_compiled_2026-08-15.csv",
     "airtemp_csv_filename": "02FW002_airtemp_hourly.csv"
   },
   {
@@ -449,9 +449,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/02MF001",
     "filename": "02MF001_DockPoint.json",
     "start": "2023-10-04",
-    "end": "2025-08-07",
-    "n": 667,
-    "csv_filename": "02MF001_compiled_2026 (2).csv"
+    "end": "2026-06-23",
+    "n": 987,
+    "csv_filename": "02MF001_compiled_2026-08-15.csv"
   },
   {
     "station_id": "02MF002",
@@ -467,9 +467,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/02MF002",
     "filename": "02MF002_Goose Point.json",
     "start": "2023-10-12",
-    "end": "2025-08-07",
-    "n": 666,
-    "csv_filename": "02MF002_compiled_2026.csv"
+    "end": "2026-06-23",
+    "n": 986,
+    "csv_filename": "02MF002_compiled_2026-08-15.csv"
   },
   {
     "station_id": "02MF003",
@@ -485,9 +485,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/02MF003",
     "filename": "02MF003_Plato Point.json",
     "start": "2017-08-29",
-    "end": "2025-11-28",
-    "n": 2643,
-    "csv_filename": "02MF003_compiled_2026 (2).csv"
+    "end": "2026-06-23",
+    "n": 2850,
+    "csv_filename": "02MF003_compiled_2026-08-15.csv"
   },
   {
     "station_id": "02MF009",
@@ -503,9 +503,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/02MF009",
     "filename": "02MF009_QuesnelLakeWestArm.json",
     "start": "2024-06-05",
-    "end": "2025-08-28",
-    "n": 450,
-    "csv_filename": "02MF009_compiled_2026 (3).csv"
+    "end": "2026-06-23",
+    "n": 749,
+    "csv_filename": "02MF009_compiled_2026-08-15.csv"
   },
   {
     "station_id": "01FW007",
@@ -521,9 +521,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW007",
     "filename": "01FW007_OtterCreekBelowFingerLake.json",
     "start": "2020-06-03",
-    "end": "2026-05-12",
-    "n": 2170,
-    "csv_filename": "01FW007_compiled_2026-05-26.csv",
+    "end": "2026-08-05",
+    "n": 2255,
+    "csv_filename": "01FW007_compiled_2026-08-15.csv",
     "airtemp_csv_filename": "01FW007_airtemp_hourly.csv"
   },
   {
@@ -540,9 +540,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW021",
     "filename": "01FW021_PinchiCreekAboveStuartLake.json",
     "start": "2020-07-16",
-    "end": "2025-06-11",
-    "n": 1535,
-    "csv_filename": "01FW021_compiled_2025-09-12.csv",
+    "end": "2026-07-09",
+    "n": 1928,
+    "csv_filename": "01FW021_compiled_2026-08-15.csv",
     "airtemp_csv_filename": "01FW021_airtemp_hourly.csv"
   },
   {
@@ -559,9 +559,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01NE004",
     "filename": "01NE004_RhineCreekAboveSweeneyCreek.json",
     "start": "2020-08-24",
-    "end": "2025-10-10",
-    "n": 1810,
-    "csv_filename": "01NE004_compiled_2026.csv",
+    "end": "2026-06-10",
+    "n": 2053,
+    "csv_filename": "01NE004_compiled_2026-08-15.csv",
     "airtemp_csv_filename": "01NE004_airtemp_hourly.csv"
   },
   {
@@ -597,9 +597,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW004",
     "filename": "01FW004_StellakoRiverAboveFraserLake.json",
     "start": "2020-11-12",
-    "end": "2025-10-23",
-    "n": 1366,
-    "csv_filename": "01FW004_compiled_2026.csv",
+    "end": "2026-07-17",
+    "n": 1619,
+    "csv_filename": "01FW004_compiled_2026-08-15.csv",
     "airtemp_csv_filename": "01FW004_airtemp_hourly.csv"
   },
   {
@@ -635,9 +635,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW011",
     "filename": "01FW011_TachieRiverAboveStuartLake.json",
     "start": "2020-07-16",
-    "end": "2025-06-10",
-    "n": 1593,
-    "csv_filename": "01FW011_compiled_2025-09-12.csv",
+    "end": "2026-07-09",
+    "n": 1987,
+    "csv_filename": "01FW011_compiled_2026-08-15.csv",
     "airtemp_csv_filename": "01FW011_airtemp_hourly.csv"
   },
   {
@@ -654,9 +654,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW020",
     "filename": "01FW020_TsilcohRiverAbovePinchiLake.json",
     "start": "2020-07-17",
-    "end": "2025-06-10",
-    "n": 1262,
-    "csv_filename": "01FW020_compiled_2025-09-12 (1).csv",
+    "end": "2026-07-09",
+    "n": 1656,
+    "csv_filename": "01FW020_compiled_2026-08-15.csv",
     "airtemp_csv_filename": "01FW020_airtemp_hourly.csv"
   },
   {
@@ -673,9 +673,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01NE002",
     "filename": "01NE002_WhitesailMiddleCreekAboveTahtsaReach.json",
     "start": "2020-07-29",
-    "end": "2025-09-24",
-    "n": 1548,
-    "csv_filename": "01NE002_compiled_2025-10-02 (1).csv",
+    "end": "2026-07-23",
+    "n": 1850,
+    "csv_filename": "01NE002_compiled_2026-08-15.csv",
     "airtemp_csv_filename": "01NE002_airtemp_hourly.csv"
   },
   {
@@ -692,9 +692,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01NE003",
     "filename": "01NE003_WhitingCreek.json",
     "start": "2021-09-18",
-    "end": "2025-10-10",
-    "n": 1484,
-    "csv_filename": "01NE003_compiled_2026.csv",
+    "end": "2026-06-10",
+    "n": 1727,
+    "csv_filename": "01NE003_compiled_2026-08-15.csv",
     "airtemp_csv_filename": "01NE003_airtemp_hourly.csv"
   },
   {
@@ -711,9 +711,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW026",
     "filename": "01FW026_BlackWater.json",
     "start": "2025-05-15",
-    "end": "2025-09-18",
-    "n": 127,
-    "csv_filename": "01FW026_compiled_2025-10-02 (1).csv"
+    "end": "2026-06-16",
+    "n": 398,
+    "csv_filename": "01FW026_compiled_2026-08-15.csv"
   },
   {
     "station_id": "01MF001",
@@ -804,5 +804,41 @@
     "end": "2025-10-23",
     "n": 112,
     "csv_filename": "04FW001_compiled_2026.csv"
+  },
+  {
+    "station_id": "01FW027",
+    "provider_station_code": "UNBC:01FW027",
+    "station_code": "01FW027",
+    "station_description": "Ormond Creek",
+    "waterbody_name": "Ormond Creek",
+    "latitude": 54.095898,
+    "longitude": -124.747563,
+    "provider_code": "UNBC",
+    "provider_name": "University of Northern British Columbia",
+    "dataset": "UNBC",
+    "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW027",
+    "filename": "01FW027_OrmondCreek.json",
+    "start": "2025-07-03",
+    "end": "2026-07-17",
+    "n": 380,
+    "csv_filename": "01FW027_compiled_2026-08-15.csv"
+  },
+  {
+    "station_id": "01FW028",
+    "provider_station_code": "UNBC:01FW028",
+    "station_code": "01FW028",
+    "station_description": "Nithi River",
+    "waterbody_name": "Nithi River",
+    "latitude": 53.978522,
+    "longitude": -124.985239,
+    "provider_code": "UNBC",
+    "provider_name": "University of Northern British Columbia",
+    "dataset": "UNBC",
+    "url": "https://watertemp.unbc.ca/#/explorer/stations/01FW028",
+    "filename": "01FW028_NithiRiver.json",
+    "start": "2025-07-03",
+    "end": "2026-07-17",
+    "n": 380,
+    "csv_filename": "01FW028_compiled_2026-08-15.csv"
   }
 ]
