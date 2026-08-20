@@ -431,9 +431,9 @@
     "url": "https://watertemp.unbc.ca/#/explorer/stations/02FW006",
     "filename": "02FW006_NulkiLake.json",
     "start": "2024-05-28",
-    "end": "2025-07-11",
-    "n": 410,
-    "csv_filename": "02FW006_compiled_2025-11-20.csv"
+    "end": "2026-05-20",
+    "n": 723,
+    "csv_filename": "02FW006_compiled_2026-05-28.csv"
   },
   {
     "station_id": "02MF001",

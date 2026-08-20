@@ -5,6 +5,7 @@ Convert Nechako watershed CSV data to JSON format for the visualization tool
 
 import pandas as pd
 import json
+import math
 import os
 from datetime import datetime
 import glob
@@ -65,8 +66,11 @@ def process_csv_file(csv_file, station_code):
     # Convert timestamp to datetime
     df['timestamp'] = pd.to_datetime(df['timestamp'])
     
-    # Ensure wtmp is numeric, coercing errors to NaN
+    # Ensure wtmp is numeric, coercing invalid and non-finite values to NaN.
+    # Values such as +/-inf would otherwise poison the daily aggregates and
+    # json.dump would emit non-standard Infinity tokens.
     df['wtmp'] = pd.to_numeric(df['wtmp'], errors='coerce')
+    df.loc[~df['wtmp'].map(math.isfinite), 'wtmp'] = float('nan')
     
     # Extract date
     df['date'] = df['timestamp'].dt.date
@@ -101,11 +105,11 @@ def process_csv_file(csv_file, station_code):
     # Convert to dict and handle NaN values
     records = daily_stats.to_dict('records')
     
-    # Replace NaN values with None for valid JSON
-    import math
+    # Replace all non-finite floats with None for valid JSON. This also guards
+    # values introduced by merged air-temperature data or future processing.
     for record in records:
         for key, value in record.items():
-            if isinstance(value, float) and math.isnan(value):
+            if isinstance(value, float) and not math.isfinite(value):
                 record[key] = None
     
     return records
@@ -177,7 +181,7 @@ def update_stations_data(stations, data_dir):
             
             filename = station['filename']
             with open(os.path.join(data_output_dir, filename), 'w') as f:
-                json.dump(data, f, indent=2)
+                json.dump(data, f, indent=2, allow_nan=False)
                 
             updated_stations.append(station)
             print(f"Updated data file for {station_code}: {len(data)} daily records")
@@ -205,7 +209,7 @@ def main():
     
     # Save updated stations.json
     with open(f"{data_dir}/stations.json", 'w') as f:
-        json.dump(updated_stations, f, indent=2)
+        json.dump(updated_stations, f, indent=2, allow_nan=False)
     
     print(f"Updated stations.json with {len(updated_stations)} stations")
     

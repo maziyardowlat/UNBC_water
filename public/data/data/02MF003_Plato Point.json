@@ -27497,10 +27497,10 @@
   },
   {
     "date": "2026-01-16",
-    "temp_c": Infinity,
+    "temp_c": -7.88,
     "min_temp_c": -8.24,
-    "max_temp_c": Infinity,
-    "n_values": 96,
+    "max_temp_c": -7.36,
+    "n_values": 95,
     "airtemp_c": null
   },
   {
@@ -27633,10 +27633,10 @@
   },
   {
     "date": "2026-02-02",
-    "temp_c": Infinity,
+    "temp_c": -7.72,
     "min_temp_c": -8.18,
-    "max_temp_c": Infinity,
-    "n_values": 96,
+    "max_temp_c": -6.95,
+    "n_values": 95,
     "airtemp_c": null
   },
   {
@@ -27721,10 +27721,10 @@
   },
   {
     "date": "2026-02-13",
-    "temp_c": Infinity,
+    "temp_c": -7.66,
     "min_temp_c": -8.04,
-    "max_temp_c": Infinity,
-    "n_values": 96,
+    "max_temp_c": -7.24,
+    "n_values": 95,
     "airtemp_c": null
   },
   {
@@ -28017,10 +28017,10 @@
   },
   {
     "date": "2026-03-22",
-    "temp_c": Infinity,
+    "temp_c": -7.59,
     "min_temp_c": -8.41,
-    "max_temp_c": Infinity,
-    "n_values": 95,
+    "max_temp_c": -6.0,
+    "n_values": 94,
     "airtemp_c": null
   },
   {
