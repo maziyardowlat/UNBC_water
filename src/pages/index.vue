@@ -19,7 +19,7 @@
         </div>
         <div :class="{'text-h5': lgAndUp, 'text-h6': !lgAndUp, 'd-flex': true}">
           <div>WaterTemp<span class="text-caption">VIZ</span></div>
-          <div v-if="lgAndUp" class="ml-2">Stream Temperature Data Visualization Tool</div>
+          <div v-if="lgAndUp" class="ml-2">Water &amp; Weather Explorer</div>
         </div>
       </div>
     </v-toolbar-title>
@@ -183,6 +183,10 @@
 
           <div class="text-h6 mt-4">Dataset Updates</div>
           <p>The datasets from each source are updated as new data is collected from the field team.</p>
+          <div class="text-h6 mt-4">Weather Station Data</div>
+          <p>The Weather stations tab displays the supplied 02FW005 tidy CSV for logger CR350-1379,
+            covering July 2023 to May 2025. Values, source units and per-variable QC codes are preserved;
+            QA/QC has not been rerun. Download the original file from the weather tab.</p>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -191,7 +195,12 @@
       </v-card>
     </v-dialog>
 
-    <v-row>
+    <v-tabs v-model="stationView" color="primary" class="w-100 mb-4" aria-label="Station type">
+      <v-tab value="water" prepend-icon="mdi-water">Water stations</v-tab>
+      <v-tab value="weather" prepend-icon="mdi-weather-partly-cloudy">Weather stations</v-tab>
+    </v-tabs>
+    <WeatherStations v-if="stationView === 'weather'" />
+    <v-row v-else>
       <!-- Stations -->
       <v-col :cols="lgAndUp && isCollapsed ? '1' : '12'" :lg="lgAndUp && isCollapsed ? '1' : '5'" :xl="lgAndUp && isCollapsed ? '1' : '4'">
         <v-card :elevation="4" :loading="loadingStations">
@@ -885,6 +894,7 @@
 <script setup>
 import { ref, computed, onMounted, watch, nextTick } from 'vue'
 import { DateTime } from 'luxon'
+import { useRoute, useRouter } from 'vue-router'
 import { driver } from 'driver.js'
 import { useDisplay } from 'vuetify'
 import { groups } from 'd3-array'
@@ -894,16 +904,25 @@ import StationMap from '@/components/StationMap'
 import TimeseriesChart from '@/components/TimeseriesChart'
 import SeasonalChart from '@/components/SeasonalChart'
 import ScatterChart from '@/components/ScatterChart'
+import WeatherStations from '@/components/WeatherStations.vue'
 import { downloadCSV } from '@/lib/download'
 import { monthOptions } from '@/lib/constants'
 const { width, lgAndUp } = useDisplay()
+const route = useRoute()
+const router = useRouter()
+const stationView = ref(route.query.view === 'weather' ? 'weather' : 'water')
+watch(stationView, view => {
+  if (view === 'weather') showWelcome.value = false
+  router.replace({ query: { ...route.query, view } })
+})
+watch(() => route.query.view, view => { stationView.value = view === 'weather' ? 'weather' : 'water' })
 
 // REFS
 const loadingStations = ref(false)
 const loadingData = ref(false)
 const isCollapsed = ref(false)
 
-const showWelcome = ref(true)
+const showWelcome = ref(stationView.value === 'water')
 const showDatasets = ref(false)
 const showTimeseriesHelp = ref(false)
 const showSeasonalHelp = ref(false)
