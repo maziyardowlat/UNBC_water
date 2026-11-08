@@ -1,0 +1,2815 @@
+[
+  {
+    "id": "02FW003",
+    "name": "Nadina Spawning Channel",
+    "latitude": 53.902461,
+    "longitude": -126.966122,
+    "coordinateSource": "02FW003_FieldReport_20250820.pdf",
+    "sourceFolder": "02FW003_NadinaSpawningChannel",
+    "files": [
+      {
+        "name": "02FW003_tidy_CR350_6269_20250820.csv",
+        "url": "/data/weather/02FW003_tidy_CR350_6269_20250820.csv",
+        "sha256": "de218f9d6b985223f0fedb132ae93be7d48662edd4dabe536b0c92e62ce43e24"
+      }
+    ],
+    "months": [
+      {
+        "month": "2024-06",
+        "url": "/data/weather/02FW003/2024-06.csv.gz",
+        "records": 336
+      },
+      {
+        "month": "2024-07",
+        "url": "/data/weather/02FW003/2024-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2024-08",
+        "url": "/data/weather/02FW003/2024-08.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2024-09",
+        "url": "/data/weather/02FW003/2024-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2024-10",
+        "url": "/data/weather/02FW003/2024-10.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2024-11",
+        "url": "/data/weather/02FW003/2024-11.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2024-12",
+        "url": "/data/weather/02FW003/2024-12.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2025-01",
+        "url": "/data/weather/02FW003/2025-01.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2025-02",
+        "url": "/data/weather/02FW003/2025-02.csv.gz",
+        "records": 2688
+      },
+      {
+        "month": "2025-03",
+        "url": "/data/weather/02FW003/2025-03.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2025-04",
+        "url": "/data/weather/02FW003/2025-04.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2025-05",
+        "url": "/data/weather/02FW003/2025-05.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2025-06",
+        "url": "/data/weather/02FW003/2025-06.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2025-07",
+        "url": "/data/weather/02FW003/2025-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2025-08",
+        "url": "/data/weather/02FW003/2025-08.csv.gz",
+        "records": 1887
+      }
+    ],
+    "records": 40239,
+    "offsets": [
+      "-07:00"
+    ],
+    "metadataUrl": "/data/weather/02FW003/MetadataLog.xlsx",
+    "status": "available",
+    "units": {
+      "TIMESTAMP": "TS",
+      "UTC Offset": "UTC",
+      "RECORD": "RN",
+      "RECORD_Flag": "nan",
+      "BattV_Avg": "Volts",
+      "BattV_Avg_Flag": "nan",
+      "PTemp_C_Avg": "Deg C",
+      "PTemp_C_Avg_Flag": "nan",
+      "SR50AT_TCDT_Avg": "cm",
+      "SR50AT_TCDT_Avg_Flag": "nan",
+      "SR50AT_Q_Avg": "unitless",
+      "SR50AT_Q_Avg_Flag": "nan",
+      "SR50AT_SRTmp_C_Avg": "Deg C",
+      "SR50AT_SRTmp_C_Avg_Flag": "nan",
+      "SR50AT_DBTCDT_Avg": "cm",
+      "SR50AT_DBTCDT_Avg_Flag": "nan",
+      "SlrFD_W_Avg": "W/m^2",
+      "SlrFD_W_Avg_Flag": "nan",
+      "Rain_mm_Tot": "mm",
+      "Rain_mm_Tot_Flag": "nan",
+      "Strikes_Tot": "count",
+      "Strikes_Tot_Flag": "nan",
+      "Dist_km_Avg": "kilometers",
+      "Dist_km_Avg_Flag": "nan",
+      "WS_ms_Avg": "meters/second",
+      "WS_ms_Avg_Flag": "nan",
+      "WindDir": "degrees",
+      "WindDir_Flag": "nan",
+      "WindDir_SD1_WVT": "nan",
+      "WindDir_SD1_WVT_Flag": "nan",
+      "MaxWS_ms_Avg": "meters/second",
+      "MaxWS_ms_Avg_Flag": "nan",
+      "MaxWS_ms_TMx": "Timestamp",
+      "AirT_C_Avg": "Deg C",
+      "AirT_C_Avg_Flag": "nan",
+      "VP_hPa_Avg": "hPa",
+      "VP_hPa_Avg_Flag": "nan",
+      "BP_hPa_Avg": "hPa",
+      "BP_hPa_Avg_Flag": "nan",
+      "RH": "%",
+      "RH_Flag": "nan",
+      "RHT_C_Avg": "Deg C",
+      "RHT_C_Avg_Flag": "nan",
+      "TiltNS_deg_Avg": "degrees",
+      "TiltNS_deg_Avg_Flag": "nan",
+      "TiltWE_deg_Avg": "degrees",
+      "TiltWE_deg_Avg_Flag": "nan",
+      "SlrTF_MJ_Tot": "MJ/m^2",
+      "SlrTF_MJ_Tot_Flag": "nan",
+      "T109_AirT_C_Avg": "Deg C",
+      "T109_AirT_C_Avg_Flag": "nan",
+      "Gtmp_Avg": "Deg C",
+      "Gtmp_Avg_Flag": "nan",
+      "SWin_Avg": "W/m^2",
+      "SWin_Avg_Flag": "nan",
+      "SWout_Avg": "W/m^2",
+      "SWout_Avg_Flag": "nan",
+      "LWin_Avg": "W/m^2",
+      "LWin_Avg_Flag": "nan",
+      "LWout_Avg": "W/m^2",
+      "LWout_Avg_Flag": "nan",
+      "SWnet_Avg": "W/m^2",
+      "SWnet_Avg_Flag": "nan",
+      "LWnet_Avg": "W/m^2",
+      "LWnet_Avg_Flag": "nan",
+      "SWalbedo_Avg": "W/m^2",
+      "SWalbedo_Avg_Flag": "nan",
+      "NR_Avg": "W/m^2",
+      "NR_Avg_Flag": "nan",
+      "Data_ID": "nan",
+      "Station_ID": "nan",
+      "Logger_ID": "nan",
+      "Logger_Script": "nan",
+      "Logger_Software": "nan"
+    },
+    "fields": [
+      "TIMESTAMP",
+      "UTC Offset",
+      "RECORD",
+      "RECORD_Flag",
+      "BattV_Avg",
+      "BattV_Avg_Flag",
+      "PTemp_C_Avg",
+      "PTemp_C_Avg_Flag",
+      "SR50AT_TCDT_Avg",
+      "SR50AT_TCDT_Avg_Flag",
+      "SR50AT_Q_Avg",
+      "SR50AT_Q_Avg_Flag",
+      "SR50AT_SRTmp_C_Avg",
+      "SR50AT_SRTmp_C_Avg_Flag",
+      "SR50AT_DBTCDT_Avg",
+      "SR50AT_DBTCDT_Avg_Flag",
+      "SlrFD_W_Avg",
+      "SlrFD_W_Avg_Flag",
+      "Rain_mm_Tot",
+      "Rain_mm_Tot_Flag",
+      "Strikes_Tot",
+      "Strikes_Tot_Flag",
+      "Dist_km_Avg",
+      "Dist_km_Avg_Flag",
+      "WS_ms_Avg",
+      "WS_ms_Avg_Flag",
+      "WindDir",
+      "WindDir_Flag",
+      "WindDir_SD1_WVT",
+      "WindDir_SD1_WVT_Flag",
+      "MaxWS_ms_Avg",
+      "MaxWS_ms_Avg_Flag",
+      "MaxWS_ms_TMx",
+      "AirT_C_Avg",
+      "AirT_C_Avg_Flag",
+      "VP_hPa_Avg",
+      "VP_hPa_Avg_Flag",
+      "BP_hPa_Avg",
+      "BP_hPa_Avg_Flag",
+      "RH",
+      "RH_Flag",
+      "RHT_C_Avg",
+      "RHT_C_Avg_Flag",
+      "TiltNS_deg_Avg",
+      "TiltNS_deg_Avg_Flag",
+      "TiltWE_deg_Avg",
+      "TiltWE_deg_Avg_Flag",
+      "SlrTF_MJ_Tot",
+      "SlrTF_MJ_Tot_Flag",
+      "T109_AirT_C_Avg",
+      "T109_AirT_C_Avg_Flag",
+      "Gtmp_Avg",
+      "Gtmp_Avg_Flag",
+      "SWin_Avg",
+      "SWin_Avg_Flag",
+      "SWout_Avg",
+      "SWout_Avg_Flag",
+      "LWin_Avg",
+      "LWin_Avg_Flag",
+      "LWout_Avg",
+      "LWout_Avg_Flag",
+      "SWnet_Avg",
+      "SWnet_Avg_Flag",
+      "LWnet_Avg",
+      "LWnet_Avg_Flag",
+      "SWalbedo_Avg",
+      "SWalbedo_Avg_Flag",
+      "NR_Avg",
+      "NR_Avg_Flag",
+      "Data_ID",
+      "Station_ID",
+      "Logger_ID",
+      "Logger_Script",
+      "Logger_Software"
+    ],
+    "start": "2024-06-27",
+    "end": "2025-08-20"
+  },
+  {
+    "id": "02FW005",
+    "name": "Cheslatta Lake",
+    "latitude": 53.721712,
+    "longitude": -125.641697,
+    "coordinateSource": "02FW005_FieldReport_20250521.pdf",
+    "sourceFolder": "02FW005_CheslattaLake",
+    "files": [
+      {
+        "name": "02FW005_tidy_CR350_1379_20250521.csv",
+        "url": "/data/weather/02FW005_tidy_CR350_1379_20250521.csv",
+        "sha256": "d9386f234c38a99e2713a856024f373732432c53f5cc898baabb1138a6868874"
+      }
+    ],
+    "months": [
+      {
+        "month": "2023-07",
+        "url": "/data/weather/02FW005/2023-07.csv.gz",
+        "records": 2632
+      },
+      {
+        "month": "2023-08",
+        "url": "/data/weather/02FW005/2023-08.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2023-09",
+        "url": "/data/weather/02FW005/2023-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2023-10",
+        "url": "/data/weather/02FW005/2023-10.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2023-11",
+        "url": "/data/weather/02FW005/2023-11.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2023-12",
+        "url": "/data/weather/02FW005/2023-12.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2024-01",
+        "url": "/data/weather/02FW005/2024-01.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2024-02",
+        "url": "/data/weather/02FW005/2024-02.csv.gz",
+        "records": 2784
+      },
+      {
+        "month": "2024-03",
+        "url": "/data/weather/02FW005/2024-03.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2024-04",
+        "url": "/data/weather/02FW005/2024-04.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2024-05",
+        "url": "/data/weather/02FW005/2024-05.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2024-06",
+        "url": "/data/weather/02FW005/2024-06.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2024-07",
+        "url": "/data/weather/02FW005/2024-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2024-08",
+        "url": "/data/weather/02FW005/2024-08.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2024-09",
+        "url": "/data/weather/02FW005/2024-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2024-10",
+        "url": "/data/weather/02FW005/2024-10.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2024-11",
+        "url": "/data/weather/02FW005/2024-11.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2024-12",
+        "url": "/data/weather/02FW005/2024-12.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2025-01",
+        "url": "/data/weather/02FW005/2025-01.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2025-02",
+        "url": "/data/weather/02FW005/2025-02.csv.gz",
+        "records": 2688
+      },
+      {
+        "month": "2025-03",
+        "url": "/data/weather/02FW005/2025-03.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2025-04",
+        "url": "/data/weather/02FW005/2025-04.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2025-05",
+        "url": "/data/weather/02FW005/2025-05.csv.gz",
+        "records": 1481
+      }
+    ],
+    "records": 65457,
+    "offsets": [
+      "-07:00"
+    ],
+    "metadataUrl": "/data/weather/02FW005/MetadataLog.xlsx",
+    "status": "available",
+    "units": {
+      "TIMESTAMP": "TS",
+      "UTC Offset": "UTC",
+      "RECORD": "RN",
+      "RECORD_Flag": "nan",
+      "BattV_Avg": "Volts",
+      "BattV_Avg_Flag": "nan",
+      "PTemp_C_Avg": "Deg C",
+      "PTemp_C_Avg_Flag": "nan",
+      "SlrFD_W_Avg": "W/m^2",
+      "SlrFD_W_Avg_Flag": "nan",
+      "Rain_mm_Tot": "mm",
+      "Rain_mm_Tot_Flag": "nan",
+      "Strikes_Tot": "count",
+      "Strikes_Tot_Flag": "nan",
+      "Dist_km_Avg": "kilometers",
+      "Dist_km_Avg_Flag": "nan",
+      "WS_ms_Avg": "meters/second",
+      "WS_ms_Avg_Flag": "nan",
+      "WindDir": "degrees",
+      "WindDir_Flag": "nan",
+      "MaxWS_ms_Avg": "meters/second",
+      "MaxWS_ms_Avg_Flag": "nan",
+      "AirT_C_Avg": "Deg C",
+      "AirT_C_Avg_Flag": "nan",
+      "VP_hPa_Avg": "hPa",
+      "VP_hPa_Avg_Flag": "nan",
+      "BP_hPa_Avg": "hPa",
+      "BP_hPa_Avg_Flag": "nan",
+      "RH": "%",
+      "RH_Flag": "nan",
+      "RHT_C_Avg": "Deg C",
+      "RHT_C_Avg_Flag": "nan",
+      "TiltNS_deg_Avg": "degrees",
+      "TiltNS_deg_Avg_Flag": "nan",
+      "TiltWE_deg_Avg": "degrees",
+      "TiltWE_deg_Avg_Flag": "nan",
+      "SlrTF_MJ_Tot": "MJ/m^2",
+      "SlrTF_MJ_Tot_Flag": "nan",
+      "DT_Avg": "nan",
+      "DT_Avg_Flag": "nan",
+      "TCDT_Avg": "nan",
+      "TCDT_Avg_Flag": "nan",
+      "DBTCDT_Avg": "nan",
+      "DBTCDT_Avg_Flag": "nan",
+      "SWin_Avg": "W/m^2",
+      "SWin_Avg_Flag": "nan",
+      "SWout_Avg": "W/m^2",
+      "SWout_Avg_Flag": "nan",
+      "LWin_Avg": "W/m^2",
+      "LWin_Avg_Flag": "nan",
+      "LWout_Avg": "W/m^2",
+      "LWout_Avg_Flag": "nan",
+      "SWnet_Avg": "W/m^2",
+      "SWnet_Avg_Flag": "nan",
+      "LWnet_Avg": "W/m^2",
+      "LWnet_Avg_Flag": "nan",
+      "SWalbedo_Avg": "W/m^2",
+      "SWalbedo_Avg_Flag": "nan",
+      "NR_Avg": "W/m^2",
+      "NR_Avg_Flag": "nan",
+      "Stmp_Avg": "Deg C",
+      "Stmp_Avg_Flag": "nan",
+      "Gtmp_Avg": "Deg C",
+      "Gtmp_Avg_Flag": "nan",
+      "Data_ID": "nan",
+      "Station_ID": "nan",
+      "Logger_ID": "nan",
+      "Logger_Script": "nan",
+      "Logger_Software": "nan"
+    },
+    "fields": [
+      "TIMESTAMP",
+      "UTC Offset",
+      "RECORD",
+      "RECORD_Flag",
+      "BattV_Avg",
+      "BattV_Avg_Flag",
+      "PTemp_C_Avg",
+      "PTemp_C_Avg_Flag",
+      "SlrFD_W_Avg",
+      "SlrFD_W_Avg_Flag",
+      "Rain_mm_Tot",
+      "Rain_mm_Tot_Flag",
+      "Strikes_Tot",
+      "Strikes_Tot_Flag",
+      "Dist_km_Avg",
+      "Dist_km_Avg_Flag",
+      "WS_ms_Avg",
+      "WS_ms_Avg_Flag",
+      "WindDir",
+      "WindDir_Flag",
+      "MaxWS_ms_Avg",
+      "MaxWS_ms_Avg_Flag",
+      "AirT_C_Avg",
+      "AirT_C_Avg_Flag",
+      "VP_hPa_Avg",
+      "VP_hPa_Avg_Flag",
+      "BP_hPa_Avg",
+      "BP_hPa_Avg_Flag",
+      "RH",
+      "RH_Flag",
+      "RHT_C_Avg",
+      "RHT_C_Avg_Flag",
+      "TiltNS_deg_Avg",
+      "TiltNS_deg_Avg_Flag",
+      "TiltWE_deg_Avg",
+      "TiltWE_deg_Avg_Flag",
+      "SlrTF_MJ_Tot",
+      "SlrTF_MJ_Tot_Flag",
+      "DT_Avg",
+      "DT_Avg_Flag",
+      "TCDT_Avg",
+      "TCDT_Avg_Flag",
+      "DBTCDT_Avg",
+      "DBTCDT_Avg_Flag",
+      "SWin_Avg",
+      "SWin_Avg_Flag",
+      "SWout_Avg",
+      "SWout_Avg_Flag",
+      "LWin_Avg",
+      "LWin_Avg_Flag",
+      "LWout_Avg",
+      "LWout_Avg_Flag",
+      "SWnet_Avg",
+      "SWnet_Avg_Flag",
+      "LWnet_Avg",
+      "LWnet_Avg_Flag",
+      "SWalbedo_Avg",
+      "SWalbedo_Avg_Flag",
+      "NR_Avg",
+      "NR_Avg_Flag",
+      "Stmp_Avg",
+      "Stmp_Avg_Flag",
+      "Gtmp_Avg",
+      "Gtmp_Avg_Flag",
+      "Data_ID",
+      "Station_ID",
+      "Logger_ID",
+      "Logger_Script",
+      "Logger_Software"
+    ],
+    "start": "2023-07-04",
+    "end": "2025-05-16"
+  },
+  {
+    "id": "02FW006",
+    "name": "Nulki Lake",
+    "latitude": 53.913409,
+    "longitude": -124.151613,
+    "coordinateSource": "02FW006_FieldReport_20250711.pdf",
+    "sourceFolder": "02FW006_NulkiLake",
+    "files": [
+      {
+        "name": "02FW006_tidy_CR350_4621_20250711.csv",
+        "url": "/data/weather/02FW006_tidy_CR350_4621_20250711.csv",
+        "sha256": "5525a158c977b0d5f27f1045a14fdc6f65851fc4bb3f7b019f584f33addaabec"
+      }
+    ],
+    "months": [
+      {
+        "month": "2024-05",
+        "url": "/data/weather/02FW006/2024-05.csv.gz",
+        "records": 325
+      },
+      {
+        "month": "2024-06",
+        "url": "/data/weather/02FW006/2024-06.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2024-07",
+        "url": "/data/weather/02FW006/2024-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2024-08",
+        "url": "/data/weather/02FW006/2024-08.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2024-09",
+        "url": "/data/weather/02FW006/2024-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2024-10",
+        "url": "/data/weather/02FW006/2024-10.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2024-11",
+        "url": "/data/weather/02FW006/2024-11.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2024-12",
+        "url": "/data/weather/02FW006/2024-12.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2025-01",
+        "url": "/data/weather/02FW006/2025-01.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2025-02",
+        "url": "/data/weather/02FW006/2025-02.csv.gz",
+        "records": 2688
+      },
+      {
+        "month": "2025-03",
+        "url": "/data/weather/02FW006/2025-03.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2025-04",
+        "url": "/data/weather/02FW006/2025-04.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2025-05",
+        "url": "/data/weather/02FW006/2025-05.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2025-06",
+        "url": "/data/weather/02FW006/2025-06.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2025-07",
+        "url": "/data/weather/02FW006/2025-07.csv.gz",
+        "records": 1006
+      }
+    ],
+    "records": 39251,
+    "offsets": [
+      "-07:00"
+    ],
+    "metadataUrl": "/data/weather/02FW006/MetadataLog.xlsx",
+    "status": "available",
+    "units": {
+      "TIMESTAMP": "TS",
+      "UTC Offset": "UTC",
+      "RECORD": "RN",
+      "RECORD_Flag": "nan",
+      "BattV_Avg": "Volts",
+      "BattV_Avg_Flag": "nan",
+      "PTemp_C_Avg": "Deg C",
+      "PTemp_C_Avg_Flag": "nan",
+      "SlrFD_W_Avg": "W/m^2",
+      "SlrFD_W_Avg_Flag": "nan",
+      "Rain_mm_Tot": "mm",
+      "Rain_mm_Tot_Flag": "nan",
+      "Strikes_Tot": "count",
+      "Strikes_Tot_Flag": "nan",
+      "Dist_km_Avg": "kilometers",
+      "Dist_km_Avg_Flag": "nan",
+      "WS_ms_Avg": "meters/second",
+      "WS_ms_Avg_Flag": "nan",
+      "WindDir": "degrees",
+      "WindDir_Flag": "nan",
+      "WindDir_SD1_WVT": "nan",
+      "WindDir_SD1_WVT_Flag": "nan",
+      "MaxWS_ms_Avg": "meters/second",
+      "MaxWS_ms_Avg_Flag": "nan",
+      "MaxWS_ms_TMx": "Timestamp",
+      "AirT_C_Avg": "Deg C",
+      "AirT_C_Avg_Flag": "nan",
+      "VP_hPa_Avg": "hPa",
+      "VP_hPa_Avg_Flag": "nan",
+      "BP_hPa_Avg": "hPa",
+      "BP_hPa_Avg_Flag": "nan",
+      "RH": "%",
+      "RH_Flag": "nan",
+      "RHT_C_Avg": "Deg C",
+      "RHT_C_Avg_Flag": "nan",
+      "TiltNS_deg_Avg": "degrees",
+      "TiltNS_deg_Avg_Flag": "nan",
+      "TiltWE_deg_Avg": "degrees",
+      "TiltWE_deg_Avg_Flag": "nan",
+      "SlrTF_MJ_Tot": "MJ/m^2",
+      "SlrTF_MJ_Tot_Flag": "nan",
+      "SV_DT_Avg": "cm",
+      "SV_DT_Avg_Flag": "nan",
+      "SV_Q_Avg": "nan",
+      "SV_Q_Avg_Flag": "nan",
+      "SV_TCDT_Avg": "cm",
+      "SV_TCDT_Avg_Flag": "nan",
+      "SV_DBTCDT_Avg": "cm",
+      "SV_DBTCDT_Avg_Flag": "nan",
+      "SV_Tmp_Avg": "Deg C",
+      "SV_Tmp_Avg_Flag": "nan",
+      "SV_RH": "%",
+      "SV_RH_Flag": "nan",
+      "SV_Pitch": "degrees",
+      "SV_Pitch_Flag": "nan",
+      "SV_Roll": "degrees",
+      "SV_Roll_Flag": "nan",
+      "SV_Volt": "Volts",
+      "SV_Volt_Flag": "nan",
+      "SV_Freq": "kHz",
+      "SV_Freq_Flag": "nan",
+      "SV_Alert": "nan",
+      "SV_Alert_Flag": "nan",
+      "Gtmp_0cm_Avg": "Deg C",
+      "Gtmp_0cm_Avg_Flag": "nan",
+      "Gtmp_5cm_Avg": "Deg C",
+      "Gtmp_5cm_Avg_Flag": "nan",
+      "Gtmp_10cm_Avg": "Deg C",
+      "Gtmp_10cm_Avg_Flag": "nan",
+      "Gtmp_15cm_Avg": "Deg C",
+      "Gtmp_15cm_Avg_Flag": "nan",
+      "Gtmp_20cm_Avg": "Deg C",
+      "Gtmp_20cm_Avg_Flag": "nan",
+      "T109_AirT_C_Avg": "Deg C",
+      "T109_AirT_C_Avg_Flag": "nan",
+      "SWin_Avg": "W/m^2",
+      "SWin_Avg_Flag": "nan",
+      "SWout_Avg": "W/m^2",
+      "SWout_Avg_Flag": "nan",
+      "LWin_Avg": "W/m^2",
+      "LWin_Avg_Flag": "nan",
+      "LWout_Avg": "W/m^2",
+      "LWout_Avg_Flag": "nan",
+      "SWnet_Avg": "W/m^2",
+      "SWnet_Avg_Flag": "nan",
+      "LWnet_Avg": "W/m^2",
+      "LWnet_Avg_Flag": "nan",
+      "SWalbedo_Avg": "W/m^2",
+      "SWalbedo_Avg_Flag": "nan",
+      "NR_Avg": "W/m^2",
+      "NR_Avg_Flag": "nan",
+      "Data_ID": "nan",
+      "Station_ID": "nan",
+      "Logger_ID": "nan",
+      "Logger_Script": "nan",
+      "Logger_Software": "nan"
+    },
+    "fields": [
+      "TIMESTAMP",
+      "UTC Offset",
+      "RECORD",
+      "RECORD_Flag",
+      "BattV_Avg",
+      "BattV_Avg_Flag",
+      "PTemp_C_Avg",
+      "PTemp_C_Avg_Flag",
+      "SlrFD_W_Avg",
+      "SlrFD_W_Avg_Flag",
+      "Rain_mm_Tot",
+      "Rain_mm_Tot_Flag",
+      "Strikes_Tot",
+      "Strikes_Tot_Flag",
+      "Dist_km_Avg",
+      "Dist_km_Avg_Flag",
+      "WS_ms_Avg",
+      "WS_ms_Avg_Flag",
+      "WindDir",
+      "WindDir_Flag",
+      "WindDir_SD1_WVT",
+      "WindDir_SD1_WVT_Flag",
+      "MaxWS_ms_Avg",
+      "MaxWS_ms_Avg_Flag",
+      "MaxWS_ms_TMx",
+      "AirT_C_Avg",
+      "AirT_C_Avg_Flag",
+      "VP_hPa_Avg",
+      "VP_hPa_Avg_Flag",
+      "BP_hPa_Avg",
+      "BP_hPa_Avg_Flag",
+      "RH",
+      "RH_Flag",
+      "RHT_C_Avg",
+      "RHT_C_Avg_Flag",
+      "TiltNS_deg_Avg",
+      "TiltNS_deg_Avg_Flag",
+      "TiltWE_deg_Avg",
+      "TiltWE_deg_Avg_Flag",
+      "SlrTF_MJ_Tot",
+      "SlrTF_MJ_Tot_Flag",
+      "SV_DT_Avg",
+      "SV_DT_Avg_Flag",
+      "SV_Q_Avg",
+      "SV_Q_Avg_Flag",
+      "SV_TCDT_Avg",
+      "SV_TCDT_Avg_Flag",
+      "SV_DBTCDT_Avg",
+      "SV_DBTCDT_Avg_Flag",
+      "SV_Tmp_Avg",
+      "SV_Tmp_Avg_Flag",
+      "SV_RH",
+      "SV_RH_Flag",
+      "SV_Pitch",
+      "SV_Pitch_Flag",
+      "SV_Roll",
+      "SV_Roll_Flag",
+      "SV_Volt",
+      "SV_Volt_Flag",
+      "SV_Freq",
+      "SV_Freq_Flag",
+      "SV_Alert",
+      "SV_Alert_Flag",
+      "Gtmp_0cm_Avg",
+      "Gtmp_0cm_Avg_Flag",
+      "Gtmp_5cm_Avg",
+      "Gtmp_5cm_Avg_Flag",
+      "Gtmp_10cm_Avg",
+      "Gtmp_10cm_Avg_Flag",
+      "Gtmp_15cm_Avg",
+      "Gtmp_15cm_Avg_Flag",
+      "Gtmp_20cm_Avg",
+      "Gtmp_20cm_Avg_Flag",
+      "T109_AirT_C_Avg",
+      "T109_AirT_C_Avg_Flag",
+      "SWin_Avg",
+      "SWin_Avg_Flag",
+      "SWout_Avg",
+      "SWout_Avg_Flag",
+      "LWin_Avg",
+      "LWin_Avg_Flag",
+      "LWout_Avg",
+      "LWout_Avg_Flag",
+      "SWnet_Avg",
+      "SWnet_Avg_Flag",
+      "LWnet_Avg",
+      "LWnet_Avg_Flag",
+      "SWalbedo_Avg",
+      "SWalbedo_Avg_Flag",
+      "NR_Avg",
+      "NR_Avg_Flag",
+      "Data_ID",
+      "Station_ID",
+      "Logger_ID",
+      "Logger_Script",
+      "Logger_Software"
+    ],
+    "start": "2024-05-28",
+    "end": "2025-07-11"
+  },
+  {
+    "id": "02FW007",
+    "name": "François Lake",
+    "latitude": 54.05147,
+    "longitude": -125.757264,
+    "coordinateSource": "02FW007_FieldReport_20250521.pdf",
+    "sourceFolder": "02FW007_FrancoisLake",
+    "files": [],
+    "months": [],
+    "records": 0,
+    "offsets": [],
+    "metadataUrl": "/data/weather/02FW007/MetadataLog.xlsx",
+    "status": "pending"
+  },
+  {
+    "id": "02FW008",
+    "name": "Isle Pierre",
+    "latitude": 53.957133,
+    "longitude": -123.258189,
+    "coordinateSource": "02FW008_FieldReport_20251022.pdf",
+    "sourceFolder": "02FW008_IslePierre",
+    "files": [
+      {
+        "name": "02FW008_tidy_CR350_8056_20251022.csv",
+        "url": "/data/weather/02FW008_tidy_CR350_8056_20251022.csv",
+        "sha256": "85bd020fecd1f229a04a427917d405b1995cf46cf3b4a1add29f7d71fdcb6232"
+      }
+    ],
+    "months": [
+      {
+        "month": "2025-06",
+        "url": "/data/weather/02FW008/2025-06.csv.gz",
+        "records": 1180
+      },
+      {
+        "month": "2025-07",
+        "url": "/data/weather/02FW008/2025-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2025-08",
+        "url": "/data/weather/02FW008/2025-08.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2025-09",
+        "url": "/data/weather/02FW008/2025-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2025-10",
+        "url": "/data/weather/02FW008/2025-10.csv.gz",
+        "records": 2067
+      }
+    ],
+    "records": 12079,
+    "offsets": [
+      "-07:00"
+    ],
+    "metadataUrl": "/data/weather/02FW008/MetadataLog.xlsx",
+    "status": "available",
+    "units": {
+      "TIMESTAMP": "TS",
+      "UTC Offset": "UTC",
+      "RECORD": "RN",
+      "RECORD_Flag": "nan",
+      "BattV_Avg": "Volts",
+      "BattV_Avg_Flag": "nan",
+      "PTemp_C_Avg": "Deg C",
+      "PTemp_C_Avg_Flag": "nan",
+      "SlrFD_W_Avg": "W/m^2",
+      "SlrFD_W_Avg_Flag": "nan",
+      "Rain_mm_Tot": "mm",
+      "Rain_mm_Tot_Flag": "nan",
+      "Strikes_Tot": "count",
+      "Strikes_Tot_Flag": "nan",
+      "Dist_km_Max": "kilometers",
+      "Dist_km_Max_Flag": "nan",
+      "Dist_km_TMx": "Timestamp",
+      "WS_ms_Avg": "meters/second",
+      "WS_ms_Avg_Flag": "nan",
+      "WindDir": "degrees",
+      "WindDir_Flag": "nan",
+      "WindDir_SD1_WVT": "nan",
+      "WindDir_SD1_WVT_Flag": "nan",
+      "MaxWS_ms_Avg": "meters/second",
+      "MaxWS_ms_Avg_Flag": "nan",
+      "MaxWS_ms_TMx": "Timestamp",
+      "AirT_C_Avg": "Deg C",
+      "AirT_C_Avg_Flag": "nan",
+      "VP_hPa_Avg": "hPa",
+      "VP_hPa_Avg_Flag": "nan",
+      "BP_hPa_Avg": "hPa",
+      "BP_hPa_Avg_Flag": "nan",
+      "RH": "%",
+      "RH_Flag": "nan",
+      "RHT_C_Avg": "Deg C",
+      "RHT_C_Avg_Flag": "nan",
+      "TiltNS_deg_Avg": "degrees",
+      "TiltNS_deg_Avg_Flag": "nan",
+      "TiltWE_deg_Avg": "degrees",
+      "TiltWE_deg_Avg_Flag": "nan",
+      "SlrTF_MJ_Tot": "MJ/m^2",
+      "SlrTF_MJ_Tot_Flag": "nan",
+      "SWin_Avg": "W/m^2",
+      "SWin_Avg_Flag": "nan",
+      "SWout_Avg": "W/m^2",
+      "SWout_Avg_Flag": "nan",
+      "LWin_Avg": "W/m^2",
+      "LWin_Avg_Flag": "nan",
+      "LWout_Avg": "W/m^2",
+      "LWout_Avg_Flag": "nan",
+      "SWnet_Avg": "W/m^2",
+      "SWnet_Avg_Flag": "nan",
+      "LWnet_Avg": "W/m^2",
+      "LWnet_Avg_Flag": "nan",
+      "SWalbedo_Avg": "W/m^2",
+      "SWalbedo_Avg_Flag": "nan",
+      "NR_Avg": "W/m^2",
+      "NR_Avg_Flag": "nan",
+      "SV_DT_Avg": "cm",
+      "SV_DT_Avg_Flag": "nan",
+      "SV_Q_Avg": "nan",
+      "SV_Q_Avg_Flag": "nan",
+      "SV_TCDT_Avg": "cm",
+      "SV_TCDT_Avg_Flag": "nan",
+      "SV_DBTCDT_Avg": "cm",
+      "SV_DBTCDT_Avg_Flag": "nan",
+      "SV_Tmp_Avg": "Deg C",
+      "SV_Tmp_Avg_Flag": "nan",
+      "SV_RH": "%",
+      "SV_RH_Flag": "nan",
+      "SV_Pitch": "degrees",
+      "SV_Pitch_Flag": "nan",
+      "SV_Roll": "degrees",
+      "SV_Roll_Flag": "nan",
+      "SV_Volt": "Volts",
+      "SV_Volt_Flag": "nan",
+      "SV_Freq": "kHz",
+      "SV_Freq_Flag": "nan",
+      "SV_Alert": "nan",
+      "SV_Alert_Flag": "nan",
+      "T109_AirT_C_Avg": "Deg C",
+      "T109_AirT_C_Avg_Flag": "nan",
+      "Gtmp_Avg": "Deg C",
+      "Gtmp_Avg_Flag": "nan",
+      "Data_ID": "nan",
+      "Station_ID": "nan",
+      "Logger_ID": "nan",
+      "Logger_Script": "nan",
+      "Logger_Software": "nan"
+    },
+    "fields": [
+      "TIMESTAMP",
+      "UTC Offset",
+      "RECORD",
+      "RECORD_Flag",
+      "BattV_Avg",
+      "BattV_Avg_Flag",
+      "PTemp_C_Avg",
+      "PTemp_C_Avg_Flag",
+      "SlrFD_W_Avg",
+      "SlrFD_W_Avg_Flag",
+      "Rain_mm_Tot",
+      "Rain_mm_Tot_Flag",
+      "Strikes_Tot",
+      "Strikes_Tot_Flag",
+      "Dist_km_Max",
+      "Dist_km_Max_Flag",
+      "Dist_km_TMx",
+      "WS_ms_Avg",
+      "WS_ms_Avg_Flag",
+      "WindDir",
+      "WindDir_Flag",
+      "WindDir_SD1_WVT",
+      "WindDir_SD1_WVT_Flag",
+      "MaxWS_ms_Avg",
+      "MaxWS_ms_Avg_Flag",
+      "MaxWS_ms_TMx",
+      "AirT_C_Avg",
+      "AirT_C_Avg_Flag",
+      "VP_hPa_Avg",
+      "VP_hPa_Avg_Flag",
+      "BP_hPa_Avg",
+      "BP_hPa_Avg_Flag",
+      "RH",
+      "RH_Flag",
+      "RHT_C_Avg",
+      "RHT_C_Avg_Flag",
+      "TiltNS_deg_Avg",
+      "TiltNS_deg_Avg_Flag",
+      "TiltWE_deg_Avg",
+      "TiltWE_deg_Avg_Flag",
+      "SlrTF_MJ_Tot",
+      "SlrTF_MJ_Tot_Flag",
+      "SWin_Avg",
+      "SWin_Avg_Flag",
+      "SWout_Avg",
+      "SWout_Avg_Flag",
+      "LWin_Avg",
+      "LWin_Avg_Flag",
+      "LWout_Avg",
+      "LWout_Avg_Flag",
+      "SWnet_Avg",
+      "SWnet_Avg_Flag",
+      "LWnet_Avg",
+      "LWnet_Avg_Flag",
+      "SWalbedo_Avg",
+      "SWalbedo_Avg_Flag",
+      "NR_Avg",
+      "NR_Avg_Flag",
+      "SV_DT_Avg",
+      "SV_DT_Avg_Flag",
+      "SV_Q_Avg",
+      "SV_Q_Avg_Flag",
+      "SV_TCDT_Avg",
+      "SV_TCDT_Avg_Flag",
+      "SV_DBTCDT_Avg",
+      "SV_DBTCDT_Avg_Flag",
+      "SV_Tmp_Avg",
+      "SV_Tmp_Avg_Flag",
+      "SV_RH",
+      "SV_RH_Flag",
+      "SV_Pitch",
+      "SV_Pitch_Flag",
+      "SV_Roll",
+      "SV_Roll_Flag",
+      "SV_Volt",
+      "SV_Volt_Flag",
+      "SV_Freq",
+      "SV_Freq_Flag",
+      "SV_Alert",
+      "SV_Alert_Flag",
+      "T109_AirT_C_Avg",
+      "T109_AirT_C_Avg_Flag",
+      "Gtmp_Avg",
+      "Gtmp_Avg_Flag",
+      "Data_ID",
+      "Station_ID",
+      "Logger_ID",
+      "Logger_Script",
+      "Logger_Software"
+    ],
+    "start": "2025-06-18",
+    "end": "2025-10-22"
+  },
+  {
+    "id": "02MF005",
+    "name": "Browntop Mountain",
+    "latitude": 52.70777777777778,
+    "longitude": -121.33399999999999,
+    "coordinateSource": "Expsite_Browntop - NHG wiki.html",
+    "sourceFolder": "02MF005_BrowntopMountain",
+    "files": [
+      {
+        "name": "02MF005_tidy_historical.csv",
+        "sha256": "7ebaa15b745f6852afef0a5cf4d9d82c4793bd1870281ddd21daf02397980dce",
+        "format": "zip",
+        "url": "/data/weather/02MF005_tidy_historical.zip"
+      }
+    ],
+    "months": [
+      {
+        "month": "2006-08",
+        "url": "/data/weather/02MF005/2006-08.csv.gz",
+        "records": 803
+      },
+      {
+        "month": "2006-09",
+        "url": "/data/weather/02MF005/2006-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2006-10",
+        "url": "/data/weather/02MF005/2006-10.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2006-11",
+        "url": "/data/weather/02MF005/2006-11.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2006-12",
+        "url": "/data/weather/02MF005/2006-12.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2007-01",
+        "url": "/data/weather/02MF005/2007-01.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2007-02",
+        "url": "/data/weather/02MF005/2007-02.csv.gz",
+        "records": 2688
+      },
+      {
+        "month": "2007-03",
+        "url": "/data/weather/02MF005/2007-03.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2007-04",
+        "url": "/data/weather/02MF005/2007-04.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2007-05",
+        "url": "/data/weather/02MF005/2007-05.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2007-06",
+        "url": "/data/weather/02MF005/2007-06.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2007-07",
+        "url": "/data/weather/02MF005/2007-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2007-08",
+        "url": "/data/weather/02MF005/2007-08.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2007-09",
+        "url": "/data/weather/02MF005/2007-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2007-10",
+        "url": "/data/weather/02MF005/2007-10.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2007-11",
+        "url": "/data/weather/02MF005/2007-11.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2007-12",
+        "url": "/data/weather/02MF005/2007-12.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2008-01",
+        "url": "/data/weather/02MF005/2008-01.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2008-02",
+        "url": "/data/weather/02MF005/2008-02.csv.gz",
+        "records": 2784
+      },
+      {
+        "month": "2008-03",
+        "url": "/data/weather/02MF005/2008-03.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2008-04",
+        "url": "/data/weather/02MF005/2008-04.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2008-05",
+        "url": "/data/weather/02MF005/2008-05.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2008-06",
+        "url": "/data/weather/02MF005/2008-06.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2008-07",
+        "url": "/data/weather/02MF005/2008-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2008-08",
+        "url": "/data/weather/02MF005/2008-08.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2008-09",
+        "url": "/data/weather/02MF005/2008-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2008-10",
+        "url": "/data/weather/02MF005/2008-10.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2008-11",
+        "url": "/data/weather/02MF005/2008-11.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2008-12",
+        "url": "/data/weather/02MF005/2008-12.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2009-01",
+        "url": "/data/weather/02MF005/2009-01.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2009-02",
+        "url": "/data/weather/02MF005/2009-02.csv.gz",
+        "records": 2688
+      },
+      {
+        "month": "2009-03",
+        "url": "/data/weather/02MF005/2009-03.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2009-04",
+        "url": "/data/weather/02MF005/2009-04.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2009-05",
+        "url": "/data/weather/02MF005/2009-05.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2009-06",
+        "url": "/data/weather/02MF005/2009-06.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2009-07",
+        "url": "/data/weather/02MF005/2009-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2009-08",
+        "url": "/data/weather/02MF005/2009-08.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2009-09",
+        "url": "/data/weather/02MF005/2009-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2009-10",
+        "url": "/data/weather/02MF005/2009-10.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2009-11",
+        "url": "/data/weather/02MF005/2009-11.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2009-12",
+        "url": "/data/weather/02MF005/2009-12.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2010-01",
+        "url": "/data/weather/02MF005/2010-01.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2010-02",
+        "url": "/data/weather/02MF005/2010-02.csv.gz",
+        "records": 2688
+      },
+      {
+        "month": "2010-03",
+        "url": "/data/weather/02MF005/2010-03.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2010-04",
+        "url": "/data/weather/02MF005/2010-04.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2010-05",
+        "url": "/data/weather/02MF005/2010-05.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2010-06",
+        "url": "/data/weather/02MF005/2010-06.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2010-07",
+        "url": "/data/weather/02MF005/2010-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2010-08",
+        "url": "/data/weather/02MF005/2010-08.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2010-09",
+        "url": "/data/weather/02MF005/2010-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2010-10",
+        "url": "/data/weather/02MF005/2010-10.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2010-11",
+        "url": "/data/weather/02MF005/2010-11.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2010-12",
+        "url": "/data/weather/02MF005/2010-12.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2011-01",
+        "url": "/data/weather/02MF005/2011-01.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2011-02",
+        "url": "/data/weather/02MF005/2011-02.csv.gz",
+        "records": 2688
+      },
+      {
+        "month": "2011-03",
+        "url": "/data/weather/02MF005/2011-03.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2011-04",
+        "url": "/data/weather/02MF005/2011-04.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2011-05",
+        "url": "/data/weather/02MF005/2011-05.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2011-06",
+        "url": "/data/weather/02MF005/2011-06.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2011-07",
+        "url": "/data/weather/02MF005/2011-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2011-08",
+        "url": "/data/weather/02MF005/2011-08.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2011-09",
+        "url": "/data/weather/02MF005/2011-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2011-10",
+        "url": "/data/weather/02MF005/2011-10.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2011-11",
+        "url": "/data/weather/02MF005/2011-11.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2011-12",
+        "url": "/data/weather/02MF005/2011-12.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2012-01",
+        "url": "/data/weather/02MF005/2012-01.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2012-02",
+        "url": "/data/weather/02MF005/2012-02.csv.gz",
+        "records": 2784
+      },
+      {
+        "month": "2012-03",
+        "url": "/data/weather/02MF005/2012-03.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2012-04",
+        "url": "/data/weather/02MF005/2012-04.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2012-05",
+        "url": "/data/weather/02MF005/2012-05.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2012-06",
+        "url": "/data/weather/02MF005/2012-06.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2012-07",
+        "url": "/data/weather/02MF005/2012-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2012-08",
+        "url": "/data/weather/02MF005/2012-08.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2012-09",
+        "url": "/data/weather/02MF005/2012-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2012-10",
+        "url": "/data/weather/02MF005/2012-10.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2012-11",
+        "url": "/data/weather/02MF005/2012-11.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2012-12",
+        "url": "/data/weather/02MF005/2012-12.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2013-01",
+        "url": "/data/weather/02MF005/2013-01.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2013-02",
+        "url": "/data/weather/02MF005/2013-02.csv.gz",
+        "records": 2688
+      },
+      {
+        "month": "2013-03",
+        "url": "/data/weather/02MF005/2013-03.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2013-04",
+        "url": "/data/weather/02MF005/2013-04.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2013-05",
+        "url": "/data/weather/02MF005/2013-05.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2013-06",
+        "url": "/data/weather/02MF005/2013-06.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2013-07",
+        "url": "/data/weather/02MF005/2013-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2013-08",
+        "url": "/data/weather/02MF005/2013-08.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2013-09",
+        "url": "/data/weather/02MF005/2013-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2013-10",
+        "url": "/data/weather/02MF005/2013-10.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2013-11",
+        "url": "/data/weather/02MF005/2013-11.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2013-12",
+        "url": "/data/weather/02MF005/2013-12.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2014-01",
+        "url": "/data/weather/02MF005/2014-01.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2014-02",
+        "url": "/data/weather/02MF005/2014-02.csv.gz",
+        "records": 2688
+      },
+      {
+        "month": "2014-03",
+        "url": "/data/weather/02MF005/2014-03.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2014-04",
+        "url": "/data/weather/02MF005/2014-04.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2014-05",
+        "url": "/data/weather/02MF005/2014-05.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2014-06",
+        "url": "/data/weather/02MF005/2014-06.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2014-07",
+        "url": "/data/weather/02MF005/2014-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2014-08",
+        "url": "/data/weather/02MF005/2014-08.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2014-09",
+        "url": "/data/weather/02MF005/2014-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2014-10",
+        "url": "/data/weather/02MF005/2014-10.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2014-11",
+        "url": "/data/weather/02MF005/2014-11.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2014-12",
+        "url": "/data/weather/02MF005/2014-12.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2015-01",
+        "url": "/data/weather/02MF005/2015-01.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2015-02",
+        "url": "/data/weather/02MF005/2015-02.csv.gz",
+        "records": 2688
+      },
+      {
+        "month": "2015-03",
+        "url": "/data/weather/02MF005/2015-03.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2015-04",
+        "url": "/data/weather/02MF005/2015-04.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2015-05",
+        "url": "/data/weather/02MF005/2015-05.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2015-06",
+        "url": "/data/weather/02MF005/2015-06.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2015-07",
+        "url": "/data/weather/02MF005/2015-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2015-08",
+        "url": "/data/weather/02MF005/2015-08.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2015-09",
+        "url": "/data/weather/02MF005/2015-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2015-10",
+        "url": "/data/weather/02MF005/2015-10.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2015-11",
+        "url": "/data/weather/02MF005/2015-11.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2015-12",
+        "url": "/data/weather/02MF005/2015-12.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2016-01",
+        "url": "/data/weather/02MF005/2016-01.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2016-02",
+        "url": "/data/weather/02MF005/2016-02.csv.gz",
+        "records": 2784
+      },
+      {
+        "month": "2016-03",
+        "url": "/data/weather/02MF005/2016-03.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2016-04",
+        "url": "/data/weather/02MF005/2016-04.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2016-05",
+        "url": "/data/weather/02MF005/2016-05.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2016-06",
+        "url": "/data/weather/02MF005/2016-06.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2016-07",
+        "url": "/data/weather/02MF005/2016-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2016-08",
+        "url": "/data/weather/02MF005/2016-08.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2016-09",
+        "url": "/data/weather/02MF005/2016-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2016-10",
+        "url": "/data/weather/02MF005/2016-10.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2016-11",
+        "url": "/data/weather/02MF005/2016-11.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2016-12",
+        "url": "/data/weather/02MF005/2016-12.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2017-01",
+        "url": "/data/weather/02MF005/2017-01.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2017-02",
+        "url": "/data/weather/02MF005/2017-02.csv.gz",
+        "records": 2688
+      },
+      {
+        "month": "2017-03",
+        "url": "/data/weather/02MF005/2017-03.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2017-04",
+        "url": "/data/weather/02MF005/2017-04.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2017-05",
+        "url": "/data/weather/02MF005/2017-05.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2017-06",
+        "url": "/data/weather/02MF005/2017-06.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2017-07",
+        "url": "/data/weather/02MF005/2017-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2017-08",
+        "url": "/data/weather/02MF005/2017-08.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2017-09",
+        "url": "/data/weather/02MF005/2017-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2017-10",
+        "url": "/data/weather/02MF005/2017-10.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2017-11",
+        "url": "/data/weather/02MF005/2017-11.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2017-12",
+        "url": "/data/weather/02MF005/2017-12.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2018-01",
+        "url": "/data/weather/02MF005/2018-01.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2018-02",
+        "url": "/data/weather/02MF005/2018-02.csv.gz",
+        "records": 2688
+      },
+      {
+        "month": "2018-03",
+        "url": "/data/weather/02MF005/2018-03.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2018-04",
+        "url": "/data/weather/02MF005/2018-04.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2018-05",
+        "url": "/data/weather/02MF005/2018-05.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2018-06",
+        "url": "/data/weather/02MF005/2018-06.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2018-07",
+        "url": "/data/weather/02MF005/2018-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2018-08",
+        "url": "/data/weather/02MF005/2018-08.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2018-09",
+        "url": "/data/weather/02MF005/2018-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2018-10",
+        "url": "/data/weather/02MF005/2018-10.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2018-11",
+        "url": "/data/weather/02MF005/2018-11.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2018-12",
+        "url": "/data/weather/02MF005/2018-12.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2019-01",
+        "url": "/data/weather/02MF005/2019-01.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2019-02",
+        "url": "/data/weather/02MF005/2019-02.csv.gz",
+        "records": 2688
+      },
+      {
+        "month": "2019-03",
+        "url": "/data/weather/02MF005/2019-03.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2019-04",
+        "url": "/data/weather/02MF005/2019-04.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2019-05",
+        "url": "/data/weather/02MF005/2019-05.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2019-06",
+        "url": "/data/weather/02MF005/2019-06.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2019-07",
+        "url": "/data/weather/02MF005/2019-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2019-08",
+        "url": "/data/weather/02MF005/2019-08.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2019-09",
+        "url": "/data/weather/02MF005/2019-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2019-10",
+        "url": "/data/weather/02MF005/2019-10.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2019-11",
+        "url": "/data/weather/02MF005/2019-11.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2019-12",
+        "url": "/data/weather/02MF005/2019-12.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2020-01",
+        "url": "/data/weather/02MF005/2020-01.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2020-02",
+        "url": "/data/weather/02MF005/2020-02.csv.gz",
+        "records": 2784
+      },
+      {
+        "month": "2020-03",
+        "url": "/data/weather/02MF005/2020-03.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2020-04",
+        "url": "/data/weather/02MF005/2020-04.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2020-05",
+        "url": "/data/weather/02MF005/2020-05.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2020-06",
+        "url": "/data/weather/02MF005/2020-06.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2020-07",
+        "url": "/data/weather/02MF005/2020-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2020-08",
+        "url": "/data/weather/02MF005/2020-08.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2020-09",
+        "url": "/data/weather/02MF005/2020-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2020-10",
+        "url": "/data/weather/02MF005/2020-10.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2020-11",
+        "url": "/data/weather/02MF005/2020-11.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2020-12",
+        "url": "/data/weather/02MF005/2020-12.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2021-01",
+        "url": "/data/weather/02MF005/2021-01.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2021-02",
+        "url": "/data/weather/02MF005/2021-02.csv.gz",
+        "records": 2688
+      },
+      {
+        "month": "2021-03",
+        "url": "/data/weather/02MF005/2021-03.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2021-04",
+        "url": "/data/weather/02MF005/2021-04.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2021-05",
+        "url": "/data/weather/02MF005/2021-05.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2021-06",
+        "url": "/data/weather/02MF005/2021-06.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2021-07",
+        "url": "/data/weather/02MF005/2021-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2021-08",
+        "url": "/data/weather/02MF005/2021-08.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2021-09",
+        "url": "/data/weather/02MF005/2021-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2021-10",
+        "url": "/data/weather/02MF005/2021-10.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2021-11",
+        "url": "/data/weather/02MF005/2021-11.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2021-12",
+        "url": "/data/weather/02MF005/2021-12.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2022-01",
+        "url": "/data/weather/02MF005/2022-01.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2022-02",
+        "url": "/data/weather/02MF005/2022-02.csv.gz",
+        "records": 2688
+      },
+      {
+        "month": "2022-03",
+        "url": "/data/weather/02MF005/2022-03.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2022-04",
+        "url": "/data/weather/02MF005/2022-04.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2022-05",
+        "url": "/data/weather/02MF005/2022-05.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2022-06",
+        "url": "/data/weather/02MF005/2022-06.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2022-07",
+        "url": "/data/weather/02MF005/2022-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2022-08",
+        "url": "/data/weather/02MF005/2022-08.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2022-09",
+        "url": "/data/weather/02MF005/2022-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2022-10",
+        "url": "/data/weather/02MF005/2022-10.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2022-11",
+        "url": "/data/weather/02MF005/2022-11.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2022-12",
+        "url": "/data/weather/02MF005/2022-12.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2023-01",
+        "url": "/data/weather/02MF005/2023-01.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2023-02",
+        "url": "/data/weather/02MF005/2023-02.csv.gz",
+        "records": 2688
+      },
+      {
+        "month": "2023-03",
+        "url": "/data/weather/02MF005/2023-03.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2023-04",
+        "url": "/data/weather/02MF005/2023-04.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2023-05",
+        "url": "/data/weather/02MF005/2023-05.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2023-06",
+        "url": "/data/weather/02MF005/2023-06.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2023-07",
+        "url": "/data/weather/02MF005/2023-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2023-08",
+        "url": "/data/weather/02MF005/2023-08.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2023-09",
+        "url": "/data/weather/02MF005/2023-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2023-10",
+        "url": "/data/weather/02MF005/2023-10.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2023-11",
+        "url": "/data/weather/02MF005/2023-11.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2023-12",
+        "url": "/data/weather/02MF005/2023-12.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2024-01",
+        "url": "/data/weather/02MF005/2024-01.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2024-02",
+        "url": "/data/weather/02MF005/2024-02.csv.gz",
+        "records": 2784
+      },
+      {
+        "month": "2024-03",
+        "url": "/data/weather/02MF005/2024-03.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2024-04",
+        "url": "/data/weather/02MF005/2024-04.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2024-05",
+        "url": "/data/weather/02MF005/2024-05.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2024-06",
+        "url": "/data/weather/02MF005/2024-06.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2024-07",
+        "url": "/data/weather/02MF005/2024-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2024-08",
+        "url": "/data/weather/02MF005/2024-08.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2024-09",
+        "url": "/data/weather/02MF005/2024-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2024-10",
+        "url": "/data/weather/02MF005/2024-10.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2024-11",
+        "url": "/data/weather/02MF005/2024-11.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2024-12",
+        "url": "/data/weather/02MF005/2024-12.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2025-01",
+        "url": "/data/weather/02MF005/2025-01.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2025-02",
+        "url": "/data/weather/02MF005/2025-02.csv.gz",
+        "records": 2688
+      },
+      {
+        "month": "2025-03",
+        "url": "/data/weather/02MF005/2025-03.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2025-04",
+        "url": "/data/weather/02MF005/2025-04.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2025-05",
+        "url": "/data/weather/02MF005/2025-05.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2025-06",
+        "url": "/data/weather/02MF005/2025-06.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2025-07",
+        "url": "/data/weather/02MF005/2025-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2025-08",
+        "url": "/data/weather/02MF005/2025-08.csv.gz",
+        "records": 2730
+      }
+    ],
+    "records": 666797,
+    "offsets": [
+      "-07:00"
+    ],
+    "metadataUrl": "/data/weather/02MF005/MetadataLog.xlsx",
+    "status": "available",
+    "units": {
+      "TIMESTAMP": "TS",
+      "UTC Offset": "UTC",
+      "RECORD": "RN",
+      "RECORD_Flag": "nan",
+      "BattV_Avg": "Volts",
+      "BattV_Avg_Flag": "nan",
+      "BP_hPa_Avg": "hPa",
+      "BP_hPa_Avg_Flag": "nan",
+      "Rain_mm_Tot": "mm",
+      "Rain_mm_Tot_Flag": "nan",
+      "WS_ms_Avg": "meters/second",
+      "WS_ms_Avg_Flag": "nan",
+      "WS_Std": "meters/second",
+      "WS_Std_Flag": "nan",
+      "WindDir": "degrees",
+      "WindDir_Flag": "nan",
+      "WindDir_Avg": "degrees",
+      "WindDir_Avg_Flag": "nan",
+      "AirT_C_Avg": "Deg C",
+      "AirT_C_Avg_Flag": "nan",
+      "RH": "%",
+      "RH_Flag": "nan",
+      "Gtmp_Avg": "Deg C",
+      "Gtmp_Avg_Flag": "nan",
+      "DT_Avg": "nan",
+      "DT_Avg_Flag": "nan",
+      "TCDT_Avg": "nan",
+      "TCDT_Avg_Flag": "nan",
+      "DBTCDT_Avg": "nan",
+      "DBTCDT_Avg_Flag": "nan",
+      "Original_WindDir": "degrees",
+      "Original_WindDir_Flag": "nan",
+      "Original_WindDir_Avg": "degrees",
+      "Original_WindDir_Avg_Flag": "nan",
+      "PTemp_C_Avg": "Deg C",
+      "PTemp_C_Avg_Flag": "nan",
+      "SlrFD_W_Avg": "W/m^2",
+      "SlrFD_W_Avg_Flag": "nan",
+      "Strikes_Tot": "count",
+      "Strikes_Tot_Flag": "nan",
+      "Dist_km_Max": "kilometers",
+      "Dist_km_Max_Flag": "nan",
+      "Dist_km_TMx": "Timestamp",
+      "WS_ms_Avg_2": "meters/second",
+      "WS_ms_Avg_2_Flag": "nan",
+      "WindDir_2": "degrees",
+      "WindDir_2_Flag": "nan",
+      "WindDir_SD1_WVT_2": "degrees",
+      "WindDir_SD1_WVT_2_Flag": "nan",
+      "MaxWS_ms_Avg": "meters/second",
+      "MaxWS_ms_Avg_Flag": "nan",
+      "MaxWS_ms_TMx": "Timestamp",
+      "VP_hPa_Avg": "hPa",
+      "VP_hPa_Avg_Flag": "nan",
+      "RHT_C_Avg": "Deg C",
+      "RHT_C_Avg_Flag": "nan",
+      "TiltNS_deg_Avg": "degrees",
+      "TiltNS_deg_Avg_Flag": "nan",
+      "TiltWE_deg_Avg": "degrees",
+      "TiltWE_deg_Avg_Flag": "nan",
+      "SlrTF_MJ_Tot": "MJ/m^2",
+      "SlrTF_MJ_Tot_Flag": "nan",
+      "WindDir_SD1_WVT": "degrees",
+      "WindDir_SD1_WVT_Flag": "nan",
+      "Data_ID": "nan",
+      "Station_ID": "nan",
+      "Logger_ID": "nan",
+      "Logger_Script": "nan",
+      "Logger_Software": "nan"
+    },
+    "fields": [
+      "TIMESTAMP",
+      "UTC Offset",
+      "RECORD",
+      "RECORD_Flag",
+      "BattV_Avg",
+      "BattV_Avg_Flag",
+      "BP_hPa_Avg",
+      "BP_hPa_Avg_Flag",
+      "Rain_mm_Tot",
+      "Rain_mm_Tot_Flag",
+      "WS_ms_Avg",
+      "WS_ms_Avg_Flag",
+      "WS_Std",
+      "WS_Std_Flag",
+      "WindDir",
+      "WindDir_Flag",
+      "WindDir_Avg",
+      "WindDir_Avg_Flag",
+      "AirT_C_Avg",
+      "AirT_C_Avg_Flag",
+      "RH",
+      "RH_Flag",
+      "Gtmp_Avg",
+      "Gtmp_Avg_Flag",
+      "DT_Avg",
+      "DT_Avg_Flag",
+      "TCDT_Avg",
+      "TCDT_Avg_Flag",
+      "DBTCDT_Avg",
+      "DBTCDT_Avg_Flag",
+      "Original_WindDir",
+      "Original_WindDir_Flag",
+      "Original_WindDir_Avg",
+      "Original_WindDir_Avg_Flag",
+      "PTemp_C_Avg",
+      "PTemp_C_Avg_Flag",
+      "SlrFD_W_Avg",
+      "SlrFD_W_Avg_Flag",
+      "Strikes_Tot",
+      "Strikes_Tot_Flag",
+      "Dist_km_Max",
+      "Dist_km_Max_Flag",
+      "Dist_km_TMx",
+      "WS_ms_Avg_2",
+      "WS_ms_Avg_2_Flag",
+      "WindDir_2",
+      "WindDir_2_Flag",
+      "WindDir_SD1_WVT_2",
+      "WindDir_SD1_WVT_2_Flag",
+      "MaxWS_ms_Avg",
+      "MaxWS_ms_Avg_Flag",
+      "MaxWS_ms_TMx",
+      "VP_hPa_Avg",
+      "VP_hPa_Avg_Flag",
+      "RHT_C_Avg",
+      "RHT_C_Avg_Flag",
+      "TiltNS_deg_Avg",
+      "TiltNS_deg_Avg_Flag",
+      "TiltWE_deg_Avg",
+      "TiltWE_deg_Avg_Flag",
+      "SlrTF_MJ_Tot",
+      "SlrTF_MJ_Tot_Flag",
+      "WindDir_SD1_WVT",
+      "WindDir_SD1_WVT_Flag",
+      "Data_ID",
+      "Station_ID",
+      "Logger_ID",
+      "Logger_Script",
+      "Logger_Software"
+    ],
+    "start": "2006-08-23",
+    "end": "2025-08-29"
+  },
+  {
+    "id": "02MF009",
+    "name": "Quesnel Lake West Arm",
+    "latitude": 52.489456,
+    "longitude": -121.429141,
+    "coordinateSource": "02MF009_FieldReport_20250828.pdf",
+    "sourceFolder": "02MF009_QuesnelLakeWestArm",
+    "files": [
+      {
+        "name": "02MF009_tidy_CR350_4311_20250828.csv",
+        "url": "/data/weather/02MF009_tidy_CR350_4311_20250828.csv",
+        "sha256": "13d1bcae0506242b6ce3e2c6f47cf9f83bf3a0c2d874b64c4436469906b9ff3c"
+      }
+    ],
+    "months": [
+      {
+        "month": "2024-06",
+        "url": "/data/weather/02MF009/2024-06.csv.gz",
+        "records": 2519
+      },
+      {
+        "month": "2024-07",
+        "url": "/data/weather/02MF009/2024-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2024-08",
+        "url": "/data/weather/02MF009/2024-08.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2024-09",
+        "url": "/data/weather/02MF009/2024-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2024-10",
+        "url": "/data/weather/02MF009/2024-10.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2024-11",
+        "url": "/data/weather/02MF009/2024-11.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2024-12",
+        "url": "/data/weather/02MF009/2024-12.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2025-01",
+        "url": "/data/weather/02MF009/2025-01.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2025-02",
+        "url": "/data/weather/02MF009/2025-02.csv.gz",
+        "records": 2688
+      },
+      {
+        "month": "2025-03",
+        "url": "/data/weather/02MF009/2025-03.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2025-04",
+        "url": "/data/weather/02MF009/2025-04.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2025-05",
+        "url": "/data/weather/02MF009/2025-05.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2025-06",
+        "url": "/data/weather/02MF009/2025-06.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2025-07",
+        "url": "/data/weather/02MF009/2025-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2025-08",
+        "url": "/data/weather/02MF009/2025-08.csv.gz",
+        "records": 2638
+      }
+    ],
+    "records": 43173,
+    "offsets": [
+      "-07:00"
+    ],
+    "metadataUrl": "/data/weather/02MF009/MetadataLog.xlsx",
+    "status": "available",
+    "units": {
+      "TIMESTAMP": "TS",
+      "UTC Offset": "UTC",
+      "RECORD": "RN",
+      "RECORD_Flag": "nan",
+      "BattV_Avg": "Volts",
+      "BattV_Avg_Flag": "nan",
+      "PTemp_C_Avg": "Deg C",
+      "PTemp_C_Avg_Flag": "nan",
+      "SlrFD_W_Avg": "W/m^2",
+      "SlrFD_W_Avg_Flag": "nan",
+      "Rain_mm_Tot": "mm",
+      "Rain_mm_Tot_Flag": "nan",
+      "Strikes_Tot": "count",
+      "Strikes_Tot_Flag": "nan",
+      "Dist_km_Avg": "kilometers",
+      "Dist_km_Avg_Flag": "nan",
+      "WS_ms_Avg": "meters/second",
+      "WS_ms_Avg_Flag": "nan",
+      "WindDir": "degrees",
+      "WindDir_Flag": "nan",
+      "WindDir_SD1": "m/s",
+      "WindDir_SD1_Flag": "nan",
+      "MaxWS_ms_Avg": "meters/second",
+      "MaxWS_ms_Avg_Flag": "nan",
+      "AirT_C_Avg": "Deg C",
+      "AirT_C_Avg_Flag": "nan",
+      "VP_hPa_Avg": "hPa",
+      "VP_hPa_Avg_Flag": "nan",
+      "BP_hPa_Avg": "hPa",
+      "BP_hPa_Avg_Flag": "nan",
+      "RH": "%",
+      "RH_Flag": "nan",
+      "RHT_C_Avg": "Deg C",
+      "RHT_C_Avg_Flag": "nan",
+      "TiltNS_deg_Avg": "degrees",
+      "TiltNS_deg_Avg_Flag": "nan",
+      "TiltWE_deg_Avg": "degrees",
+      "TiltWE_deg_Avg_Flag": "nan",
+      "SlrTF_MJ_Tot": "MJ/m^2",
+      "SlrTF_MJ_Tot_Flag": "nan",
+      "Data_ID": "nan",
+      "Station_ID": "nan",
+      "Logger_ID": "nan",
+      "Logger_Script": "nan",
+      "Logger_Software": "nan"
+    },
+    "fields": [
+      "TIMESTAMP",
+      "UTC Offset",
+      "RECORD",
+      "RECORD_Flag",
+      "BattV_Avg",
+      "BattV_Avg_Flag",
+      "PTemp_C_Avg",
+      "PTemp_C_Avg_Flag",
+      "SlrFD_W_Avg",
+      "SlrFD_W_Avg_Flag",
+      "Rain_mm_Tot",
+      "Rain_mm_Tot_Flag",
+      "Strikes_Tot",
+      "Strikes_Tot_Flag",
+      "Dist_km_Avg",
+      "Dist_km_Avg_Flag",
+      "WS_ms_Avg",
+      "WS_ms_Avg_Flag",
+      "WindDir",
+      "WindDir_Flag",
+      "WindDir_SD1",
+      "WindDir_SD1_Flag",
+      "MaxWS_ms_Avg",
+      "MaxWS_ms_Avg_Flag",
+      "AirT_C_Avg",
+      "AirT_C_Avg_Flag",
+      "VP_hPa_Avg",
+      "VP_hPa_Avg_Flag",
+      "BP_hPa_Avg",
+      "BP_hPa_Avg_Flag",
+      "RH",
+      "RH_Flag",
+      "RHT_C_Avg",
+      "RHT_C_Avg_Flag",
+      "TiltNS_deg_Avg",
+      "TiltNS_deg_Avg_Flag",
+      "TiltWE_deg_Avg",
+      "TiltWE_deg_Avg_Flag",
+      "SlrTF_MJ_Tot",
+      "SlrTF_MJ_Tot_Flag",
+      "Data_ID",
+      "Station_ID",
+      "Logger_ID",
+      "Logger_Script",
+      "Logger_Software"
+    ],
+    "start": "2024-06-04",
+    "end": "2025-08-28"
+  },
+  {
+    "id": "02PE002",
+    "name": "Kiskatinaw",
+    "latitude": 55.75116666666667,
+    "longitude": -120.52411111111111,
+    "coordinateSource": "Expsite_Kiskatinaw - NHG wiki.html",
+    "sourceFolder": "02PE002_Kiskatinaw",
+    "files": [
+      {
+        "name": "02PE002_tidy_historical.csv",
+        "url": "/data/weather/02PE002_tidy_historical.csv",
+        "sha256": "e36b08f65b4ce5e3e06827b918786c9c1092688053465a4a443410906711415a"
+      }
+    ],
+    "months": [
+      {
+        "month": "2015-08",
+        "url": "/data/weather/02PE002/2015-08.csv.gz",
+        "records": 1088
+      },
+      {
+        "month": "2015-09",
+        "url": "/data/weather/02PE002/2015-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2015-10",
+        "url": "/data/weather/02PE002/2015-10.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2015-11",
+        "url": "/data/weather/02PE002/2015-11.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2015-12",
+        "url": "/data/weather/02PE002/2015-12.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2016-01",
+        "url": "/data/weather/02PE002/2016-01.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2016-02",
+        "url": "/data/weather/02PE002/2016-02.csv.gz",
+        "records": 2784
+      },
+      {
+        "month": "2016-03",
+        "url": "/data/weather/02PE002/2016-03.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2016-04",
+        "url": "/data/weather/02PE002/2016-04.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2016-05",
+        "url": "/data/weather/02PE002/2016-05.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2016-06",
+        "url": "/data/weather/02PE002/2016-06.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2016-07",
+        "url": "/data/weather/02PE002/2016-07.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2016-08",
+        "url": "/data/weather/02PE002/2016-08.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2016-09",
+        "url": "/data/weather/02PE002/2016-09.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2016-10",
+        "url": "/data/weather/02PE002/2016-10.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2016-11",
+        "url": "/data/weather/02PE002/2016-11.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2016-12",
+        "url": "/data/weather/02PE002/2016-12.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2017-01",
+        "url": "/data/weather/02PE002/2017-01.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2017-02",
+        "url": "/data/weather/02PE002/2017-02.csv.gz",
+        "records": 2688
+      },
+      {
+        "month": "2017-03",
+        "url": "/data/weather/02PE002/2017-03.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2017-04",
+        "url": "/data/weather/02PE002/2017-04.csv.gz",
+        "records": 2880
+      },
+      {
+        "month": "2017-05",
+        "url": "/data/weather/02PE002/2017-05.csv.gz",
+        "records": 2976
+      },
+      {
+        "month": "2017-06",
+        "url": "/data/weather/02PE002/2017-06.csv.gz",
+        "records": 1398
+      }
+    ],
+    "records": 63830,
+    "offsets": [
+      "-07:00"
+    ],
+    "metadataUrl": "/data/weather/02PE002/MetadataLog.xlsx",
+    "status": "available",
+    "units": {
+      "TIMESTAMP": "TS",
+      "UTC Offset": "UTC",
+      "RECORD": "RN",
+      "RECORD_Flag": "nan",
+      "BattV_Avg": "Volts",
+      "BattV_Avg_Flag": "nan",
+      "BP_hPa_Avg": "hPa",
+      "BP_hPa_Avg_Flag": "nan",
+      "WS_ms_Avg": "meters/second",
+      "WS_ms_Avg_Flag": "nan",
+      "WS_Std": "meters/second",
+      "WS_Std_Flag": "nan",
+      "WindDir": "degrees",
+      "WindDir_Flag": "nan",
+      "AirT_C_Avg": "Deg C",
+      "AirT_C_Avg_Flag": "nan",
+      "RH": "%",
+      "RH_Flag": "nan",
+      "Gtmp_24cm depth": "Deg C",
+      "Gtmp_24cm depth_Flag": "nan",
+      "GTMP_13cm": "Deg C",
+      "GTMP_13cm_Flag": "nan",
+      "T109_AirT_C_Avg": "Deg C",
+      "T109_AirT_C_Avg_Flag": "nan",
+      "DT_Avg": "nan",
+      "DT_Avg_Flag": "nan",
+      "TCDT_Avg": "nan",
+      "TCDT_Avg_Flag": "nan",
+      "DBTCDT_Avg": "nan",
+      "DBTCDT_Avg_Flag": "nan",
+      "Rain_mm_Tot": "mm",
+      "Rain_mm_Tot_Flag": "nan",
+      "SlrFD_W_Avg": "W/m^2",
+      "SlrFD_W_Avg_Flag": "nan",
+      "SlrFD_W_Std": "W/m^2",
+      "SlrFD_W_Std_Flag": "nan",
+      "SlrTF_MJ_Tot": "MJ/m^2",
+      "SlrTF_MJ_Tot_Flag": "nan",
+      "Data_ID": "nan",
+      "Station_ID": "nan",
+      "Logger_ID": "nan",
+      "Logger_Script": "nan",
+      "Logger_Software": "nan"
+    },
+    "fields": [
+      "TIMESTAMP",
+      "UTC Offset",
+      "RECORD",
+      "RECORD_Flag",
+      "BattV_Avg",
+      "BattV_Avg_Flag",
+      "BP_hPa_Avg",
+      "BP_hPa_Avg_Flag",
+      "WS_ms_Avg",
+      "WS_ms_Avg_Flag",
+      "WS_Std",
+      "WS_Std_Flag",
+      "WindDir",
+      "WindDir_Flag",
+      "AirT_C_Avg",
+      "AirT_C_Avg_Flag",
+      "RH",
+      "RH_Flag",
+      "Gtmp_24cm depth",
+      "Gtmp_24cm depth_Flag",
+      "GTMP_13cm",
+      "GTMP_13cm_Flag",
+      "T109_AirT_C_Avg",
+      "T109_AirT_C_Avg_Flag",
+      "DT_Avg",
+      "DT_Avg_Flag",
+      "TCDT_Avg",
+      "TCDT_Avg_Flag",
+      "DBTCDT_Avg",
+      "DBTCDT_Avg_Flag",
+      "Rain_mm_Tot",
+      "Rain_mm_Tot_Flag",
+      "SlrFD_W_Avg",
+      "SlrFD_W_Avg_Flag",
+      "SlrFD_W_Std",
+      "SlrFD_W_Std_Flag",
+      "SlrTF_MJ_Tot",
+      "SlrTF_MJ_Tot_Flag",
+      "Data_ID",
+      "Station_ID",
+      "Logger_ID",
+      "Logger_Script",
+      "Logger_Software"
+    ],
+    "start": "2015-08-20",
+    "end": "2017-06-15"
+  }
+]

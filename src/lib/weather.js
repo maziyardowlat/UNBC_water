@@ -1,7 +1,7 @@
 import Papa from 'papaparse'
 import { DateTime } from 'luxon'
 
-export const weatherSource = '/data/weather/02FW005_tidy_CR350_1379_20250521.csv'
+export const weatherCatalog = '/data/weather/stations.json'
 
 // Names match FLAG_DISPLAY_NAMES in the weatherqa_qc source application.
 export const flagNames = {
@@ -12,6 +12,21 @@ export const flagNames = {
 }
 
 const labels = {
+  WS_Std: 'Wind speed standard deviation', WS_ms_Avg_2: 'Wind speed (sensor 2)',
+  WindDir_Avg: 'Average wind direction', WindDir_2: 'Wind direction (sensor 2)',
+  WindDir_SD1: 'Wind direction standard deviation', WindDir_SD1_WVT: 'Wind direction standard deviation (WVT)',
+  WindDir_SD1_WVT_2: 'Wind direction standard deviation (sensor 2)',
+  Original_WindDir: 'Original wind direction', Original_WindDir_Avg: 'Original average wind direction',
+  Dist_km_Max: 'Maximum lightning distance', SlrFD_W_Std: 'Solar radiation standard deviation',
+  T109_AirT_C_Avg: 'Air temperature (T109)', GTMP_13cm: 'Ground temperature (13 cm)',
+  'Gtmp_24cm depth': 'Ground temperature (24 cm)',
+  SR50AT_DBTCDT_Avg: 'Snow depth (SR50AT)', SR50AT_TCDT_Avg: 'Compensated distance (SR50AT)',
+  SR50AT_Q_Avg: 'Signal quality (SR50AT)', SR50AT_SRTmp_C_Avg: 'Sensor temperature (SR50AT)',
+  SV_DBTCDT_Avg: 'Snow depth (SnowVue)', SV_DT_Avg: 'Distance to target (SnowVue)',
+  SV_TCDT_Avg: 'Compensated distance (SnowVue)', SV_Q_Avg: 'Signal quality (SnowVue)',
+  SV_Tmp_Avg: 'Sensor temperature (SnowVue)', SV_RH: 'Sensor humidity (SnowVue)',
+  SV_Pitch: 'Sensor pitch (SnowVue)', SV_Roll: 'Sensor roll (SnowVue)',
+  SV_Alert: 'Sensor alert (SnowVue)', SV_Freq: 'Sensor frequency (SnowVue)', SV_Volt: 'Sensor voltage (SnowVue)',
   AirT_C_Avg: 'Air temperature', RH: 'Relative humidity', WS_ms_Avg: 'Wind speed',
   WindDir: 'Wind direction', MaxWS_ms_Avg: 'Maximum wind speed', Rain_mm_Tot: 'Rainfall',
   SlrFD_W_Avg: 'Solar radiation', SlrTF_MJ_Tot: 'Solar energy', BP_hPa_Avg: 'Air pressure',
@@ -24,6 +39,37 @@ const labels = {
   Gtmp_Avg: 'Ground temperature', BattV_Avg: 'Battery voltage', PTemp_C_Avg: 'Panel temperature',
   Strikes_Tot: 'Lightning strikes', Dist_km_Avg: 'Lightning distance',
   TiltNS_deg_Avg: 'Sensor tilt north–south', TiltWE_deg_Avg: 'Sensor tilt west–east'
+}
+
+export function weatherVariables (fields, units) {
+  return fields.filter(key => key !== 'RECORD' && fields.includes(`${key}_Flag`)).map(key => ({
+    key,
+    title: labels[key] || (/^Gtmp_(\d+)cm_Avg$/.test(key) ? `Ground temperature (${key.match(/\d+/)[0]} cm)` : key),
+    unit: units[key] && units[key].toLowerCase() !== 'nan' ? units[key] : 'Unit not supplied'
+  })).sort((a, b) => a.title.localeCompare(b.title))
+}
+
+export async function loadWeatherRange (station, start, end, signal) {
+  const months = station.months.filter(chunk => chunk.month >= start.slice(0, 7) && chunk.month <= end.slice(0, 7))
+  const rows = []
+  // Limit decompression/parsing to one month at a time, especially for historical files.
+  for (const chunk of months) {
+    const response = await fetch(chunk.url, { signal })
+    if (!response.ok) throw new Error(`Weather data request failed (${response.status}).`)
+    const bytes = new Uint8Array(await response.arrayBuffer())
+    let csv
+    if (bytes[0] === 0x1f && bytes[1] === 0x8b) {
+      if (typeof DecompressionStream === 'undefined') throw new Error('This browser cannot decompress the weather files. Please use a current browser.')
+      csv = await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text()
+    } else csv = new TextDecoder().decode(bytes)
+    if (signal?.aborted) throw new DOMException('Aborted', 'AbortError')
+    const parsed = parseWeatherCSV(csv)
+    rows.push(...parsed.rows.filter(row => {
+      const date = row.TIMESTAMP.slice(0, 10)
+      return date >= start && date <= end
+    }))
+  }
+  return { rows: rows.sort((a, b) => a.millis - b.millis), units: station.units, fields: station.fields, variables: weatherVariables(station.fields, station.units) }
 }
 
 export function flagsFor (row, variable) {
@@ -54,10 +100,6 @@ export function parseWeatherCSV (csv) {
     return { ...row, millis: time.toMillis() }
   }).sort((a, b) => a.millis - b.millis)
   if (!rows.length) throw new Error('No weather observations were found.')
-  const variables = parsed.meta.fields.filter(field => field !== 'RECORD' && parsed.meta.fields.includes(`${field}_Flag`)).map(key => ({
-    key, title: labels[key] || key,
-    // Unknown units stay unknown; do not infer snow-depth or albedo units.
-    unit: units[key] && units[key].toLowerCase() !== 'nan' ? units[key] : 'Unit not supplied'
-  }))
+  const variables = weatherVariables(parsed.meta.fields, units)
   return { rows, units, variables, fields: parsed.meta.fields }
 }

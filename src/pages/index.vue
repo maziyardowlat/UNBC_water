@@ -184,9 +184,10 @@
           <div class="text-h6 mt-4">Dataset Updates</div>
           <p>The datasets from each source are updated as new data is collected from the field team.</p>
           <div class="text-h6 mt-4">Weather Station Data</div>
-          <p>The Weather stations tab displays the supplied 02FW005 tidy CSV for logger CR350-1379,
-            covering July 2023 to May 2025. Values, source units and per-variable QC codes are preserved;
-            QA/QC has not been rerun. Download the original file from the weather tab.</p>
+          <p>The Weather stations tab includes a map and named stations from the supplied weather data archive.
+            Select a station to view its tidy observations, source units and per-variable QC codes.
+            QA/QC has not been rerun. Original CSVs and station metadata can be downloaded from the weather tab.
+            Stations without a supplied tidy CSV are marked as awaiting tidy data.</p>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
